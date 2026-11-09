@@ -1,0 +1,727 @@
+;モンスターたちとイチャイチャ
+;とりあえずやっつけ。改変パッチも歓迎
+
+;-----------------------------------
+@MONSTER_PLAY
+;-----------------------------------
+$INPUT_LOOP
+
+CALL MONSTERPLAY_LIST
+
+SIF ITEM:22 >= 1
+	PRINT [900] 野良犬 
+PRINTL [999] もどる
+
+INPUT
+
+IF RESULT == 999
+	RETURN 0
+ELSEIF ITEM:RESULT <= 0 && RESULT != 900
+	GOTO INPUT_LOOP
+ELSEIF RESULT == 900 && ITEM:22 <= 0
+	GOTO INPUT_LOOP
+ENDIF
+
+LOCAL:0 = RESULT
+IF LOCAL:0 != 900
+	CALL MONSTER_DATA, LOCAL:0, 5
+	LOCAL:1 = E:507
+ENDIF
+
+A = 0
+Y = RAND:5 + 3
+
+IF LOCAL:0 == 900
+	CALL MONSTER_PLAY_DOG,MASTER
+ELSEIF LOCAL:1 == 1
+	CALL ORC_MONSTER_PLAY,MASTER
+ELSEIF LOCAL:1 == 2
+	CALL SLIME_MONSTER_PLAY,MASTER
+ELSEIF LOCAL:1 == 3
+	CALL INSECT_MONSTER_PLAY,MASTER
+ELSEIF LOCAL:1 == 4
+	CALL IVY_MONSTER_PLAY,MASTER
+ELSEIF LOCAL:1 == 5
+	CALL SYOKUSYU_MONSTER_PLAY,MASTER
+ELSEIF LOCAL:1 == 6
+	CALL FAILY_MONSTER_PLAY,MASTER
+ELSEIF LOCAL:1 == 7
+	CALL GIANT_MONSTER_PLAY,MASTER
+ELSEIF LOCAL:1 == 8
+	CALL MAN_MONSTER_PLAY,MASTER
+ELSEIF LOCAL:1 == 9
+	CALL GIRL_MONSTER_PLAY,MASTER
+ELSEIF LOCAL:1 == 10
+	CALL BEAST_MONSTER_PLAY,MASTER
+ELSEIF LOCAL:1 == 11
+	CALL BRAIN_MONSTER_PLAY,MASTER
+ELSEIF LOCAL:1 == 12
+	CALL HORSE_MONSTER_PLAY,MASTER
+ENDIF
+
+IF TALENT:A:0 == 1 && EXP:A:0 > 0
+	PRINTW 【処女喪失】
+	TALENT:A:0 = 0
+ENDIF
+
+
+
+BEGIN TURNEND
+RETURN 1
+
+;-------------------------------------
+@MONSTERPLAY_LIST
+;-------------------------------------
+
+PRINTL モンスターを選んでください
+
+LOCAL:1 = 0
+FOR LOCAL:0, 100, 200
+	IF ITEM:(LOCAL:0) >= 1
+		PRINTFORM [{LOCAL:0}] %ITEMNAME:(LOCAL:0)%　　
+		LOCAL:1 += 1
+	ENDIF
+	
+	IF LOCAL:1 >= 3
+		PRINTL  
+		LOCAL:1 = 0
+	ENDIF
+NEXT
+
+SIF LOCAL:1 != 0
+	PRINTL  
+
+RETURN 0
+
+;-----------------------------------------
+@MONSTER_PLAY_DOG,ARG:0
+#DIM PLAY
+;-----------------------------------------
+
+
+CALL MONSTER_PLAY_CALC, ARG:0, "獣姦"
+PLAY = RESULT
+
+IF TALENT:(ARG:0):122 == 1
+	PRINTW %SAVESTR:(ARG:0)%はいぬにおやつをあげてやった
+	RETURN 0
+ENDIF
+
+
+PRINTW 『クゥーン、クゥーン』
+
+PRINTFORMW 甘い声をあげて%SAVESTR:(ARG:0)%に懐く野良犬をあやしながら、四つん這いになり野良犬の膨らんできたペニスを秘所にあてがった
+PRINTFORML V経験+{PLAY}
+EXP:(ARG:0):0 += PLAY
+PRINTFORMW 獣姦経験+{PLAY}
+EXP:(ARG:0):56 += PLAY
+CFLAG:(ARG:0):106 += PLAY
+
+RETURN 0
+
+
+;--------------------------------------------
+@ORC_MONSTER_PLAY,ARG:0
+#DIM PLAY
+;--------------------------------------------
+
+PLAY = 0
+
+IF TALENT:(ARG:0):122 == 1
+	PRINTW 『マオウサマ…カンベンシテクレ…』
+	RETURN 0
+ENDIF
+
+IF RAND:5 == 0
+	PRINTW 『マ…マオウサマトせっくすデキルナンテ…！』
+ELSEIF RAND:4 == 0
+	PRINTW 『カンゲキダ…』
+ELSEIF RAND:3 == 0
+	PRINTW 『イインデスカ…オデナンカデ？』
+ELSEIF RAND:2 == 0
+	PRINTW 『ウウ…マオウサマァ…』
+ELSE
+	PRINTW 『ブヒヒッ、マオウサマ…』
+ENDIF
+
+IF RAND:2 == 0
+	CALL MONSTER_PLAY_CALC, ARG:0, "奉仕"
+	PLAY += RESULT
+	
+	PRINTW 『マオウサマガ…オデノチンポヲ…！』
+	PRINTFORMW %SAVESTR:(ARG:0)%は全裸で亜人たちのペニスに奉仕した。濃い精液が%SAVESTR:(ARG:0)%の口に注がれる…
+	
+	PRINTFORML フェラ経験+{PLAY}
+	PRINTFORML 精液経験+{PLAY}
+	EXP:(ARG:0):22 += PLAY
+	EXP:(ARG:0):20 += PLAY
+ELSE
+	CALL MONSTER_PLAY_CALC, ARG:0, "全穴"
+	PLAY += RESULT
+	
+	PRINTW 『ミンナ、マオウサマノオナグサミダ…！』
+	PRINTFORMW %SAVESTR:(ARG:0)%は、膣、口、肛門、穴という穴に亜人たちのペニスを入れられ、精液を注ぎこまれた
+	PRINTW 彼女の虚ろな目は薄暗いダンジョンの天井を向いたまま、焦点を結ばなかった
+	PRINTFORMW {PLAY}人分の溜まりに溜まった精液で化粧された顔と性器を見て、亜人たちはさらに興奮している
+	PRINTFORML V経験+{PLAY}
+	PRINTFORML A経験+{PLAY}
+	PRINTFORML フェラ経験+{PLAY}
+	PRINTFORML 精液経験+{PLAY}
+	EXP:(ARG:0):0 += PLAY
+	EXP:(ARG:0):1 += PLAY
+	EXP:(ARG:0):22 += PLAY
+	EXP:(ARG:0):20 += PLAY
+	CFLAG:(ARG:0):107 += PLAY
+ENDIF
+WAIT
+RETURN 0
+
+;--------------------------------------------
+@SLIME_MONSTER_PLAY,ARG:0
+#DIM PLAY
+;--------------------------------------------
+
+PLAY = 0
+
+IF TALENT:(ARG:0):122 == 1
+	PRINTW %SAVESTR:(ARG:0)%は粘液に両足を突っ込んで存分に冷え冷え感を味わった
+	RETURN 0
+ENDIF
+
+PRINTW 怪しく粘液は蠢動している……
+
+IF RAND:2 == 0
+	CALL MONSTER_PLAY_CALC, ARG:0, "粘液"
+	PLAY += RESULT
+	PRINTFORMW %SAVESTR:(ARG:0)%は粘液風呂を楽しんだ
+	PRINTFORMW …ヌルヌルだ！
+	PRINTFORML 恥情の珠+{PLAY * 10}
+	PRINTFORML 欲情の珠+{PLAY * 10}
+	JUEL:(ARG:0):5 += PLAY * 10
+	JUEL:(ARG:0):8 += PLAY * 10
+ELSE
+	CALL MONSTER_PLAY_CALC, ARG:0, "アナル"
+	PLAY += RESULT
+	PRINTFORMW %SAVESTR:(ARG:0)%は粘液風呂を楽しんだ
+	PRINTFORMW %SAVESTR:(ARG:0)%は肛門から逆流する大量の粘液で身体の中が綺麗になるのを感じる
+	PRINTFORML A経験+{PLAY}
+	PRINTFORML 恥情の珠+{PLAY * 10}
+	PRINTFORML 欲情の珠+{PLAY * 10}
+	JUEL:(ARG:0):5 += PLAY * 10
+	JUEL:(ARG:0):8 += PLAY * 10
+	EXP:(ARG:0):1 += PLAY
+ENDIF
+WAIT
+RETURN 0
+
+;--------------------------------------------
+@INSECT_MONSTER_PLAY,ARG:0
+#DIM PLAY
+;--------------------------------------------
+
+PLAY = 0
+
+IF TALENT:(ARG:0):122 == 1
+	PRINTW %SAVESTR:(ARG:0)%は昆虫観察を存分に楽しんだ
+	RETURN 0
+ENDIF
+
+PRINTW 節足動物の甲殻が軋んでいる…
+
+IF RAND:2 == 0
+	CALL MONSTER_PLAY_CALC, ARG:0, "奉仕"
+	PLAY += RESULT
+	PRINTW 『ギチギチギチ……』
+	PRINTFORMW %SAVESTR:(ARG:0)%は産卵管を口でしゃぶってあげた
+	PRINTFORML 習得の珠+{PLAY * 10}
+	PRINTFORML 欲情の珠+{PLAY * 10}
+	JUEL:(ARG:0):7 += PLAY * 10
+	JUEL:(ARG:0):5 += PLAY * 10
+ELSE
+	CALL MONSTER_PLAY_CALC, ARG:0, "アナル"
+	PLAY += RESULT
+	PRINTW 『ギーギーギー』
+	PRINTFORMW %SAVESTR:(ARG:0)%は肛門に産卵管をねじ込まれ、卵を産みつけられた
+	PRINTFORMW %SAVESTR:(ARG:0)%は四つん這いになって産卵を受け入れている
+	PRINTFORMW {PLAY}匹が代わる代わる彼女に覆いかぶさり、尻や背中まで卵だらけにさせられた
+	PRINTFORML A経験+{PLAY}
+	EXP:(ARG:0):1 += PLAY
+ENDIF
+WAIT
+RETURN 0
+
+;--------------------------------------------
+@IVY_MONSTER_PLAY,ARG:0
+#DIM PLAY
+;--------------------------------------------
+
+PLAY = 0
+
+IF TALENT:(ARG:0):122 == 1
+	PRINTW %SAVESTR:(ARG:0)%は植物観察を存分に楽しんだ
+	RETURN 0
+ENDIF
+
+PRINTW 『シュルシュル…』
+
+
+IF RAND:2 == 0
+	CALL MONSTER_PLAY_CALC, ARG:0, "マゾ"
+	PLAY += RESULT
+	PRINTW 蔦が締め付けてくる！
+	PRINTFORMW 加減を知らない蔦に%SAVESTR:(ARG:0)%はもがき苦しんだが、すぐに解放され、彼女は荒い息をついている
+	PRINTFORML 苦痛の珠+{PLAY * 10}
+	PRINTFORML 恐怖の珠+{PLAY * 10}
+	JUEL:(ARG:0):9 += PLAY * 10
+	JUEL:(ARG:0):10 += PLAY * 10
+ELSE
+	CALL MONSTER_PLAY_CALC, ARG:0, "アナル"
+	PLAY += RESULT
+	PRINTW 蔦が肛門に根を下ろした
+	PRINTFORMW %SAVESTR:(ARG:0)%は肛門を蹂躙され喉が裂けるほどの絶叫を上げた
+	PRINTW 蔦は養分を吸収すると、肛門から一気に根を引き抜く
+	PRINTFORML A経験+{PLAY}
+	PRINTFORML 苦痛の珠+{PLAY * 10}
+	PRINTFORML 恐怖の珠+{PLAY * 10}
+	JUEL:(ARG:0):9 += PLAY * 10
+	JUEL:(ARG:0):10 += PLAY * 10
+	EXP:(ARG:0):1 += PLAY
+ENDIF
+WAIT
+RETURN 0
+
+;--------------------------------------------
+@SYOKUSYU_MONSTER_PLAY,ARG:0
+#DIM PLAY
+;--------------------------------------------
+
+PLAY = 0
+
+IF TALENT:(ARG:0):122 == 1
+	PRINTW 触手はうねうね動いている…
+	RETURN 0
+ENDIF
+
+PRINTW 怪しく触手は蠢動している………
+
+IF RAND:4 == 0
+	CALL MONSTER_PLAY_CALC, ARG:0, "奉仕"
+	PLAY += RESULT
+	PRINTFORMW %SAVESTR:(ARG:0)%は触手の粘液の出る先端を口に含んで吸った
+	PRINTFORMW すぐに大量の体液が迸り、むせる。やがて(ARG:0)の意識は混濁してくる………
+	PRINTFORML 欲情の珠+{PLAY * 10}
+	JUEL:(ARG:0):5 += PLAY * 10
+ELSEIF RAND:3 == 0
+	CALL MONSTER_PLAY_CALC, ARG:0, "アナル"
+	PLAY += RESULT
+	PRINTFORMW 触手を%SAVESTR:(ARG:0)%は肛門にあてがい中へと導く
+	PRINTFORMW 肛門は触手を飲みこみ、腸内で体液を撒き散らす
+	PRINTW やがて筋肉が弛緩して、だらしなく肛門から大量の濁った体液を垂れ流した
+	PRINTFORML A経験+{PLAY}
+	PRINTFORML 欲情の珠+{PLAY * 10}
+	JUEL:(ARG:0):5 += PLAY * 10
+	EXP:(ARG:0):1 += PLAY
+ELSEIF RAND:2 == 0
+	CALL MONSTER_PLAY_CALC, ARG:0, "前穴"
+	PLAY += RESULT
+	PRINTFORMW %SAVESTR:(ARG:0)%は性器に触手を受け入れた
+	PRINTFORMW 太い触手がねじ込まれ、媚薬成分を膣壁に塗り込む
+	PRINTFORML V経験+{PLAY}
+	PRINTFORML 欲情の珠+{PLAY * 10}
+	JUEL:(ARG:0):5 += PLAY * 10
+	EXP:(ARG:0):0 += PLAY
+	CFLAG:(ARG:0):107 += PLAY
+ELSE
+	CALL MONSTER_PLAY_CALC, ARG:0, "全穴"
+	PLAY += RESULT
+	PRINTFORMW %SAVESTR:(ARG:0)%は、口も膣も肛門も触手の入る所はすべて犯され大量の体液を流しこまれた
+	PRINTFORMW 媚薬成分に%SAVESTR:(ARG:0)%は陶酔している…
+	PRINTFORML A経験+{PLAY}
+	PRINTFORML V経験+{PLAY}
+	PRINTFORML 欲情の珠+{PLAY * 10}
+	JUEL:(ARG:0):5 += PLAY * 10
+	EXP:(ARG:0):0 += PLAY
+	EXP:(ARG:0):1 += PLAY
+	CFLAG:(ARG:0):107 += PLAY
+ENDIF
+PRINTFORMW 触手経験+{PLAY}
+EXP:(ARG:0):55 += PLAY
+RETURN 0
+
+;--------------------------------------------
+@FAILY_MONSTER_PLAY,ARG:0
+#DIM PLAY
+;--------------------------------------------
+
+PLAY = 0
+
+IF TALENT:(ARG:0):122 == 1
+	PRINTW 『あたちちいさいよ？それでえもいいの？』
+ELSE
+	PRINTW 『まおーさま！えっち！』
+ENDIF
+
+IF TALENT:(ARG:0):122 == 1 || TALENT:(ARG:0):121 == 1
+	CALL MONSTER_PLAY_CALC, ARG:0, "愛撫"
+	PLAY += RESULT
+	PRINTW 『まおーさまのおちんちんあったかーい』
+	PRINTFORMW %SAVESTR:(ARG:0)%のペニスを妖精が全身を使ってしごいている
+	PRINTFORML 快Cの珠+{PLAY * 10}
+	PRINTFORML 欲情の珠+{PLAY * 10}
+	JUEL:(ARG:0):0 += PLAY * 10
+	JUEL:(ARG:0):5 += PLAY * 10
+ELSE
+	CALL MONSTER_PLAY_CALC, ARG:0, "愛撫"
+	PLAY += RESULT
+	PRINTW 『なめちゃえー！』
+	PRINTFORMW %SAVESTR:(ARG:0)%は、クリトリスと両乳首を妖精たちにフェラされた
+	PRINTW 彼女は妖精たちの舌さばきに悶えている
+	PRINTFORML 快Cの珠+{PLAY * 10}
+	PRINTFORML 欲情の珠+{PLAY * 10}
+	JUEL:(ARG:0):0 += PLAY * 10
+	JUEL:(ARG:0):5 += PLAY * 10
+ENDIF
+WAIT
+RETURN 0
+
+;--------------------------------------------
+@GIANT_MONSTER_PLAY,ARG:0
+#DIM PLAY
+;--------------------------------------------
+
+PLAY = 0
+
+IF TALENT:(ARG:0):122 == 1
+	PRINTW 『マオウサマ…カンベンシテクレ…』
+	RETURN 0
+ENDIF
+
+PRINTW 『マオウサマ　コワレルゾ　イイノカ？』
+
+
+IF RAND:2 == 0
+	CALL MONSTER_PLAY_CALC, ARG:0, "前穴"
+	PLAY += RESULT
+	PRINTFORMW 『マオウサマガ　オナホ　ミタイニッ　！！』
+	PRINTFORMW %SAVESTR:(ARG:0)%は胴を掴まれ巨人の巨大なペニスをしごくための道具、オナホとなっていた
+	PRINTFORMW 『ウウッ　マオウサマ　キモチイイデスッ』
+	PRINTFORMW 次の瞬間、腹が膨らむほどの大量の精液がぶちまけられた…
+	PRINTFORML V経験+{PLAY}
+	PRINTFORML 精液経験+{PLAY}
+	PRINTFORML V拡張経験+{PLAY}
+	EXP:(ARG:0):0 += PLAY
+	EXP:(ARG:0):20 += PLAY
+	EXP:(ARG:0):53 += PLAY
+	CFLAG:(ARG:0):107 += PLAY
+ELSE
+	CALL MONSTER_PLAY_CALC, ARG:0, "前穴"
+	PLAY += RESULT
+	PRINTFORMW 『マオウサマガ　オナホ　ミタイニッ　！！』
+	PRINTFORMW %SAVESTR:(ARG:0)%は胴を掴まれ巨人の巨大なペニスをしごくための道具、オナホとなっていた
+	PRINTFORMW 『ウウッ　マオウサマ　キモチイイデスッ』
+	PRINTFORMW 次の瞬間、腹が膨らむほどの大量の精液がぶちまけられた…
+	PRINTFORML V経験+{PLAY}
+	PRINTFORML 精液経験+{PLAY}
+	PRINTFORML V拡張経験+{PLAY}
+	EXP:(ARG:0):0 += PLAY
+	EXP:(ARG:0):20 += PLAY
+	EXP:(ARG:0):53 += PLAY
+	CFLAG:(ARG:0):107 += PLAY
+ENDIF
+WAIT
+RETURN 0
+
+;--------------------------------------------
+@MAN_MONSTER_PLAY,ARG:0
+#DIM PLAY
+;--------------------------------------------
+
+PLAY = 0
+
+IF TALENT:(ARG:0):122 == 1
+	PRINTW 『魔王様冗談きついよ……』
+	RETURN 0
+ENDIF
+
+PRINTW 『い、いいんですか！？魔王様…信じられない…』
+
+IF RAND:2 == 0
+	CALL MONSTER_PLAY_CALC, ARG:0, "奉仕"
+	PLAY += RESULT
+	PRINTW 『ううっ…魔王様…気持ちいいです…』
+	PRINTFORMW %SAVESTR:(ARG:0)%は全裸で男たちのペニスに奉仕した。%SAVESTR:(ARG:0)%の舌さばきに男たちは悶えている
+	PRINTFORML フェラ経験+{PLAY}
+	PRINTFORML 精液経験+{PLAY}
+	EXP:(ARG:0):22 += PLAY
+	EXP:(ARG:0):20 += PLAY
+ELSE
+	CALL MONSTER_PLAY_CALC, ARG:0, "両穴"
+	PLAY += RESULT
+	PRINTW 『魔王様が…俺たちに尻を…！』
+	PRINTFORMW %SAVESTR:(ARG:0)%は壁に手をつき男たちに尻を突き出して誘惑した
+	PRINTFORMW 男たちは我先にとペニスを勃起させ%SAVESTR:(ARG:0)%を犯した
+	PRINTFORMW %SAVESTR:(ARG:0)%は喘ぎ声を上げてこの慰みを楽しんでいる
+	PRINTFORML V経験+{PLAY}
+	PRINTFORML A経験+{PLAY}
+	PRINTFORML 精液経験+{PLAY}
+	EXP:(ARG:0):0 += PLAY
+	EXP:(ARG:0):1 += PLAY
+	EXP:(ARG:0):20 += PLAY
+	CFLAG:(ARG:0):107 += PLAY
+ENDIF
+WAIT
+RETURN 0
+
+;--------------------------------------------
+@GIRL_MONSTER_PLAY,ARG:0
+#DIM PLAY
+;--------------------------------------------
+
+PLAY = 0
+
+IF TALENT:(ARG:0):122 == 1
+	PRINTW 『あーら魔王様、アタシ達と遊びたいの？』
+ELSE
+	PRINTW 『魔王様…そっちの趣味もあるんだぁ』
+ENDIF
+
+IF TALENT:(ARG:0):122 == 1
+	CALL MONSTER_PLAY_CALC, ARG:0, "愛撫"
+	PLAY += RESULT
+	PRINTW 『魔王様…よかったら毎晩でも私たちはご奉仕しますよ…？』
+	PRINTFORMW %SAVESTR:(ARG:0)%のペニスを求めて女魔族たちがキャッキャと群がっている
+	PRINTFORML 快Cの珠+{PLAY * 10}
+	PRINTFORML 欲情の珠+{PLAY * 10}
+	JUEL:(ARG:0):0 += PLAY * 10
+	JUEL:(ARG:0):5 += PLAY * 10
+ELSE
+	CALL MONSTER_PLAY_CALC, ARG:0, "レズ"
+	PLAY += RESULT
+	PRINTW 『あーん、魔王様ぁ、アタシを奴隷にしてー♪』
+	PRINTFORM %SAVESTR:(ARG:0)%は
+	IF TALENT:(ARG:0):121 == 1
+		PRINT ペニス
+	ELSE
+		PRINT ディルド
+	ENDIF
+	PRINTFORMW で女魔族たちを攻めている
+	PRINTW 女同士だがまんざらでもないようだ
+	PRINTFORML 快Cの珠+{PLAY * 10}
+	PRINTFORML 欲情の珠+{PLAY * 10}
+	PRINTFORML レズ経験+{PLAY}
+	JUEL:(ARG:0):0 += PLAY * 10
+	JUEL:(ARG:0):5 += PLAY * 10
+	EXP:(ARG:0):40 += PLAY
+ENDIF
+
+WAIT
+RETURN 0
+
+;--------------------------------------------
+@BEAST_MONSTER_PLAY,ARG:0
+#DIM PLAY
+;-----------------------------------------
+
+PLAY = 0
+
+;経験人数・獲得リソース
+CALL MONSTER_PLAY_CALC, ARG:0, "獣姦"
+PLAY += RESULT
+
+IF TALENT:(ARG:0):122 == 1
+	PRINTW %SAVESTR:(ARG:0)%は腹を見せて懐く魔獣の毛並みを存分にモフった
+	RETURN 0
+ENDIF
+
+PRINTW 『クゥーン、クゥーン』
+
+PRINTFORMW 甘い声をあげて%SAVESTR:(ARG:0)%に懐く野獣をあやしながら、四つん這いになり野獣の膨らんできたペニスを秘所にあてがった
+PRINTFORML V経験+{PLAY}
+EXP:(ARG:0):0 += PLAY
+PRINTFORMW 獣姦経験+{PLAY}
+EXP:(ARG:0):56 += PLAY
+CFLAG:(ARG:0):107 += PLAY
+RETURN 0
+
+;--------------------------------------------
+@BRAIN_MONSTER_PLAY,ARG:0
+#DIM PLAY
+;--------------------------------------------
+
+PLAY = 0
+
+IF RAND:2 == 0
+	CALL MONSTER_PLAY_CALC, ARG:0, "脳姦"
+	PLAY += RESULT
+	PRINTL 「あ…あ…あ゛ーっ、あ゛ーっ」
+	PRINTFORML ブレインイーターの硬い触手が%SAVESTR:(ARG:0)%の頭蓋骨を貫通し、脳を愛撫し始めた
+	PRINTFORML %SAVESTR:(ARG:0)%は四肢をばらばらに動かし、超感覚を楽しんでいる
+	PRINTFORML 欲情の珠+{PLAY * 20}
+	JUEL:(ARG:0):5 += PLAY * 20
+	
+ELSE
+	CALL MONSTER_PLAY_CALC, ARG:0, "脳姦"
+	PLAY += RESULT
+	PRINTL 「あ…あ…あ゛ーっ、あ゛ーっ」
+	PRINTFORML ブレインイーターの硬い触手が%SAVESTR:(ARG:0)%の頭蓋骨を貫通し、脳を愛撫し始めた
+	PRINTFORML %SAVESTR:(ARG:0)%は四肢をばらばらに動かし、超感覚を楽しんでいる
+	PRINTFORML 欲情の珠+{PLAY * 15}
+	JUEL:(ARG:0):5 += PLAY * 15
+	
+ENDIF
+WAIT
+RETURN 0
+
+;--------------------------------------------
+@HORSE_MONSTER_PLAY,ARG:0
+#DIM PLAY
+;-----------------------------------------
+
+PLAY = 0
+
+;経験人数・獲得リソース
+CALL MONSTER_PLAY_CALC, ARG:0, "獣姦"
+PLAY += RESULT
+
+IF TALENT:(ARG:0):122 == 1
+	PRINTW %SAVESTR:(ARG:0)%は乗馬を存分に楽しんだ
+	RETURN 0
+ENDIF
+
+PRINTW 『ヒヒーン！』
+
+PRINTFORMW %SAVESTR:(ARG:0)%は息を荒げてのしかかろうとする馬をいなしながら、脚の間に四つん這いになって潜り込んだ
+PRINTFORMW 馬の巨大なペニスはさすがの%SAVESTR:(ARG:0)%でもかなり大きい
+PRINTFORML 苦痛の珠+{PLAY * 10}
+PRINTFORML 恐怖の珠+{PLAY * 10}
+PRINTFORML V経験+{PLAY}
+EXP:(ARG:0):0 += PLAY
+JUEL:(ARG:0):9 += PLAY * 10
+JUEL:(ARG:0):10 += PLAY * 10
+CFLAG:(ARG:0):107 += PLAY
+PRINTFORMW 獣姦経験+{PLAY}
+EXP:(ARG:0):56 += PLAY
+RETURN 0
+
+
+;-----------------------------------------
+@MONSTER_PLAY_CALC,ARG:0,ARGS
+#DIM PLAY
+;-----------------------------------------
+
+;経験人数・獲得リソース
+PLAY = 1
+;素質を見る
+
+IF ARGS == "獣姦"
+	;動物耳
+	SIF TALENT:(ARG:0):動物耳
+		PLAY += 1
+	;牝犬
+	SIF TALENT:(ARG:0):牝犬
+		PLAY += 3
+	;獣姦中毒
+		PLAY += ABL:(ARG:0):獣姦中毒
+
+	;特殊な経験の有無
+	;獣姦経験
+	SIF EXP:(ARG:0):獣姦経験
+		PLAY += 1
+	;50回を超える獣姦経験
+	SIF EXP:(ARG:0):獣姦経験 > 50
+		PLAY += 3
+
+	;常識改変効果
+	;獣姦マニア
+	SIF TALENT:(ARG:0):283 == 5
+		PLAY += 3
+ENDIF
+
+IF ARGS == "奉仕" || ARGS == "全穴"
+	;献身的（奉仕）
+	SIF TALENT:(ARG:0):献身的
+		PLAY += 1
+	;奉仕しない（奉仕減少）
+	SIF TALENT:(ARG:0):奉仕しない
+		PLAY -= 20
+	;奉仕精神（奉仕）
+		PLAY += ABL:(ARG:0):奉仕精神
+	;奉仕快楽経験（奉仕）
+	SIF EXP:(ARG:0):奉仕快楽経験
+		PLAY += 1
+	;物乞い奉仕（奉仕）
+	SIF TALENT:(ARG:0):283 == 1
+		PLAY += 3
+ENDIF
+
+IF ARGS == "前穴" || ARGS == "両穴" || ARGS == "全穴"
+	;セックス狂（V）
+	SIF TALENT:(ARG:0):セックス狂
+		PLAY += 3
+	;淫壷（V）
+	SIF TALENT:(ARG:0):淫壷
+		PLAY += 3
+	;V感覚（V）
+		PLAY += ABL:(ARG:0):Ｖ感覚
+	;V拡張経験（V）
+	SIF EXP:(ARG:0):Ｖ拡張経験
+		PLAY += 1
+ENDIF
+
+IF ARGS == "アナル" || ARGS == "両穴" || ARGS == "全穴"
+	;尻穴狂い（A）
+	SIF TALENT:(ARG:0):尻穴狂い
+		PLAY += 3
+	;淫肛（A）
+	SIF TALENT:(ARG:0):淫肛
+		PLAY += 3
+	;A感覚（A）
+		PLAY += ABL:(ARG:0):Ａ感覚
+	;A拡張経験（A）
+	SIF EXP:(ARG:0):Ａ拡張経験
+		PLAY += 1
+	IF ARGS == "アナル"
+		;処女封印（V減少）
+		SIF TALENT:(ARG:0):処女封印
+			PLAY += 1
+		;処女（V減少）
+		SIF TALENT:(ARG:0):処女
+			PLAY += 1
+	ENDIF
+ENDIF
+
+;素質
+
+;貞操無頓着
+SIF TALENT:(ARG:0):貞操無頓着
+	PLAY += 1
+;快感に素直
+SIF TALENT:(ARG:0):快感に素直
+	PLAY += 1
+;淫乱
+SIF TALENT:(ARG:0):淫乱
+	PLAY += 1
+
+;能力
+
+;従順
+	PLAY += ABL:(ARG:0):従順
+;欲望
+	PLAY += ABL:(ARG:0):欲望
+;技巧
+	PLAY += ABL:(ARG:0):技巧
+
+;常識改変効果
+;公衆便女
+SIF TALENT:(ARG:0):283 == 4
+	PLAY += 3
+
+;ランダムボーナス
+	PLAY += RAND:2
+
+SIF PLAY <= 0
+	PLAY = 1
+
+RETURN PLAY
+
+

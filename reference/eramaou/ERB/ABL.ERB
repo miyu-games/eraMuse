@@ -1,0 +1,187 @@
+;eraIM@S‚©‚ç“±“ü‚µ‚Ü‚µ‚½
+
+@SHOW_JUEL
+PRINTL ddddddddddddddddddddddddddddddddddddddd
+FOR COUNT, 0, 13
+	IF COUNT == 3
+		LOCAL = 14
+	ELSEIF COUNT == 11
+		LOCAL = 100
+	ELSEIF COUNT == 12
+		LOCAL = 15
+	ELSE
+		LOCAL = COUNT
+	ENDIF
+
+	PRINTFORM  %PALAMNAME:LOCAL%‚ÌŽìF{JUEL:LOCAL, 6, RIGHT}
+
+	;‰üs
+	IF (COUNT+1)%4 == 0
+		PRINTL 
+	ENDIF
+NEXT
+PRINTL
+PRINTL ddddddddddddddddddddddddddddddddddddddd
+
+@SHOW_ABLUP_SELECT
+U = 0
+REPEAT 40
+	SIF COUNT >= 4 && COUNT <=9
+		CONTINUE
+	SIF COUNT >= 18 && COUNT <= 19
+		CONTINUE
+	SIF COUNT >= 24 && COUNT <= 29
+		CONTINUE
+	SIF COUNT >= 34 && COUNT <= 36
+		CONTINUE
+	SIF COUNT == 38
+		CONTINUE
+
+	;’j‚¾‚Æ‚uŠ´Šo‚ÆƒŒƒY‚Á‹C‚ÆƒŒƒY’†“Å‚Íã‚°‚ç‚ê‚È‚¢
+	SIF TALENT:122 && (COUNT == 2 || COUNT == 22 || COUNT == 33)
+		CONTINUE
+	;—‚¾‚Æ‚a‚k‚Á‹C‚Æ‚a‚k’†“Å‚Íã‚°‚ç‚ê‚È‚¢
+	SIF TALENT:122 == 0 && (COUNT == 23 || COUNT == 34)
+		CONTINUE
+	X = COUNT
+	PRINTPLAIN  
+	IF X == 0 && TALENT:101 & 2
+		SETCOLOR 128, 128, 128
+		PRINT [\]
+	ELSEIF X == 1 && TALENT:107 & 2
+		SETCOLOR 128, 128, 128
+		PRINT [\]
+	ELSEIF X == 2 && TALENT:103 & 2
+		SETCOLOR 128, 128, 128
+		PRINT [\]
+	ELSEIF X == 3 && TALENT:105 & 2
+		SETCOLOR 128, 128, 128
+		PRINT [\]
+	ELSE
+		PRINTFORM [{X, 2}]
+	ENDIF
+	PRINTFORM %ABLNAME:X%
+	;•¶Žš‘µ‚¦‚»‚Ì‚Q
+	IF X <= 3 || X == 17
+		PRINT   
+	ELSEIF (X >= 10 && X <= 12) || X == 15
+		PRINT     
+	ENDIF	
+	PRINTFORM -{ABL:X}LV
+	CALL DECIDE_ABLUP
+	RESETCOLOR
+	U += 1
+	IF U % 4 == 0
+		PRINTL 
+	ENDIF
+REND 
+SIF U % 4 != 0
+	PRINTL 
+
+PRINTFORM  [99]%MARKNAME:3%-{MARK:3}LV
+CALL DECIDE_ABLUP99
+SIF RESULT == 1
+	PRINT  *
+SIF CSTR:7 != ""
+	PRINTFORM   [ 4] %CSTR:7%Š´Šo
+CALL DECIDE_ABLUP4
+SIF RESULT == 1
+	PRINT  *
+SIF CSTR:7 != ""
+	PRINTFORM   [40] %CSTR:7%’†“Å
+CALL DECIDE_ABLUP40
+SIF RESULT == 1
+	PRINT  *
+
+PRINTL 
+PRINTL ddddddddddddddddddddddddddddddddddddddd
+PRINTL [999] - ”\—Í’lƒAƒbƒv‚ÌI—¹
+
+@DECIDE_ABLUP
+;‚bŠ´Šo
+IF X == 0
+	CALL DECIDE_ABLUP0
+;‚aŠ´Šo
+ELSEIF  X == 1
+	CALL DECIDE_ABLUP1
+;‚uŠ´Šo
+ELSEIF X == 2
+	CALL DECIDE_ABLUP2
+;‚`Š´Šo
+ELSEIF X == 3
+	CALL DECIDE_ABLUP3
+;]‡
+ELSEIF X == 10
+	CALL DECIDE_ABLUP10
+;—~–]
+ELSEIF X == 11
+	CALL DECIDE_ABLUP11
+;‹ZI
+ELSEIF X == 12
+	CALL DECIDE_ABLUP12
+;•òŽd‹Zp
+ELSEIF X == 13
+	CALL DECIDE_ABLUP13
+;«Œð‹Zp
+ELSEIF X == 14
+	CALL DECIDE_ABLUP14
+;˜bp
+ELSEIF X == 15
+	CALL DECIDE_ABLUP15
+;•òŽd¸_
+ELSEIF X == 16
+	CALL DECIDE_ABLUP16
+;˜Io•È
+ELSEIF X == 17
+	CALL DECIDE_ABLUP17
+;ƒTƒh‚Á‹C
+ELSEIF X == 20
+	CALL DECIDE_ABLUP20
+;ƒ}ƒ]‚Á‹C
+ELSEIF X == 21
+	CALL DECIDE_ABLUP21
+;ƒŒƒY‚Á‹C
+ELSEIF X == 22
+	CALL DECIDE_ABLUP22
+;‚a‚k‚Á‹C
+ELSEIF X == 23
+	CALL DECIDE_ABLUP23
+;«Œð’†“Å
+ELSEIF X == 30
+	CALL DECIDE_ABLUP30
+;Ž©ˆÔ’†“Å
+ELSEIF X == 31
+	CALL DECIDE_ABLUP31
+;¸‰t’†“Å
+ELSEIF X == 32
+	CALL DECIDE_ABLUP32
+;ƒŒƒY’†“Å
+ELSEIF X == 33
+	CALL DECIDE_ABLUP33
+;”„t’†“Å
+ELSEIF X == 37
+	CALL DECIDE_ABLUP37
+;bŠ­’†“Å
+ELSEIF X == 39
+	CALL DECIDE_ABLUP39
+ENDIF
+IF RESULT == 1
+	PRINT  *
+ELSEIF ABL:X >= 10
+	PRINT  
+ELSE
+	PRINT   
+ENDIF
+
+RETURN 1
+
+@USERABLUP
+IF RESULT == 999
+	CALL JUJUN_UP_CHECK
+	CALL YOKUBO_UP_CHECK
+	BEGIN TURNEND
+	RETURN 1
+ENDIF
+
+RETURN 0
+;

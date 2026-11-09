@@ -1,0 +1,135 @@
+;eraIM@S‚©‚ç“±“ü‚µ‚Ü‚µ‚½(eramaou)
+
+;>”„‹p‚Æ•Žè‰»‚Ìˆ—‚ðíœ(SHOP‚Å‚Ü‚Æ‚ß‚Äs‚¤)
+
+;=================================================
+;BEGIN TURNENDŒãÅ‰‚ÉŒÄ‚Ño‚³‚ê‚éŠÖ”
+;=================================================
+@EVENTTURNEND
+#PRI
+LOCAL = TARGET
+FOR TARGET,0,CHARANUM
+	;”„‹p‰ÂE•Žè‰Â”»’è‚Ìˆ—
+	CALL CHECK_SELLASSIABLE
+
+	;“ÁŽê‘fŽ¿Šl“¾”»’è‚Ìˆ—
+	CALL CHECK_SPECIALSKIL
+
+	;”DP”»’è‚Ìˆ—
+	CALL IN_VAGINA_ALL
+	
+	;”DPŠm’èŽž‚Ìˆ—
+	CALL CONCEPTION_CHECK_ALL
+NEXT
+
+TARGET = LOCAL
+
+;Š®‘S‚ÉŽ€‚ñ‚¾ƒLƒƒƒ‰‚ª‚¢‚½‚çíœ
+;REPEAT CHARANUM
+	;ŽålŒö‚ÍœŠO
+;	SIF COUNT == 0
+;		CONTINUE
+	;ƒLƒƒƒ‰l”‚ªCOUNTˆÈ‰º‚É‚È‚Á‚Ä‚¢‚½‚çREPEAT”²‚¯‚é
+;	SIF COUNT >= CHARANUM
+;		BREAK
+;
+;	IF BASE:COUNT:0 <= -1
+;		T = -1
+;		SIF TARGET != COUNT
+;			T = TARGET
+;		TARGET = COUNT
+;		C = COUNT
+;		CALL KILL_TARGET
+;		COUNT = C - 1
+;		SIF T != -1
+;			TARGET = T
+;	ENDIF
+;REND
+
+;‹xŒeƒtƒ‰ƒOŠO‚·
+FLAG:0 = 0
+
+;ŒßŒã‚È‚çŽŸ‚Ì“úAŒß‘O‚È‚çŒßŒã‚É‚·‚é
+IF TIME == 1
+	;©ŠÙ‰c‹ÆŒ‹‰Ê‚ÌƒCƒxƒ“ƒg‚ÌŒÄ‚Ño‚µ
+	;CALL YUUKAKU_RESULT
+
+	LOCAL = TARGET
+	FOR TARGET,0,CHARANUM
+		;”„t‚É‚æ‚é”DP”»’è
+		CALL IN_VAGINA_EXTRA
+		CALL CONCEPTION_CHECK_EXTRA
+	
+		;‹¶‰¤‚ÆbŠ­ƒVƒ‡[‚É‚æ‚é”DP”»’è
+		CALL IN_VAGINA_KYOUOU_TO_T
+		CALL CONCEPTION_CHECK_KYOUOU_TO_T
+		CALL IN_VAGINA_NTRD_TO_T
+		CALL CONCEPTION_CHECK_NTRD_TO_T
+	NEXT
+	
+	TARGET = LOCAL
+
+	;“ú•t•ÏXŽž‚ÌƒCƒxƒ“ƒgŒÄ‚Ño‚µ
+	CALL EVENT_NEXTDAY
+	
+	DAY:0 += 1
+	
+	DAY:2 = DAY:2 + 1
+	;–ˆŒŽ29“úˆÈã‚É‚È‚Á‚Ä‚½‚çŒŽ‘Ö‚í‚èˆ—
+	SIF DAY:2 > 28
+		CALL EVENT_NEXTMONTH
+
+	DAY:3 = DAY:3 + 1
+	;“ú—j‚ÌŽŸ‚ÍŒŽ—j‚É‚·‚é
+	SIF DAY:3 > 6
+		DAY:3 = 0
+
+	TIME = 0
+	
+	CALL ENTER_ENEMY,0
+	SIF DAY >= 100
+		CALL ENTER_ENEMY,0
+	SIF DAY >= 500
+		CALL ENTER_ENEMY,0
+	SIF DAY >= 1000
+		CALL ENTER_ENEMY,0
+	
+ELSE
+	TIME = 1
+ENDIF
+
+;ƒAƒCƒeƒ€‚ÌŽ©“®w“ü
+CALL AUTO_BUYING
+
+;’²‹³‘ÎÛ‚Æ•Žè‚ð‹ó‚É
+TARGET = -1
+ASSI = -1
+
+BEGIN SHOP
+
+;-------------------------------------------------
+;ƒAƒCƒeƒ€‚ÌŽ©“®w“üˆ—
+;-------------------------------------------------
+@AUTO_BUYING
+;ƒ[ƒVƒ‡ƒ“
+IF (FLAG:34 & 1) && MONEY >= 200 && ITEM:25 == 0
+	ITEM:25 += 1
+	MONEY -= 200
+ENDIF
+;ƒrƒfƒIƒe[ƒv
+IF (FLAG:34 & 2) && MONEY >= 500 && ITEM:6 && ITEM:28 == 0
+	ITEM:28 += 1
+	MONEY -= 500
+ENDIF
+;ƒRƒ“ƒh[ƒ€
+IF (FLAG:34 & 8)
+	REPEAT 10
+		IF MONEY >= 100 && ITEM:24 < 10
+			ITEM:24 += 1
+			MONEY -= 100
+		ENDIF
+	REND
+ENDIF
+
+
+

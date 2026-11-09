@@ -1,0 +1,586 @@
+{
+ "axes": [
+  {
+   "capacity": 1,
+   "forms": [
+    "hokori",
+    "hokori_hikui"
+   ],
+   "id": "pride",
+   "label": "プライド"
+  },
+  {
+   "capacity": 1,
+   "forms": [
+    "hankou",
+    "sunao"
+   ],
+   "id": "juujun",
+   "label": "従順さ"
+  },
+  {
+   "capacity": 1,
+   "forms": [
+    "koukishin",
+    "hoshu"
+   ],
+   "id": "kanshin",
+   "label": "好奇心・保守"
+  },
+  {
+   "capacity": 1,
+   "forms": [
+    "rakkan",
+    "hikan"
+   ],
+   "id": "rakkan",
+   "label": "楽観・悲観"
+  },
+  {
+   "capacity": 1,
+   "forms": [
+    "teisou",
+    "teisou_mudon"
+   ],
+   "id": "teisou",
+   "label": "貞操"
+  },
+  {
+   "capacity": 1,
+   "forms": [
+    "hazukashigari",
+    "haji_usui"
+   ],
+   "id": "haji",
+   "label": "恥"
+  },
+  {
+   "capacity": 1,
+   "forms": [
+    "itami_yowai",
+    "itami_tsuyoi"
+   ],
+   "id": "kutsuu",
+   "label": "苦痛耐性"
+  },
+  {
+   "capacity": 1,
+   "forms": [
+    "nure_yasui",
+    "nure_nikui"
+   ],
+   "id": "nure",
+   "label": "濡れ"
+  },
+  {
+   "capacity": 1,
+   "forms": [
+    "shuutoku",
+    "shuutoku_osoi"
+   ],
+   "id": "shuutoku",
+   "label": "習得"
+  },
+  {
+   "capacity": 1,
+   "forms": [
+    "oshu_donkan",
+    "oshu_binkan"
+   ],
+   "id": "oshu",
+   "label": "汚臭への感度"
+  },
+  {
+   "capacity": 1,
+   "forms": [
+    "kaikan_sunao",
+    "kaikan_hitei"
+   ],
+   "id": "kaikan",
+   "label": "快感への応答"
+  },
+  {
+   "capacity": 1,
+   "forms": [
+    "c_donkan",
+    "c_binkan"
+   ],
+   "id": "kan_c",
+   "label": "Ｃ感度"
+  },
+  {
+   "capacity": 1,
+   "forms": [
+    "v_donkan",
+    "v_binkan"
+   ],
+   "id": "kan_v",
+   "label": "Ｖ感度"
+  },
+  {
+   "capacity": 1,
+   "forms": [
+    "a_donkan",
+    "a_binkan"
+   ],
+   "id": "kan_a",
+   "label": "Ａ感度"
+  },
+  {
+   "capacity": 1,
+   "forms": [
+    "b_donkan",
+    "b_binkan"
+   ],
+   "id": "kan_b",
+   "label": "Ｂ感度"
+  },
+  {
+   "capacity": 1,
+   "forms": [
+    "kaifuku_hayai",
+    "kaifuku_osoi"
+   ],
+   "id": "kaifuku",
+   "label": "回復"
+  }
+ ],
+ "circumstances": [
+  {
+   "hooks": {
+    "debt": 600,
+    "ending_notes": {
+     "debt_clear": "債務は完済されていた。彼女の売却益と稼ぎが、調教者側の枷を外した。",
+     "debt_left": "期日が来ても、債務は残っていた。彼女をどうするかと、借金をどうするかは、別の問題として残った。"
+    }
+   },
+   "id": "debtor",
+   "label": "借金を抱えた調教者",
+   "note": "ダークサモナー型。売って稼がなければならない側の事情がループ全体を駆動する枷",
+   "side": "trainer",
+   "world_variants": {
+    "fantasy": {
+     "flavor": "商会への借り。返せなければ店ごと持っていかれる",
+     "label": "商会への借りを抱えた調教者"
+    },
+    "modern": {
+     "flavor": "知人の保証と消費者金融。返済日が毎月、首を絞める",
+     "label": "借金を背負った調教者"
+    },
+    "scifi": {
+     "flavor": "債務プログラムが返済計画を自動執行する。延滞は権限の制限に直結する",
+     "label": "債務プログラム下の調教者"
+    }
+   }
+  },
+  {
+   "hooks": {
+    "days_factor": 0.8,
+    "ending_notes": {
+     "release": "依頼主への引き渡しが行われた。仲介料は出来栄え次第、という契約だった。"
+    },
+    "funds_mult": 1.2,
+    "goal_add": {
+     "satisfaction": 300
+    }
+   },
+   "id": "broker",
+   "label": "依頼を請け負う仲介者",
+   "note": "他人の依頼で預かり、条件付きで仕上げて納める側。期限と出来栄えにノルマがある",
+   "side": "trainer",
+   "world_variants": {
+    "fantasy": {
+     "flavor": "ギルド経由の依頼。納期と査定ランクが報酬を決める",
+     "label": "ギルドの仲介者"
+    },
+    "modern": {
+     "flavor": "依頼主との契約で、期限と仕上がりの条件が細かく決まっている",
+     "label": "依頼主の仲介者"
+    },
+    "scifi": {
+     "flavor": "委託契約のエージェント。進捗は依頼主のシステムへ随時報告される",
+     "label": "委託仲介エージェント"
+    }
+   }
+  },
+  {
+   "hooks": {
+    "days_factor": 1.15,
+    "funds_mult": 0.8,
+    "init_funds": 800
+   },
+   "id": "fallen_house",
+   "label": "没落した元上級者",
+   "note": "資金と時間はあるが、社会的制約で稼ぎの効率が悪い。落ちた立場を取り戻す動機が底にある",
+   "side": "trainer",
+   "world_variants": {
+    "fantasy": {
+     "flavor": "家名は残ったが領地は無い。格式に合わない稼ぎ方はできない",
+     "label": "没落貴族"
+    },
+    "modern": {
+     "flavor": "資産は残ったが人脈と信用を失った。表向きの体裁が行動を縛る",
+     "label": "没落した資産家"
+    },
+    "scifi": {
+     "flavor": "かつて管理する側だった。権限を失った今、下層の作法に慣れていない",
+     "label": "旧管理者層の調教者"
+    }
+   }
+  },
+  {
+   "hooks": {
+    "days_factor": 0.9,
+    "ending_notes": {
+     "release": "返却の期日が来た。預かりものは、預かった時とは違う状態で返される。"
+    },
+    "init_offsets": {
+     "stress": 20
+    }
+   },
+   "id": "entrusted_charge",
+   "label": "依頼で預かった対象",
+   "note": "返却期限つきの預かりもの。本人の意思ではなく枠組みでここにいる",
+   "side": "target",
+   "world_variants": {
+    "fantasy": {
+     "flavor": "依頼主の名で預けられた。返却時の状態が次の依頼を決める",
+     "label": "依頼主から預かった彼女"
+    },
+    "modern": {
+     "flavor": "保護を名目にした預かり。表向きの書類は穏当なものになっている",
+     "label": "保護依頼で預かった彼女"
+    },
+    "scifi": {
+     "flavor": "管理委託契約の対象として移管された。委託元の監視ログが残る",
+     "label": "管理委託の対象"
+    }
+   }
+  },
+  {
+   "hooks": {
+    "debt": 400,
+    "ending_notes": {
+     "debt_clear": "債務は返し終わった。それでも彼女がここに残るかどうかは、別の話だった。",
+     "debt_left": "彼女の債務はまだ残っていた。返す当ては、彼女自身の身の振り方に委ねられた。"
+    },
+    "init_offsets": {
+     "stress": -10,
+     "trust": 20
+    }
+   },
+   "id": "debt_payer",
+   "label": "返済のために来た彼女",
+   "note": "自分の（または家の）借金を返すために、自ら来た。事情がある分、最初の距離は少し近い",
+   "side": "target",
+   "world_variants": {
+    "fantasy": {
+     "flavor": "実家の借り。商会への返済が終わるまでが契約の単位",
+     "label": "家の借りを返すために来た彼女"
+    },
+    "modern": {
+     "flavor": "自分の名義の借金。返すまでは帰れない、と自分で決めている",
+     "label": "借金返済のために来た彼女"
+    },
+    "scifi": {
+     "flavor": "返済プログラムへの参加が、彼女の居場所と引き換えになっている",
+     "label": "債務返済プログラムの参加者"
+    }
+   }
+  },
+  {
+   "hooks": {
+    "ending_notes": {
+     "keep": "彼女の探していた所属先は、ここになった。探す日々は終わった。"
+    },
+    "relation_offset": 200
+   },
+   "id": "seeking_home",
+   "label": "身請け先を探している彼女",
+   "note": "恒常的な所属先を探している。最初から、ここが候補地として彼女の側にも認識されている",
+   "side": "target",
+   "world_variants": {
+    "fantasy": {
+     "flavor": "身請け先が決まれば身分が定まる。彼女は候補を見定める側でもある",
+     "label": "身請け先を探している彼女"
+    },
+    "modern": {
+     "flavor": "頼れる先が無く、居場所そのものを探している",
+     "label": "行き先を探している彼女"
+    },
+    "scifi": {
+     "flavor": "登録上の所属が無いと生活基盤が成り立たない世界で、恒常的な所属を求めている",
+     "label": "所属先を探している彼女"
+    }
+   }
+  }
+ ],
+ "circumstances_note": "境遇のスロットは側ごとに1つ（調教者側スロット／対象側スロット）。性格の軸スロットと同じ「枠は1つ、事情が入る」考え方で、複合させないのは、期限・目標・債務のような枠組み条件が積み重なると駆動条件が曖昧になるため。入手手段（data/acquisition.json）との競合は各定義の conflicts_with で宣言し、validate_setup が組み合わせを検証する。",
+ "comment": "素質カタログの機械可読版（CHARACTER.md と対）。排他の実体は本家準拠の「スロット」モデル: 軸（axis）は同一軸のプラス形/マイナス形が1つのスロットを共有し、グループ（group）は分類内の特化枠。どちらも容量（capacity、既定1）と記載順の優先順位を持ち、検証（選択・抽選・読込）は容量チェック、後付け付与は優先・置換で処理する。正負の素質群で方式は分けない。ざっくりしたモデルであり、容量2の軸（恥の比重）のように複数形が入る枠もある。境遇（circumstances）は性格ではなく立場・事情で枠を決めるカテゴリ。保持先は側で分かれる: 対象側はキャラ定義（character.json の circumstance）、調教者側はセッションの開始時選択。提示（label/flavor）はワールド別バリエーションを持ち、機械フックは共通。",
+ "groups": [
+  {
+   "capacity": 1,
+   "forms": [
+    "jii_kurui",
+    "sex_kurui",
+    "ana_kurui",
+    "inyuu"
+   ],
+   "id": "special_sense",
+   "label": "特殊性感"
+  }
+ ],
+ "slots_note": "軸の正本は Chara0000.csv テンプレートの著者向け作表ルール「設定する場合はどちらかのみ」の実ペア。本家では排他はエンジンの実行時検証ではなく作表ルールとして存在する。パックではミューズが手でデータを書く前提のため、実行時検証を安全側として併置する（本家との差異）。forms は本家番号順＝優先順位。軸の実体は「1スロットに符号で方向」ではなく「番号ペアによる両形の併記」で、符号軸は本家でも 284 の1件のみ（Talent.csv 分析 §3-5）。容量は軸/グループごとに持て既定1。容量を超える同居は、検証系（選択・抽選・読込）では容量チェック、後付け付与では優先・置換で処理する。サド/マゾ（83/84）は定義側では役割分離で同一スロットの両形ではなく、作表ルールにも無いため軸にしない（排他は能力・特殊性癖側の話）。汎用の敏感/鈍感はパック独自の全体感度としてカタログに残すが、実ペアは部位別（101-108）が正。孕みたがり（78）は「自慰狂い～淫乳と共存可」の明記により特殊性感グループの外。",
+ "traits": [
+  {
+   "category": "性格",
+   "id": "sunao",
+   "label": "素直"
+  },
+  {
+   "category": "性格",
+   "id": "hankou",
+   "label": "反抗的"
+  },
+  {
+   "category": "性格",
+   "id": "kijou",
+   "label": "気丈"
+  },
+  {
+   "category": "性格",
+   "id": "hokori",
+   "label": "誇り高い"
+  },
+  {
+   "category": "性格",
+   "id": "okubyou",
+   "label": "臆病"
+  },
+  {
+   "category": "性格",
+   "id": "otonashii",
+   "label": "大人しい"
+  },
+  {
+   "category": "関心",
+   "id": "koukishin",
+   "label": "好奇心"
+  },
+  {
+   "category": "関心",
+   "id": "jiseishin",
+   "label": "自制心"
+  },
+  {
+   "category": "関心",
+   "id": "mukanshin",
+   "label": "無関心"
+  },
+  {
+   "category": "関心",
+   "id": "hoshu",
+   "label": "保守的"
+  },
+  {
+   "category": "関心",
+   "id": "hazukashigari",
+   "label": "恥ずかしがり"
+  },
+  {
+   "category": "体質",
+   "id": "binkan",
+   "label": "敏感"
+  },
+  {
+   "category": "体質",
+   "id": "donkan",
+   "label": "鈍感"
+  },
+  {
+   "category": "体質",
+   "id": "itami_tsuyoi",
+   "label": "痛みに強い"
+  },
+  {
+   "category": "体質",
+   "id": "itami_yowai",
+   "label": "痛みに弱い"
+  },
+  {
+   "category": "技術",
+   "id": "shuutoku",
+   "label": "習得早い"
+  },
+  {
+   "category": "技術",
+   "id": "sewa_jouzu",
+   "label": "世話上手"
+  },
+  {
+   "category": "到達",
+   "id": "kaikan_sunao",
+   "label": "快感に素直"
+  },
+  {
+   "category": "到達",
+   "id": "kenshin",
+   "label": "献身的"
+  },
+  {
+   "category": "到達",
+   "id": "amaetagari",
+   "label": "甘えたがり"
+  },
+  {
+   "category": "到達",
+   "id": "renbo",
+   "label": "恋慕"
+  },
+  {
+   "category": "到達",
+   "id": "sado_kke",
+   "label": "サドっ気"
+  },
+  {
+   "category": "到達",
+   "id": "mazo_kke",
+   "label": "マゾっ気"
+  },
+  {
+   "category": "到達",
+   "id": "jii_kurui",
+   "label": "自慰狂い"
+  },
+  {
+   "category": "到達",
+   "id": "sex_kurui",
+   "label": "セックス狂"
+  },
+  {
+   "category": "到達",
+   "id": "ana_kurui",
+   "label": "尻穴狂い"
+  },
+  {
+   "category": "到達",
+   "id": "inyuu",
+   "label": "淫乳"
+  },
+  {
+   "category": "到達",
+   "id": "haramitagari",
+   "label": "孕みたがり"
+  },
+  {
+   "category": "関心",
+   "id": "haji_usui",
+   "label": "恥薄い"
+  },
+  {
+   "category": "到達",
+   "id": "kaikan_hitei",
+   "label": "快感の否定"
+  },
+  {
+   "category": "関心",
+   "id": "rakkan",
+   "label": "楽観的"
+  },
+  {
+   "category": "関心",
+   "id": "hikan",
+   "label": "悲観的"
+  },
+  {
+   "category": "関心",
+   "id": "teisou",
+   "label": "貞操観念"
+  },
+  {
+   "category": "関心",
+   "id": "teisou_mudon",
+   "label": "貞操無頓着"
+  },
+  {
+   "category": "体質",
+   "id": "nure_yasui",
+   "label": "濡れやすい"
+  },
+  {
+   "category": "体質",
+   "id": "nure_nikui",
+   "label": "濡れにくい"
+  },
+  {
+   "category": "体質",
+   "id": "oshu_donkan",
+   "label": "汚臭鈍感"
+  },
+  {
+   "category": "体質",
+   "id": "oshu_binkan",
+   "label": "汚臭敏感"
+  },
+  {
+   "category": "体質",
+   "id": "kaifuku_hayai",
+   "label": "回復早い"
+  },
+  {
+   "category": "体質",
+   "id": "kaifuku_osoi",
+   "label": "回復遅い"
+  },
+  {
+   "category": "技術",
+   "id": "shuutoku_osoi",
+   "label": "習得遅い"
+  },
+  {
+   "category": "性格",
+   "id": "hokori_hikui",
+   "label": "プライド低い"
+  },
+  {
+   "category": "体質",
+   "id": "c_donkan",
+   "label": "Ｃ鈍感"
+  },
+  {
+   "category": "体質",
+   "id": "c_binkan",
+   "label": "Ｃ敏感"
+  },
+  {
+   "category": "体質",
+   "id": "v_donkan",
+   "label": "Ｖ鈍感"
+  },
+  {
+   "category": "体質",
+   "id": "v_binkan",
+   "label": "Ｖ敏感"
+  },
+  {
+   "category": "体質",
+   "id": "a_donkan",
+   "label": "Ａ鈍感"
+  },
+  {
+   "category": "体質",
+   "id": "a_binkan",
+   "label": "Ａ敏感"
+  },
+  {
+   "category": "体質",
+   "id": "b_donkan",
+   "label": "Ｂ鈍感"
+  },
+  {
+   "category": "体質",
+   "id": "b_binkan",
+   "label": "Ｂ敏感"
+  }
+ ]
+}

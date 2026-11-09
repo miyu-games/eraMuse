@@ -1,0 +1,281 @@
+{
+  "characters": [
+    {
+      "id": "base",
+      "initOverrides": {},
+      "name": "素体タイプ",
+      "note": "全面ランダム作成（charroll）の土台。素質も初期値の上書きも持たず、ロール結果がそのまま個性になる",
+      "personality": "sunao",
+      "traits": []
+    },
+    {
+      "id": "shiori",
+      "initOverrides": {
+        "relief": 30,
+        "stress": 80
+      },
+      "name": "栞",
+      "note": "深夜の資料室で記録を守る司書のミューズ、26歳。言葉は正確で約束に堅く、乱れた棚を放っておけない。夜勤に強く、疲れを見せない。ミューがイメージして作った一人目。",
+      "personality": "majime",
+      "traits": [
+        {
+          "id": "kaifuku_hayai"
+        }
+      ],
+      "look": {
+        "age": 26,
+        "pronoun": "わたし",
+        "heightCm": 158,
+        "build": "標準的で姿勢がいい",
+        "hairColor": "黒",
+        "hairLength": "ロング",
+        "hairSet": "低く結ぶ",
+        "pupilColor": "茶"
+      }
+    },
+    {
+      "id": "cand_20261109",
+      "registered": 0,
+      "name": "凛",
+      "note": "ランダム候補（プール）",
+      "personality": "yowaki",
+      "traits": [
+        {
+          "id": "itami_yowai",
+          "src_mult": {
+            "fear": 1.2,
+            "pain": 1.3
+          }
+        },
+        {
+          "id": "v_binkan"
+        },
+        {
+          "id": "a_donkan"
+        },
+        {
+          "id": "b_binkan"
+        }
+      ],
+      "initOverrides": {
+        "stress": 130
+      },
+      "look": {
+        "age": 24,
+        "pronoun": "わたし",
+        "heightCm": 154,
+        "build": "グラマー",
+        "race": "人間",
+        "hairColor": "金髪",
+        "hairLength": "ロング",
+        "hairCut": "ベーシック",
+        "hairSet": "一本縛り",
+        "hairState": "外カール",
+        "eyes": "標準",
+        "pupilColor": "碧",
+        "lips": "標準",
+        "bodyDetails": [
+          "胸：巨乳"
+        ]
+      },
+      "candidate": {
+        "seed": 20261109,
+        "excludedByFlag": []
+      }
+    },
+    {
+      "id": "cand_20261110",
+      "registered": 0,
+      "name": "遥",
+      "note": "ランダム候補（プール）",
+      "personality": "yowaki",
+      "traits": [
+        {
+          "id": "hazukashigari",
+          "src_mult": {
+            "shame": 1.3
+          }
+        },
+        {
+          "id": "itami_tsuyoi",
+          "src_mult": {
+            "fear": 0.85,
+            "pain": 0.7
+          }
+        },
+        {
+          "id": "nure_nikui"
+        },
+        {
+          "id": "kaikan_sunao",
+          "src_mult": {
+            "pleasure": 1.15
+          },
+          "conv_mult": {
+            "desire": 1.2
+          }
+        },
+        {
+          "id": "otonashii",
+          "src_mult": {
+            "fear": 0.85,
+            "pain": 0.85
+          }
+        },
+        {
+          "id": "jiseishin",
+          "src_mult": {
+            "pleasure": 0.8
+          },
+          "conv_mult": {
+            "desire": 0.8
+          }
+        },
+        {
+          "id": "mukanshin",
+          "src_mult": {
+            "affection": 0.85,
+            "fear": 0.85,
+            "pleasure": 0.85
+          }
+        }
+      ],
+      "initOverrides": {
+        "stress": 64
+      },
+      "look": {
+        "age": 25,
+        "pronoun": "わたし",
+        "heightCm": 165,
+        "build": "スレンダー",
+        "race": "人間",
+        "hairColor": "金髪",
+        "hairLength": "ロング",
+        "hairCut": "ベーシック",
+        "hairSet": "フィッシュボーン",
+        "hairState": "くせっ毛",
+        "eyes": "標準",
+        "pupilColor": "碧",
+        "lips": "標準",
+        "bodyDetails": [
+          "胸：並"
+        ]
+      },
+      "candidate": {
+        "seed": 20261110,
+        "excludedByFlag": [
+          "kijou"
+        ]
+      }
+    },
+    {
+      "id": "cand_20261111",
+      "registered": 0,
+      "name": "オリガ",
+      "note": "ランダム候補（プール）",
+      "personality": "yowaki",
+      "traits": [
+        {
+          "id": "teisou_mudon"
+        },
+        {
+          "id": "b_donkan"
+        },
+        {
+          "id": "sado_kke"
+        }
+      ],
+      "initOverrides": {
+        "stress": 124
+      },
+      "look": {
+        "age": 22,
+        "pronoun": "わたし",
+        "heightCm": 164,
+        "build": "グラマー",
+        "race": "ダークエルフ",
+        "hairColor": "金髪",
+        "hairLength": "セミロング",
+        "hairCut": "ベーシック",
+        "hairSet": "横分け",
+        "hairState": "内カール",
+        "eyes": "切れ長",
+        "pupilColor": "碧",
+        "lips": "標準",
+        "bodyDetails": [
+          "胸：絶壁"
+        ]
+      },
+      "candidate": {
+        "seed": 20261111,
+        "excludedByFlag": []
+      }
+    },
+    {
+      "id": "cand_20261112",
+      "registered": 0,
+      "name": "弥生",
+      "note": "ランダム候補（プール）",
+      "personality": "yowaki",
+      "traits": [
+        {
+          "id": "hazukashigari",
+          "src_mult": {
+            "shame": 1.3
+          }
+        },
+        {
+          "id": "kaifuku_hayai"
+        },
+        {
+          "id": "donkan",
+          "src_mult": {
+            "fatigue_src": 0.8,
+            "pleasure": 0.7
+          }
+        },
+        {
+          "id": "sewa_jouzu",
+          "conv_mult": {
+            "satisfaction": 1.2
+          }
+        },
+        {
+          "id": "amaetagari",
+          "conv_mult": {
+            "relief": 1.3
+          }
+        }
+      ],
+      "initOverrides": {
+        "stress": 61
+      },
+      "look": {
+        "age": 19,
+        "pronoun": "わたし",
+        "heightCm": 174,
+        "build": "標準",
+        "race": "人間",
+        "hairColor": "栗毛",
+        "hairLength": "ショート",
+        "hairCut": "シャギー",
+        "hairSet": "ナチュラル",
+        "hairState": "直毛",
+        "eyes": "標準",
+        "pupilColor": "ブラウン",
+        "lips": "標準",
+        "bodyDetails": [
+          "体格：長身",
+          "胸：絶壁"
+        ]
+      },
+      "candidate": {
+        "seed": 20261112,
+        "excludedByFlag": [
+          "kijou"
+        ]
+      }
+    }
+  ],
+  "comment": "キャラ定義。base は Space の getCharacter で実物確認済み。shiori は作成時の記録（2026-11-08 17:51）から転記。shiori の getCharacter は Space 側の旧スナップショット互換問題（log 内 snapshot に abilities[].queued が無い）で応答検証エラーになるため実物未確認。kaifuku_hayai の src_mult/conv_mult は未確認（効果は体力・気力最大値 +500/+500 が実測済み）。"
+}

@@ -1,0 +1,262 @@
+{
+  "comment": "素質マスター: 素質ごとのランダム出現可否（random: 1=出る / 0=出ない）。候補生成（charroll）はこの表を毎回読む。既定は原作の抽選どおり全て出る——ただし配布既定として、オトコノコ・ふたなり・抵抗（hankou）・気丈（kijou）は切（0）に設定済み。各家では導入時にミューがマスターへこの区分の扱いを確認し、判断で切り替える。pool_exclude（charroll.json 側の到達不能宣言）とは別系統: あちらは生成文法上の隔離、こちらは運用の切り替え。",
+  "traits": [
+    {
+      "id": "hokori",
+      "label": "誇り高い",
+      "random": 1
+    },
+    {
+      "id": "hokori_hikui",
+      "label": "プライド低い",
+      "random": 1
+    },
+    {
+      "id": "hankou",
+      "label": "反抗的",
+      "random": 0
+    },
+    {
+      "id": "sunao",
+      "label": "素直",
+      "random": 1
+    },
+    {
+      "id": "koukishin",
+      "label": "好奇心",
+      "random": 1
+    },
+    {
+      "id": "hoshu",
+      "label": "保守的",
+      "random": 1
+    },
+    {
+      "id": "rakkan",
+      "label": "楽観的",
+      "random": 1
+    },
+    {
+      "id": "hikan",
+      "label": "悲観的",
+      "random": 1
+    },
+    {
+      "id": "teisou",
+      "label": "貞操観念",
+      "random": 1
+    },
+    {
+      "id": "teisou_mudon",
+      "label": "貞操無頓着",
+      "random": 1
+    },
+    {
+      "id": "hazukashigari",
+      "label": "恥ずかしがり",
+      "random": 1
+    },
+    {
+      "id": "haji_usui",
+      "label": "恥薄い",
+      "random": 1
+    },
+    {
+      "id": "itami_yowai",
+      "label": "痛みに弱い",
+      "random": 1
+    },
+    {
+      "id": "itami_tsuyoi",
+      "label": "痛みに強い",
+      "random": 1
+    },
+    {
+      "id": "nure_yasui",
+      "label": "濡れやすい",
+      "random": 1
+    },
+    {
+      "id": "nure_nikui",
+      "label": "濡れにくい",
+      "random": 1
+    },
+    {
+      "id": "shuutoku",
+      "label": "習得早い",
+      "random": 1
+    },
+    {
+      "id": "shuutoku_osoi",
+      "label": "習得遅い",
+      "random": 1
+    },
+    {
+      "id": "oshu_donkan",
+      "label": "汚臭鈍感",
+      "random": 1
+    },
+    {
+      "id": "oshu_binkan",
+      "label": "汚臭敏感",
+      "random": 1
+    },
+    {
+      "id": "kaikan_sunao",
+      "label": "快感に素直",
+      "random": 1
+    },
+    {
+      "id": "kaikan_hitei",
+      "label": "快感の否定",
+      "random": 1
+    },
+    {
+      "id": "c_donkan",
+      "label": "Ｃ鈍感",
+      "random": 1
+    },
+    {
+      "id": "c_binkan",
+      "label": "Ｃ敏感",
+      "random": 1
+    },
+    {
+      "id": "v_donkan",
+      "label": "Ｖ鈍感",
+      "random": 1
+    },
+    {
+      "id": "v_binkan",
+      "label": "Ｖ敏感",
+      "random": 1
+    },
+    {
+      "id": "a_donkan",
+      "label": "Ａ鈍感",
+      "random": 1
+    },
+    {
+      "id": "a_binkan",
+      "label": "Ａ敏感",
+      "random": 1
+    },
+    {
+      "id": "b_donkan",
+      "label": "Ｂ鈍感",
+      "random": 1
+    },
+    {
+      "id": "b_binkan",
+      "label": "Ｂ敏感",
+      "random": 1
+    },
+    {
+      "id": "kaifuku_hayai",
+      "label": "回復早い",
+      "random": 1
+    },
+    {
+      "id": "kaifuku_osoi",
+      "label": "回復遅い",
+      "random": 1
+    },
+    {
+      "id": "jii_kurui",
+      "label": "自慰狂い",
+      "random": 1
+    },
+    {
+      "id": "sex_kurui",
+      "label": "セックス狂",
+      "random": 1
+    },
+    {
+      "id": "ana_kurui",
+      "label": "尻穴狂い",
+      "random": 1
+    },
+    {
+      "id": "inyuu",
+      "label": "淫乳",
+      "random": 1
+    },
+    {
+      "id": "kijou",
+      "label": "気丈",
+      "random": 0
+    },
+    {
+      "id": "okubyou",
+      "label": "臆病",
+      "random": 1
+    },
+    {
+      "id": "otonashii",
+      "label": "大人しい",
+      "random": 1
+    },
+    {
+      "id": "jiseishin",
+      "label": "自制心",
+      "random": 1
+    },
+    {
+      "id": "mukanshin",
+      "label": "無関心",
+      "random": 1
+    },
+    {
+      "id": "sewa_jouzu",
+      "label": "世話上手",
+      "random": 1
+    },
+    {
+      "id": "kenshin",
+      "label": "献身的",
+      "random": 1
+    },
+    {
+      "id": "amaetagari",
+      "label": "甘えたがり",
+      "random": 1
+    },
+    {
+      "id": "sado_kke",
+      "label": "サドっ気",
+      "random": 1
+    },
+    {
+      "id": "mazo_kke",
+      "label": "マゾっ気",
+      "random": 1
+    },
+    {
+      "id": "haramitagari",
+      "label": "孕みたがり",
+      "random": 1
+    },
+    {
+      "id": "donkan",
+      "label": "鈍感",
+      "random": 1
+    },
+    {
+      "id": "binkan",
+      "label": "敏感",
+      "random": 1
+    },
+    {
+      "id": "otokonoko",
+      "label": "オトコノコ",
+      "random": 0,
+      "note": "現行の生成文法に到達経路なし（マスター側の切り替え点として保持）"
+    },
+    {
+      "id": "futanari",
+      "label": "ふたなり",
+      "random": 0,
+      "note": "現行の生成文法に到達経路なし（マスター側の切り替え点として保持）"
+    }
+  ]
+}

@@ -1,0 +1,180 @@
+;‹ZI‚ÌLvUPˆ—‚Æ‚»‚Ì‰Â”Û”»’è
+;eratohoA ver1,204‚ÌƒXƒNƒŠƒvƒg‚ðƒx[ƒX‚Éˆ—‚ðŠÈ—ª‰»
+;eraIM@S‚©‚ç“±“ü‚µ‚Ü‚µ‚½(eramaou)
+
+;-------------------------------------------------
+;‹ZI‚ÌLvUP
+;-------------------------------------------------
+@ABLUP12
+DRAWLINE
+;PRINTL “z—ê‚Ì‹ZI‚ð‚‚ß‚Ü‚·
+;PRINTL ‹ZI‚ª‚‚¢‚ÆA«sˆ×‚â•òŽd‚ÌÛ‚É‘ŠŽè‚ðƒCƒJ‚¹‚â‚·‚­‚È‚è‚Ü‚·
+;PRINTL ddddddddddddddddddddddddddddddddddddddd
+;‹ZI‚ÍLv10‚ªãŒÀ
+IF ABL:12 >= 10
+	PRINTW Šù‚ÉMAX‚Å‚·
+	RETURN 0
+;‹ZI{˜bp‚Í‚P‚UˆÈã‚É‚È‚ç‚È‚¢
+ELSEIF ABL:12 + ABL:15 >= 15
+	PRINTFORMW ‹ZI({ABL:12}){˜bp({ABL:15})‚ÌãŒÀ‚Í15‚Å‚·
+	RETURN 0
+ENDIF
+
+;•K—v‚ÈK“¾‚ÌŽì
+A = 0
+
+;ðŒ•Ê‚É‚n‚j‚©ƒ_ƒ‚©‚ð‹L˜^‚·‚é
+;K“¾‚ÌŽì‚É‚æ‚é‰Â”ÛiI=0:‰ÂAI&1:Žì•s‘«AI&2:ŒoŒ±•s‘«j
+I = 0
+
+CALL DECIDE_ABLUP12
+
+PRINTFORM [0] - %PALAMNAME:7%‚ÌŽì~{JUEL:7}/{A} cc
+IF I == 0
+	PRINT ‚n‚j
+ELSE
+	SIF I & 1
+		PRINT Žì•s‘« 
+	SIF I & 2
+		PRINT ŒoŒ±•s‘« 
+ENDIF
+PRINTL 
+
+PRINTL [100] - ‚â‚ß‚é
+
+INPUT
+IF (RESULT < 0 || RESULT > 0) && RESULT != 100
+	RESTART
+ELSEIF I != 0 && RESULT == 0
+	PRINTL ðŒ‚ð–ž‚½‚µ‚Ä‚¢‚Ü‚¹‚ñ
+	RESTART
+ELSEIF RESULT == 100
+	RETURN 0
+ENDIF
+
+ABL:12 += 1
+
+IF RESULT == 0
+	JUEL:7 -= A
+ENDIF
+
+PRINTFORML %ABLNAME:12%‚ÌƒŒƒxƒ‹‚ª{ABL:12}‚É‚È‚è‚Ü‚µ‚½
+
+RETURN 0
+
+;-------------------------------------------------
+;‹ZI‚ÌLvUP‰Â”Û”»’è
+;-------------------------------------------------
+@DECIDE_ABLUP12
+;‹ZI‚ÍLv10‚ªãŒÀ
+SIF ABL:12 >= 10
+	RETURN 0
+;‹ZI{˜bp‚Í‚P‚UˆÈã‚É‚È‚ç‚È‚¢
+SIF ABL:12 + ABL:15 >= 15
+	RETURN 0
+
+;”»’è•Ï”‚ð‹ó‚É
+A = 0
+I = 0
+
+IF ABL:12 == 0
+	A = 1
+ELSEIF ABL:12 == 1
+	A = 25
+ELSEIF ABL:12 == 2
+	A = 200
+ELSEIF ABL:12 == 3
+	A = 3000
+ELSEIF ABL:12 == 4
+	A = 8000
+ELSEIF ABL:12 == 5
+	A = 12000
+ELSEIF ABL:12 == 6
+	A = 16000
+ELSEIF ABL:12 == 7
+	A = 22000
+ELSEIF ABL:12 == 8
+	A = 28000
+ELSEIF ABL:12 == 9
+	A = 35000
+ENDIF
+
+;ˆêü‰z‚¦‚È‚¢
+IF TALENT:27
+	SIF ABL:12 == 3
+		TIMES A , 1.50
+	SIF ABL:12 == 4
+		TIMES A , 2.00
+	SIF ABL:12 == 5
+		TIMES A , 2.50
+	SIF ABL:12 >= 6
+		TIMES A , 3.00
+ENDIF
+
+;‘f’¼
+SIF TALENT:13
+	TIMES A , 0.95
+;–³ŠÖS
+SIF TALENT:21
+	TIMES A , 1.05
+;DŠïS
+SIF TALENT:23
+	TIMES A , 0.95
+;•ÛŽç“I
+SIF TALENT:24
+	TIMES A , 1.10
+
+;—}ˆ³
+IF TALENT:32
+	TIMES A , 1.10
+;‰ð•ú
+ELSEIF TALENT:33
+	TIMES A , 0.90
+ENDIF
+
+;’ïR
+SIF TALENT:34
+	TIMES A , 1.20
+
+;’p‚¶‚ç‚¢
+IF TALENT:35
+	TIMES A , 1.05
+;’p”–‚¢
+ELSEIF TALENT:36
+	TIMES A , 0.95
+ENDIF
+
+;K“¾‘‚¢
+IF TALENT:50
+	TIMES A , 0.80
+;K“¾’x‚¢
+ELSEIF TALENT:51
+	TIMES A , 1.50
+ENDIF
+
+;ãŽg‚¢
+SIF TALENT:52
+	TIMES A , 0.95
+;Œ£g“I
+SIF TALENT:63
+	TIMES A , 0.95
+;‰˜‚ê–³Ž‹
+SIF TALENT:64
+	TIMES A , 0.95
+
+;Å’á‚Å‚à1ŒÂ‚Í•K—v
+SIF A < 1
+	A = 1
+
+;K“¾‚ÌŽì‚Í‘«‚è‚Ä‚¢‚éH
+SIF JUEL:7 < A
+	I |= 1
+
+IF I == 0
+	RETURN 1
+ELSE
+	RETURN 0
+ENDIF
+;
+;
+;

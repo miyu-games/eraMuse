@@ -1,0 +1,181 @@
+;コンドーム関係をこのファイルに分離
+;あんまり至れり尽くせりにしてもしょうがないので
+;コンドームを持ってないなら基本的には生でしてしまう
+;-------------------------------------------------
+;CFLAG:61 = キャラ毎のコンドームの自動使用設定
+;(0:使う度に確認,1:ある限り自動的に使う,2:使わない)
+;-------------------------------------------------
+;調教メニュー内・コンドーム設定
+;-------------------------------------------------
+@CONDOM_SETTINGS
+SIF TARGET < 1
+	RETURN 1
+PRINTFORML %SAVESTR:TARGET%とのセックスでコンドームを使いますか？
+PRINTFORML 現在：%LOCALS:(CFLAG:61)%
+DRAWLINE
+PRINTL [0] 毎回選択する
+PRINTL [1] コンドームがあるなら使う
+PRINTL [2] 常に生でする
+PRINTL [9] 戻る
+$INPUT_LOOP_01
+INPUT
+SELECTCASE RESULT
+	CASE 9
+		RETURN 0
+	CASE 0
+		PRINTW 毎回確認します.
+		CFLAG:61 = 0
+	CASE 1
+		PRINTW コンドームを使います.
+		CFLAG:61 = 1
+	CASE 2
+		PRINTFORMW %SAVESTR:TARGET%とは生でやります.
+		CFLAG:61 = 2
+	CASEELSE
+		GOTO INPUT_LOOP_01
+ENDSELECT
+RETURN 0
+
+;-------------------------------------------------
+;コンドームを使うかの確認
+;-------------------------------------------------
+@CONFIRM_CONDOM
+;TEQUIP:35 = マスターがコンドーム装着
+;TEQUIP:36 = 助手がコンドーム装着
+;-------------------
+;RETURN 1:コマンド続行
+;RETURN 0:中止
+;-------------------
+
+;コンドーム使わない設定なら続行
+SIF CFLAG:61 == 2
+	RETURN 1
+;獣姦なら続行
+SIF TEQUIP:89
+	RETURN 1
+;コロシアムなら続行
+SIF TEQUIP:55
+	RETURN 1
+;調教者が男でもふたなりでもないなら続行
+SIF !TALENT:PLAYER:121 && !TALENT:PLAYER:122
+	RETURN 1
+;調教者が既にコンドームしてるなら続行
+SIF (!ASSIPLAY && TEQUIP:35) || (ASSIPLAY && TEQUIP:36)
+	RETURN 1
+
+;毎回確認かつコンドーム所持の場合、確認する
+IF CFLAG:61 == 0 && ITEM:24
+	IF !ASSIPLAY
+		PRINTL コンドームを使いますか？
+		PRINTL  [0] - 使う
+		PRINTL  [1] - 生でやる
+	ELSE
+		PRINTL コンドームを使わせますか？
+		PRINTL  [0] - 使わせる
+		PRINTL  [1] - 生でやらせる
+	ENDIF
+	PRINTL  [2] - 今後もずっと生で
+	PRINTL  [3] - 今後もあるなら使う
+	
+	$INPUT_LOOP_01
+	INPUT
+	SELECTCASE RESULT
+		CASE 0
+			ITEM:24 -= 1
+			IF !ASSIPLAY
+				PRINTFORML %SAVESTR:PLAYER%はコンドームを装着した.
+				TEQUIP:35 = 1
+			ELSE
+				PRINTFORML %SAVESTR:PLAYER%にコンドームを装着させた.
+				TEQUIP:36 = 1
+			ENDIF
+			RETURN 1
+		CASE 1
+			RETURN 1
+		CASE 2
+			PRINTFORML 今後%SAVESTR:TARGET%とは生でセックスします
+			CFLAG:61 = 2
+			RESTART
+		CASE 3
+			PRINTFORML 今後コンドームがある場合は使用します.
+			CFLAG:61 = 1
+			RESTART
+		CASEELSE
+			GOTO INPUT_LOOP_01
+	ENDSELECT
+ENDIF
+
+;自動で使う場合
+IF CFLAG:61 == 1
+	;コンドームがあるか
+	IF ITEM:24 > 0
+		;あるなら使う
+		ITEM:24 -= 1
+		IF !ASSIPLAY
+			PRINTFORML %SAVESTR:PLAYER%はコンドームを装着した.
+			TEQUIP:35 = 1
+		ELSE
+			PRINTFORML %SAVESTR:PLAYER%にコンドームを装着させた.
+			TEQUIP:36 = 1
+		ENDIF
+		RETURN 1
+	ELSE
+		;ない場合、魔王さまの技巧Lvが5未満だと生でしてしまう
+		;理由:その方がバカっぽいので
+		IF ABL:MASTER:12 > 4
+			PRINTFORM コンドームがありませんが、生で
+			IF !ASSIPLAY
+				PRINTFORML やりますか？
+			ELSE
+				PRINTFORML させますか？
+			ENDIF
+			PRINTL  [0] - はい(次回も確認する)
+			PRINTL  [1] - はい(今後はずっと生で)
+			PRINTL  [2] - いいえ
+			
+			$INPUT_LOOP_02
+			INPUT
+			SELECTCASE RESULT
+				CASE 0
+					RETURN 1
+				CASE 1
+					PRINTFORML 今後%SAVESTR:TARGET%への生セックスの確認は行いません.
+					CFLAG:61 = 2
+					RETURN 1
+				CASE 2
+					RETURN 0
+				CASEELSE
+					GOTO INPUT_LOOP_02
+			ENDSELECT
+		ELSE
+			PRINTL コンドームが無いので生で挿入
+			RETURN 1
+		ENDIF
+	ENDIF
+ENDIF
+
+;全パターン拾えてなかったら申し訳程度のメッセージを出す
+;PRINTW ※COMF_CONDOM.ERB/@CONFIRM_CONDOM/分岐漏れ
+RETURN 1
+
+;-------------------------------------------------
+;コンドームを使うかの確認2
+;COM65「助手を犯させる」のためのもの
+;-------------------------------------------------
+@CONFIRM_CONDOM2
+$INPUT_LOOP_02
+IF TEQUIP:37 == 0 && ITEM:24 && (TALENT:TARGET:121 || TALENT:TARGET:122)
+	PRINTFORML %SAVESTR:TARGET%にコンドームを使わせますか？
+	PRINTL  [0] - 使わせる
+	PRINTL  [1] - 生でやらせる
+	INPUT
+	IF RESULT == 0
+		PRINTFORML %SAVESTR:TARGET%はコンドームを装着した
+		ITEM:24 -= 1
+		TEQUIP:37 = 1
+	ELSEIF RESULT != 1
+		GOTO INPUT_LOOP_02
+	ENDIF
+ENDIF
+RETURN 1
+

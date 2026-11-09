@@ -1,0 +1,442 @@
+;”„t’†“Å‚ÌLvUPˆ—‚Æ‚»‚Ì‰Â”Û”»’è
+;eraIm@s_ver.0.17ƒÀd‚ÌƒXƒNƒŠƒvƒg‚ðƒx[ƒX‚Éˆ—‚ðŠÈ—ª‰»
+;eraIM@S‚©‚ç“±“ü‚µ‚Ü‚µ‚½(eramaou)
+
+;-------------------------------------------------
+;”„t’†“Å‚ÌLvUP
+;-------------------------------------------------
+@ABLUP37
+DRAWLINE
+;PRINTL “z—ê‚Ì”„t‚Ö‚ÌŽ·’…S‚ð‚‚ß‚Ü‚·
+;PRINTL ”„t’†“Å‚ª‚‚­‚È‚é‚ÆA”„t‚É‚æ‚éƒZƒbƒNƒX‚â•òŽdsˆ×‚Ö‚Ì–ž‘«Š´‚ª[‚Ü‚èA
+;PRINTL Ž©•ª‚Ì‘Ì‚ð”„‚è‘±‚¯‚Ä‚¢‚È‚¢‚ÆS‚ª—Ž‚¿’…‚©‚È‚­‚È‚è‚Ü‚·
+;PRINTL ddddddddddddddddddddddddddddddddddddddd
+;”„t’†“Å‚ÍLv10‚ªãŒÀ
+;[ˆú—][’å‘€–³“Ú’…][©•w]‚ª•t‚¢‚Ä‚¢‚éê‡‚ÍLv10‚Ü‚Å‰ð•ú
+IF ABL:37 >= 5 && (TALENT:76 == 0 && TALENT:31 == 0 && TALENT:180 == 0)
+	PRINTW ‚±‚êˆÈãUP‚·‚é‚É‚Í‘fŽ¿‚ª•K—v‚Å‚·
+	RETURN 0
+ELSEIF ABL:37 >= 10
+	PRINTW Šù‚ÉMAX‚Å‚·
+	RETURN 0
+ENDIF
+
+;•K—v‚È‹±‡‚ÌŽì
+A = 0
+;•K—v‚È—~î‚ÌŽì
+B = 0
+;•K—v‚È‹ü•ž‚ÌŽì
+C = 0
+;•K—v‚È”„tŒoŒ±
+D = 0
+;•K—v‚ÈˆÙíŒoŒ±‰ñ”
+F = 0
+
+;ðŒ•Ê‚É‚n‚j‚©ƒ_ƒ‚©‚ð‹L˜^‚·‚é
+I = 0
+
+CALL DECIDE_ABLUP37
+
+;‚k‚u‚Q‚©‚ç‚RA‚k‚u‚R‚©‚ç‚SA‚S‚©‚ç‚T‚Éã‚°‚é‚Æ‚«‚ÍˆÙíŒoŒ±•K—v
+;(‘fŽ¿F[‰ð•ú][‰õŠ´‚É‘f’¼][‘¦—Ž‚¿][ˆú—][“|ö“I][’†“Å‚µ‚â‚·‚¢][©•w][ŒXé]‚ª‚ ‚é‚ÆŠÉ˜aA
+;[”½R“I][Ž©§S][—}ˆ³][’ïR][‰õŠ´‚Ì”Û’è][—ö•ç][eˆ¤][‘Šˆ¤][‹ˆ¤]‚ª‚ ‚é‚Æ‘‰ÁA[‹¶‹C][•ž]][—ê‘®][Žg‚¢–‚]‚È‚ç–³Ž‹‚Å‚«‚é)
+SIF F > 0
+	PRINTFORML %EXPNAME:50%{F}ˆÈã(Œ»Ý{EXP:50})‚©‚Â
+
+;—~–]‚ª•K—v
+PRINTFORML %ABLNAME:11%{ABL:37 + 1}LVˆÈã(Œ»Ý{ABL:11}LV)‚©‚Â
+
+PRINTFORM [0] - %PALAMNAME:4%‚ÌŽì~{JUEL:4}/{A} cc
+IF I == 0
+	PRINT ‚n‚j
+ELSE
+	SIF I & 1
+		PRINT Žì•s‘« 
+	SIF I & 2
+		PRINT ŒoŒ±•s‘« 
+	SIF I & 4
+		PRINT ”\—Í•s‘« 
+ENDIF
+PRINTL 
+PRINTFORML @@@%PALAMNAME:5%‚ÌŽì~{JUEL:5}/{B}
+PRINTFORML @@@%PALAMNAME:6%‚ÌŽì~{JUEL:6}/{C}
+PRINTFORML @@@%EXPNAME:74%@{EXP:74}/{D}
+PRINTL [100] - ‚â‚ß‚é
+
+INPUT
+IF RESULT != 0 && RESULT != 100
+	RESTART
+ELSEIF I != 0 && RESULT == 0
+	PRINTL ðŒ‚ð–ž‚½‚µ‚Ä‚¢‚Ü‚¹‚ñ
+	RESTART
+ELSEIF RESULT == 100
+	RETURN 0
+ENDIF
+
+ABL:37 += 1
+IF RESULT == 0
+	JUEL:4 -= A
+	JUEL:5 -= B
+	JUEL:6 -= C
+ENDIF
+
+PRINTFORML %ABLNAME:37%‚ÌƒŒƒxƒ‹‚ª{ABL:37}‚É‚È‚è‚Ü‚µ‚½
+
+RETURN 0
+
+;-------------------------------------------------
+;”„t’†“Å‚ÌLvUP‰Â”Û”»’è
+;-------------------------------------------------
+@DECIDE_ABLUP37
+SIF ABL:37 + ABL:38 >= 10
+	RETURN 0
+SIF ABL:37 >= 5 && (TALENT:76 == 0 && TALENT:31 == 0 && TALENT:180 == 0)
+	RETURN 0
+
+;”»’è•Ï”‚ð‹ó‚É
+I = 0
+
+A = 0
+B = 0
+C = 0
+D = 0
+F = 0
+
+IF ABL:37 == 0
+	A = 2000
+	B = 3000
+	C = 1000
+	D = 50
+ELSEIF ABL:37 == 1
+	A = 5000
+	B = 8000
+	C = 2500
+	D = 100
+ELSEIF ABL:37 == 2
+	A = 8000
+	B = 15000
+	C = 5500
+	D = 150
+ELSEIF ABL:37 == 3
+	A = 14000
+	B = 30000
+	C = 10000
+	D = 250
+ELSEIF ABL:37 == 4
+	A = 22000
+	B = 50000
+	C = 20000
+	D = 400
+ELSEIF ABL:37 == 5
+	A = 34000
+	B = 80000
+	C = 30000
+	D = 500
+ELSEIF ABL:37 == 6
+	A = 55000
+	B = 120000
+	C = 50000
+	D = 800
+ELSEIF ABL:37 == 7
+	A = 80000
+	B = 180000
+	C = 60000
+	D = 1200
+ELSEIF ABL:37 == 8
+	A = 150000
+	B = 300000
+	C = 90000
+	D = 2000
+ELSEIF ABL:37 == 9
+	A = 300000
+	B = 600000
+	C = 150000
+	D = 3000
+ENDIF
+
+;ˆêü‰z‚¦‚È‚¢
+IF TALENT:27
+	IF ABL:37 == 3
+		TIMES A , 1.50
+		TIMES B , 1.50
+		TIMES C , 1.50
+		TIMES D , 1.50
+	ELSEIF ABL:37 == 4
+		TIMES A , 2.00
+		TIMES B , 2.00
+		TIMES C , 2.00
+		TIMES D , 2.00
+	ELSEIF ABL:37 == 5
+		TIMES A , 2.50
+		TIMES B , 2.50
+		TIMES C , 2.50
+		TIMES D , 2.50
+	ELSEIF ABL:37 >= 6
+		TIMES A , 3.00
+		TIMES B , 3.00
+		TIMES C , 3.00
+		TIMES D , 3.00
+	ENDIF
+ENDIF
+
+;”½R“I
+IF TALENT:11
+	TIMES A , 1.50
+	TIMES B , 1.50
+	TIMES C , 1.50
+	TIMES D , 1.50
+ENDIF
+;‹Cä
+IF TALENT:12
+	TIMES A , 1.20
+	TIMES B , 1.20
+	TIMES C , 1.20
+	TIMES D , 1.20
+ENDIF
+;Ž©§S
+IF TALENT:20
+	TIMES A , 1.50
+	TIMES B , 1.50
+	TIMES C , 1.50
+	TIMES D , 1.50
+ENDIF
+;•ÛŽç“I
+IF TALENT:24
+	TIMES A , 1.50
+	TIMES B , 1.50
+	TIMES C , 1.50
+	TIMES D , 1.50
+ENDIF
+
+;”ßŠÏ“I
+IF TALENT:26
+	TIMES A , 0.90
+	TIMES B , 0.90
+	TIMES C , 0.90
+	TIMES D , 0.90
+ENDIF
+;–Ú—§‚¿‚½‚ª‚è
+IF TALENT:28
+	TIMES A , 0.90
+	TIMES B , 0.90
+	TIMES C , 0.90
+	TIMES D , 0.90
+ENDIF
+
+;’å‘€ŠÏ”O
+IF TALENT:30
+	TIMES A , 2.00
+	TIMES B , 2.00
+	TIMES C , 2.00
+	TIMES D , 2.00
+;’å‘€–³“Ú’…
+ELSEIF TALENT:31
+	TIMES A , 0.90
+	TIMES B , 0.90
+	TIMES C , 0.90
+	TIMES D , 0.90
+ENDIF
+
+;—}ˆ³
+IF TALENT:32
+	TIMES A , 1.20
+	TIMES B , 1.20
+	TIMES C , 1.20
+	TIMES D , 1.20
+;‰ð•ú
+ELSEIF TALENT:33
+	TIMES A , 0.80
+	TIMES B , 0.80
+	TIMES C , 0.80
+	TIMES D , 0.80
+ENDIF
+
+;’ïR
+IF TALENT:34
+	TIMES A , 2.00
+	TIMES B , 2.00
+	TIMES C , 2.00
+	TIMES D , 2.00
+ENDIF
+
+;’p‚¶‚ç‚¢
+IF TALENT:35
+	TIMES A , 1.10
+	TIMES B , 1.10
+	TIMES C , 1.10
+	TIMES D , 1.10
+;’p”–‚¢
+ELSEIF TALENT:36
+	TIMES A , 0.90
+	TIMES B , 0.90
+	TIMES C , 0.90
+	TIMES D , 0.90
+ENDIF
+;Œ£g“I
+IF TALENT:63
+	TIMES A , 0.90
+	TIMES B , 0.90
+	TIMES C , 0.90
+	TIMES D , 0.90
+ENDIF
+;’†“Å‚µ‚â‚·‚¢
+IF TALENT:72
+	TIMES A , 0.50
+	TIMES B , 0.50
+	TIMES C , 0.50
+	TIMES D , 0.50
+ENDIF
+;ˆú—
+IF TALENT:76
+	TIMES A , 0.80
+	TIMES B , 0.50
+	TIMES C , 0.80
+	TIMES D , 0.80
+ENDIF
+;’jŒ™‚¢
+IF TALENT:82
+	TIMES A , 3.00
+	TIMES B , 3.00
+	TIMES C , 3.00
+	TIMES D , 3.00
+ENDIF
+;ˆ¤
+IF TALENT:85
+	TIMES A , 1.50
+	TIMES B , 1.50
+	TIMES C , 1.50
+	TIMES D , 1.50
+ENDIF
+;”DP
+IF TALENT:153
+	TIMES A , 2.00
+	TIMES B , 2.00
+	TIMES C , 2.00
+	TIMES D , 2.00
+ENDIF
+;‹¶‹C
+IF TALENT:123
+	TIMES A , 0.50
+	TIMES B , 0.50
+	TIMES C , 0.50
+	TIMES D , 0.50
+ENDIF
+;•ö‰ó
+IF TALENT:9
+	TIMES A , 0.80
+	TIMES B , 0.80
+	TIMES C , 0.80
+	TIMES D , 0.80
+ENDIF
+;©•w
+IF TALENT:180
+	TIMES A , 0.80
+	TIMES B , 0.80
+	TIMES C , 0.80
+	TIMES D , 0.80
+ENDIF
+;ŒXé
+IF TALENT:181
+	TIMES A , 0.50
+	TIMES B , 0.50
+	TIMES C , 0.50
+	TIMES D , 0.50
+ENDIF
+;í˜A‹q
+IF TALENT:183
+	TIMES A , 0.90
+	TIMES B , 0.90
+	TIMES C , 0.90
+	TIMES D , 0.90
+ENDIF
+;‹ˆ¤
+IF TALENT:184
+	TIMES A , 2.00
+	TIMES B , 2.00
+	TIMES C , 2.00
+	TIMES D , 2.00
+ENDIF
+
+
+;‚k‚u‚Q‚©‚ç‚RA‚k‚u‚R‚©‚ç‚SA‚S‚©‚ç‚T‚Éã‚°‚é‚Æ‚«‚ÍˆÙíŒoŒ±•K—v
+;(‘fŽ¿F[‰ð•ú][‰õŠ´‚É‘f’¼][‘¦—Ž‚¿][ˆú—][“|ö“I][’†“Å‚µ‚â‚·‚¢][©•w][ŒXé]‚ª‚ ‚é‚ÆŠÉ˜aA
+;[”½R“I][Ž©§S][—}ˆ³][’ïR][‰õŠ´‚Ì”Û’è][ˆ¤][‹ˆ¤]‚ª‚ ‚é‚Æ‘‰ÁA[‹¶‹C][•ö‰ó]‚È‚ç–³Ž‹‚Å‚«‚é)
+IF ABL:37 >= 2 && (TALENT:123 == 0 && TALENT:9 == 0)
+	F = ABL:37 - 1
+	SIF TALENT:33
+		F -= 1
+	SIF TALENT:70
+		F -= 1
+	SIF TALENT:72
+		F -= 2
+	SIF TALENT:73
+		F -= 1
+	SIF TALENT:76
+		F -= 1
+	SIF TALENT:80
+		F -= 1
+	SIF TALENT:180
+		F -= 1
+	SIF TALENT:181
+		F -= 2
+	SIF TALENT:11
+		F += 1
+	SIF TALENT:20
+		F += 1
+	SIF TALENT:32
+		F += 1
+	SIF TALENT:34
+		F += 1
+	SIF TALENT:71
+		F += 1
+	SIF TALENT:85
+		F += 1
+	SIF TALENT:184
+		F += 2
+	
+	SIF F < 0
+		F = 0
+	IF EXP:50 < F
+		;ˆÙíŒoŒ±‚ª•s‘«
+		I |= 2
+		J |= 2
+	ENDIF
+ENDIF
+
+;Å’á‚Å‚à1‰ñE1ŒÂ‚Í•K—v
+SIF A < 1
+	A = 1
+SIF B < 1
+	B = 1
+SIF C < 1
+	C = 1
+SIF D < 1
+	D = 1
+
+;—~–]‚ª•K—v
+IF ABL:11 < ABL:37 + 1
+	I |= 4
+	J |= 4
+ENDIF
+
+;‹±‡‚ÌŽì‚Í‘«‚è‚Ä‚¢‚éH
+SIF JUEL:4 < A
+	I |= 1
+;—~î‚ÌŽì‚Í‘«‚è‚Ä‚¢‚éH
+SIF JUEL:5 < B
+	I |= 1
+;‹ü•ž‚ÌŽì‚Í‘«‚è‚Ä‚¢‚éH
+SIF JUEL:6 < C
+	I |= 1
+;”„tŒoŒ±‚ª•K—v
+SIF EXP:74 < D
+	I |= 2
+
+IF I == 0
+	RETURN 1
+ELSE
+	RETURN 0
+ENDIF
+;
+;
+;

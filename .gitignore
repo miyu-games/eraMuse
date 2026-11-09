@@ -1,0 +1,7 @@
+# eraMuse の実行時状態（各家のローカルに生えるもの。配布物には含めない）
+engine/trainers_state.json
+engine/characters/*.json
+engine/logs/*.jsonl
+
+# push 用スクリプトは各家のローカル専用
+push_eramuse.cmd

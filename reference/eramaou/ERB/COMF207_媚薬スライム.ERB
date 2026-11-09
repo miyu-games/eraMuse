@@ -1,0 +1,85 @@
+;eramaou追加コマンド
+
+;-------------------------------------------------
+;媚薬スライム
+;うまく気力だけを減らす要員 レベル100以上
+;-------------------------------------------------
+@COM207
+
+PRINTL 媚薬スライム
+
+CALL TRAIN_MESSAGE_B
+
+;-------------------------------------------------
+;戦闘値の計算
+;-------------------------------------------------
+LOSEBASE:1 += CFLAG:0:9 * 10
+
+CALL ARENA_SLAVE_POINT
+
+;戦闘ポイントが低ければ追加ダメージ
+IF RESULT < (5 * CFLAG:0:9)
+	;気力が0なら追加ダメージ無し
+	IF BASE:1 <= 0
+		PRINTFORMW %SAVESTR:TARGET%は媚薬スライムに包まれてもう抵抗することもできない
+	ELSE
+		PRINTFORMW %SAVESTR:TARGET%は媚薬スライムに包まれて身動きが取れなくなってしまった
+		LOSEBASE:1 += CFLAG:0:9 * 10
+			IF BASE:1 < LOSEBASE:1
+				PRINTFORMW そして%SAVESTR:TARGET%は媚薬スライムの中で溺れてしまった
+				PRINTW ＜奴隷陥落＞
+			ENDIF
+	ENDIF
+ELSE
+	PRINTFORMW %SAVESTR:TARGET%は媚薬スライムに絡みつかれて必死に逃げようとしている
+ENDIF
+
+;コロシアム収入
+;TFLAG:402 += LOSEBASE:0 * 10 + RAND:RESULT
+
+TFLAG:400 = 207
+;戦闘後の処理
+CALL COM_AFTER_ARENA
+SIF RESULT == 0
+	RETURN 1
+
+$INPUT_LOOP_0
+PRINTL どこに粘液を流し込みますか？
+PRINTL [0] - 口
+SIF TALENT:122 == 0
+	PRINTL [1] - 膣
+PRINTL [2] - アナル
+PRINTL [999] 陵辱しない
+
+INPUT
+
+IF RESULT == 0
+	PRINTFORMW 倒れた%SAVESTR:TARGET%の口めがけて大量の粘液が注ぎ込まれた
+	SELECTCOM = 51
+	JUMP COM51
+	;コロシアム収入
+	TFLAG:402 += LOSEBASE:1 * 2 + RAND:RESULT
+ELSEIF RESULT == 1
+	;対象がオトコなら戻る
+	SIF TALENT:122
+		RETURN 0
+	PRINTFORMW 倒れた%SAVESTR:TARGET%の膣めがけて大量の粘液が注ぎ込まれ、子宮まで粘液で満たされてしまった
+	SELECTCOM = 51
+	JUMP COM51
+	;コロシアム収入
+	TFLAG:402 += LOSEBASE:1 * 2 + RAND:RESULT
+ELSEIF RESULT == 2
+	PRINTFORMW 倒れた%SAVESTR:TARGET%の肛門に大量の粘液が注ぎ込まれた
+	SELECTCOM = 51
+	JUMP COM51
+	;コロシアム収入
+	TFLAG:402 += LOSEBASE:1 * 2 + RAND:RESULT
+ELSEIF RESULT == 999
+ELSE
+	GOTO INPUT_LOOP_0
+ENDIF
+
+RETURN 1
+;
+;
+;

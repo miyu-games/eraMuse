@@ -1,0 +1,3940 @@
+{
+ "entries": [
+  {
+   "band": "low",
+   "category": "愛撫系",
+   "commandId": "kiss",
+   "commandLabel": "キスする",
+   "repetition": "first",
+   "text": "唇が触れると、彼女は目を見開いた。……そして、ゆっくり閉じた。"
+  },
+  {
+   "band": "low",
+   "category": "愛撫系",
+   "commandId": "kiss",
+   "commandLabel": "キスする",
+   "repetition": "repeat",
+   "text": "唇が触れると、彼女は目を見開いた。……そして、ゆっくり閉じた。"
+  },
+  {
+   "band": "mid",
+   "category": "愛撫系",
+   "commandId": "kiss",
+   "commandLabel": "キスする",
+   "repetition": "first",
+   "text": "彼女は受け入れた。離れる時、小さく名残惜しそうな音がした。"
+  },
+  {
+   "band": "mid",
+   "category": "愛撫系",
+   "commandId": "kiss",
+   "commandLabel": "キスする",
+   "repetition": "repeat",
+   "text": "彼女は受け入れた。離れる時、小さく名残惜しそうな音がした。"
+  },
+  {
+   "band": "high",
+   "category": "愛撫系",
+   "commandId": "kiss",
+   "commandLabel": "キスする",
+   "repetition": "first",
+   "text": "彼女は自分から求めてきた。もう、誤魔化す気はないらしい。"
+  },
+  {
+   "band": "high",
+   "category": "愛撫系",
+   "commandId": "kiss",
+   "commandLabel": "キスする",
+   "repetition": "repeat",
+   "text": "彼女は自分から求めてきた。もう、誤魔化す気はないらしい。"
+  },
+  {
+   "band": "low",
+   "category": "特殊",
+   "commandId": "talk",
+   "commandLabel": "会話する",
+   "repetition": "first",
+   "text": "彼女は短く答えるだけだった。"
+  },
+  {
+   "band": "low",
+   "category": "特殊",
+   "commandId": "talk",
+   "commandLabel": "会話する",
+   "repetition": "repeat",
+   "text": "彼女は短く答えるだけだった。"
+  },
+  {
+   "band": "mid",
+   "category": "特殊",
+   "commandId": "talk",
+   "commandLabel": "会話する",
+   "repetition": "first",
+   "text": "彼女はこちらの話に耳を傾けた。"
+  },
+  {
+   "band": "mid",
+   "category": "特殊",
+   "commandId": "talk",
+   "commandLabel": "会話する",
+   "repetition": "repeat",
+   "text": "彼女はこちらの話に耳を傾けた。"
+  },
+  {
+   "band": "high",
+   "category": "特殊",
+   "commandId": "talk",
+   "commandLabel": "会話する",
+   "repetition": "first",
+   "text": "彼女は自分から話し始めた。声が少し柔らかい。"
+  },
+  {
+   "band": "high",
+   "category": "特殊",
+   "commandId": "talk",
+   "commandLabel": "会話する",
+   "repetition": "repeat",
+   "text": "彼女は自分から話し始めた。声が少し柔らかい。"
+  },
+  {
+   "band": "low",
+   "category": "愛撫系",
+   "commandId": "caress",
+   "commandLabel": "愛撫",
+   "repetition": "first",
+   "text": "彼女は身を固くした。それでも、逃げはしなかった。"
+  },
+  {
+   "band": "low",
+   "category": "愛撫系",
+   "commandId": "caress",
+   "commandLabel": "愛撫",
+   "repetition": "repeat",
+   "text": "彼女は身を固くした。それでも、逃げはしなかった。"
+  },
+  {
+   "band": "mid",
+   "category": "愛撫系",
+   "commandId": "caress",
+   "commandLabel": "愛撫",
+   "repetition": "first",
+   "text": "彼女の呼吸が少しずつ乱れていく。"
+  },
+  {
+   "band": "mid",
+   "category": "愛撫系",
+   "commandId": "caress",
+   "commandLabel": "愛撫",
+   "repetition": "repeat",
+   "text": "彼女の呼吸が少しずつ乱れていく。"
+  },
+  {
+   "band": "high",
+   "category": "愛撫系",
+   "commandId": "caress",
+   "commandLabel": "愛撫",
+   "repetition": "first",
+   "text": "彼女はこちらの手に、自分から寄るようになった。"
+  },
+  {
+   "band": "high",
+   "category": "愛撫系",
+   "commandId": "caress",
+   "commandLabel": "愛撫",
+   "repetition": "repeat",
+   "text": "彼女はこちらの手に、自分から寄るようになった。"
+  },
+  {
+   "band": "low",
+   "category": "愛撫系",
+   "commandId": "breast_caress",
+   "commandLabel": "胸愛撫",
+   "repetition": "first",
+   "text": "服の上から胸に触れると、彼女は息を止めた。拒む手は、上がってこなかった。"
+  },
+  {
+   "band": "low",
+   "category": "愛撫系",
+   "commandId": "breast_caress",
+   "commandLabel": "胸愛撫",
+   "repetition": "repeat",
+   "text": "胸に手を置くと、彼女は視線を逸らしたまま小さく震えた。"
+  },
+  {
+   "band": "mid",
+   "category": "愛撫系",
+   "commandId": "breast_caress",
+   "commandLabel": "胸愛撫",
+   "repetition": "first",
+   "text": "指の動きに合わせて、彼女の呼吸が浅くなっていく。恥ずかしさより先に、身体が反応していた。"
+  },
+  {
+   "band": "mid",
+   "category": "愛撫系",
+   "commandId": "breast_caress",
+   "commandLabel": "胸愛撫",
+   "repetition": "repeat",
+   "text": "彼女は唇を噛んで声を堪えた。それでも、逃げようとはしなかった。"
+  },
+  {
+   "band": "high",
+   "category": "愛撫系",
+   "commandId": "breast_caress",
+   "commandLabel": "胸愛撫",
+   "repetition": "first",
+   "text": "彼女はこちらの手に胸を預けるように、体重を寄せてきた。"
+  },
+  {
+   "band": "high",
+   "category": "愛撫系",
+   "commandId": "breast_caress",
+   "commandLabel": "胸愛撫",
+   "repetition": "repeat",
+   "text": "触れるたび、彼女の身体が素直に応える。もう隠す気はないようだった。"
+  },
+  {
+   "band": "low",
+   "category": "愛撫系",
+   "commandId": "cunni",
+   "commandLabel": "クンニ",
+   "repetition": "first",
+   "text": "彼女は真っ赤になって顔を覆った。脚を閉じようとする力は、弱かった。"
+  },
+  {
+   "band": "low",
+   "category": "愛撫系",
+   "commandId": "cunni",
+   "commandLabel": "クンニ",
+   "repetition": "repeat",
+   "text": "恥ずかしさに身をよじっても、彼女は最後まで押しのけなかった。"
+  },
+  {
+   "band": "mid",
+   "category": "愛撫系",
+   "commandId": "cunni",
+   "commandLabel": "クンニ",
+   "repetition": "first",
+   "text": "こちらの舌の動きに、彼女の腰が小さく跳ねる。声が漏れるのを、手で押さえていた。"
+  },
+  {
+   "band": "mid",
+   "category": "愛撫系",
+   "commandId": "cunni",
+   "commandLabel": "クンニ",
+   "repetition": "repeat",
+   "text": "彼女の指がシーツを掴んだ。呼吸の乱れが、隠しきれなくなっていた。"
+  },
+  {
+   "band": "high",
+   "category": "愛撫系",
+   "commandId": "cunni",
+   "commandLabel": "クンニ",
+   "repetition": "first",
+   "text": "彼女は自分から脚を開いた。求めることを、身体が先に覚えていた。"
+  },
+  {
+   "band": "high",
+   "category": "愛撫系",
+   "commandId": "cunni",
+   "commandLabel": "クンニ",
+   "repetition": "repeat",
+   "text": "彼女の声はもう堪えられていなかった。こちらの名を、小さく繰り返した。"
+  },
+  {
+   "band": "low",
+   "category": "奉仕系",
+   "commandId": "fellatio",
+   "commandLabel": "フェラチオ",
+   "repetition": "first",
+   "text": "彼女は戸惑いながらも口を開いた。慣れない動きが、逆に生々しかった。"
+  },
+  {
+   "band": "low",
+   "category": "奉仕系",
+   "commandId": "fellatio",
+   "commandLabel": "フェラチオ",
+   "repetition": "repeat",
+   "text": "涙目になりながらも、彼女は奉仕を止めなかった。"
+  },
+  {
+   "band": "mid",
+   "category": "奉仕系",
+   "commandId": "fellatio",
+   "commandLabel": "フェラチオ",
+   "repetition": "first",
+   "text": "彼女の舌の動きが、少しずつ的確になっていく。覚えようとしているのが分かった。"
+  },
+  {
+   "band": "mid",
+   "category": "奉仕系",
+   "commandId": "fellatio",
+   "commandLabel": "フェラチオ",
+   "repetition": "repeat",
+   "text": "合間にこちらを見上げる目が、評価を待つように揺れていた。"
+  },
+  {
+   "band": "high",
+   "category": "奉仕系",
+   "commandId": "fellatio",
+   "commandLabel": "フェラチオ",
+   "repetition": "first",
+   "text": "彼女は自分から深く咥えた。奉仕すること自体に、昂ぶりを見せていた。"
+  },
+  {
+   "band": "high",
+   "category": "奉仕系",
+   "commandId": "fellatio",
+   "commandLabel": "フェラチオ",
+   "repetition": "repeat",
+   "text": "終わった後も、彼女は名残惜しそうにこちらを見ていた。"
+  },
+  {
+   "band": "low",
+   "category": "セックス系",
+   "commandId": "sex_v",
+   "commandLabel": "正常位",
+   "repetition": "first",
+   "text": "彼女は緊張で身を固くした。それでも、受け入れる覚悟はできていた。"
+  },
+  {
+   "band": "low",
+   "category": "セックス系",
+   "commandId": "sex_v",
+   "commandLabel": "正常位",
+   "repetition": "repeat",
+   "text": "まだ慣れない感覚に、彼女はこちらの腕にしがみついた。"
+  },
+  {
+   "band": "mid",
+   "category": "セックス系",
+   "commandId": "sex_v",
+   "commandLabel": "正常位",
+   "repetition": "first",
+   "text": "動きに合わせて、彼女の声が途切れ途切れに漏れる。身体はもう拒んでいなかった。"
+  },
+  {
+   "band": "mid",
+   "category": "セックス系",
+   "commandId": "sex_v",
+   "commandLabel": "正常位",
+   "repetition": "repeat",
+   "text": "彼女の腰が、こちらの動きに応じ始めた。本人も驚いているようだった。"
+  },
+  {
+   "band": "high",
+   "category": "セックス系",
+   "commandId": "sex_v",
+   "commandLabel": "正常位",
+   "repetition": "first",
+   "text": "彼女は自分から腰を寄せた。求めることを、もう恥じていなかった。"
+  },
+  {
+   "band": "high",
+   "category": "セックス系",
+   "commandId": "sex_v",
+   "commandLabel": "正常位",
+   "repetition": "repeat",
+   "text": "彼女はこちらの名を呼びながら、強く抱きついてきた。"
+  },
+  {
+   "band": "low",
+   "category": "セックス系",
+   "commandId": "sex_a",
+   "commandLabel": "正常位アナル",
+   "repetition": "first",
+   "text": "彼女は戸惑いと羞恥に震えた。それでも、命じられるまま身体を委ねた。"
+  },
+  {
+   "band": "low",
+   "category": "セックス系",
+   "commandId": "sex_a",
+   "commandLabel": "正常位アナル",
+   "repetition": "repeat",
+   "text": "慣れない感覚に彼女は声を殺した。抵抗は、もう形だけだった。"
+  },
+  {
+   "band": "mid",
+   "category": "セックス系",
+   "commandId": "sex_a",
+   "commandLabel": "正常位アナル",
+   "repetition": "first",
+   "text": "普通ではない場所を責められる恥ずかしさが、彼女の反応を鋭くしていた。"
+  },
+  {
+   "band": "mid",
+   "category": "セックス系",
+   "commandId": "sex_a",
+   "commandLabel": "正常位アナル",
+   "repetition": "repeat",
+   "text": "彼女の身体は、この感覚にも応え始めていた。本人の戸惑いが、それを際立たせた。"
+  },
+  {
+   "band": "high",
+   "category": "セックス系",
+   "commandId": "sex_a",
+   "commandLabel": "正常位アナル",
+   "repetition": "first",
+   "text": "彼女は自ら体勢を整えた。委ねることが、彼女の中で形になっていた。"
+  },
+  {
+   "band": "high",
+   "category": "セックス系",
+   "commandId": "sex_a",
+   "commandLabel": "正常位アナル",
+   "repetition": "repeat",
+   "text": "終わった後、彼女はしばらく動けなかった。目は、どこか満ち足りていた。"
+  },
+  {
+   "band": "low",
+   "category": "愛撫系",
+   "commandId": "com2",
+   "commandLabel": "アナル愛撫",
+   "repetition": "first",
+   "text": "指先が後ろの蕾に触れると、彼女はびくりと身をすくめた。恥ずかしさに顔を背けたが、逃げようとはしなかった。"
+  },
+  {
+   "band": "low",
+   "category": "愛撫系",
+   "commandId": "com2",
+   "commandLabel": "アナル愛撫",
+   "repetition": "repeat",
+   "text": "後ろの蕾を指でなぞられ、彼女は小さく震えた。恥ずかしさに顔を背けても、身体は逃げなかった。"
+  },
+  {
+   "band": "mid",
+   "category": "愛撫系",
+   "commandId": "com2",
+   "commandLabel": "アナル愛撫",
+   "repetition": "first",
+   "text": "指の動きに、彼女の呼吸が浅くなっていく。後ろの感覚に、戸惑いながらも応え始めていた。"
+  },
+  {
+   "band": "mid",
+   "category": "愛撫系",
+   "commandId": "com2",
+   "commandLabel": "アナル愛撫",
+   "repetition": "repeat",
+   "text": "彼女は唇を噛んで声を堪えた。後ろの蕾は、もう指を受け入れる形を覚えていた。"
+  },
+  {
+   "band": "high",
+   "category": "愛撫系",
+   "commandId": "com2",
+   "commandLabel": "アナル愛撫",
+   "repetition": "first",
+   "text": "彼女は自ら腰を寄せてきた。後ろで求めることを、身体が先に覚えていた。"
+  },
+  {
+   "band": "high",
+   "category": "愛撫系",
+   "commandId": "com2",
+   "commandLabel": "アナル愛撫",
+   "repetition": "repeat",
+   "text": "触れるたび、彼女の身体が素直に応える。後ろの悦びを、もう隠す気はないようだった。"
+  },
+  {
+   "band": "low",
+   "category": "愛撫系",
+   "commandId": "com3",
+   "commandLabel": "自慰",
+   "repetition": "first",
+   "text": "命じられて自分の秘部に触れると、彼女は真っ赤になった。指の動きは、ぎこちなかった。"
+  },
+  {
+   "band": "low",
+   "category": "愛撫系",
+   "commandId": "com3",
+   "commandLabel": "自慰",
+   "repetition": "repeat",
+   "text": "自らの指で秘部を弄る姿は、まだ恥に震えていた。それでも、手は止まらなかった。"
+  },
+  {
+   "band": "mid",
+   "category": "愛撫系",
+   "commandId": "com3",
+   "commandLabel": "自慰",
+   "repetition": "first",
+   "text": "彼女の指の動きが、少しずつ的確になっていく。自分の身体の感じ方を、覚え始めていた。"
+  },
+  {
+   "band": "mid",
+   "category": "愛撫系",
+   "commandId": "com3",
+   "commandLabel": "自慰",
+   "repetition": "repeat",
+   "text": "恥ずかしさより先に、身体が指に応えていた。声を堪える唇が、それを物語っていた。"
+  },
+  {
+   "band": "high",
+   "category": "愛撫系",
+   "commandId": "com3",
+   "commandLabel": "自慰",
+   "repetition": "first",
+   "text": "彼女は求めるように自らを弄った。見られることすら、昂ぶりの一部になっていた。"
+  },
+  {
+   "band": "high",
+   "category": "愛撫系",
+   "commandId": "com3",
+   "commandLabel": "自慰",
+   "repetition": "repeat",
+   "text": "彼女の自慰は、もう隠すためのものではなかった。こちらの視線を、待つようにすら見えた。"
+  },
+  {
+   "band": "low",
+   "category": "愛撫系",
+   "commandId": "com4",
+   "commandLabel": "フェラする",
+   "repetition": "first",
+   "text": "こちらの舌が秘部に触れると、彼女は小さく跳ねた。されるがままの恥ずかしさに、顔を覆った。"
+  },
+  {
+   "band": "low",
+   "category": "愛撫系",
+   "commandId": "com4",
+   "commandLabel": "フェラする",
+   "repetition": "repeat",
+   "text": "舌の動きに、彼女は身をよじった。それでも、押しのける力は入らなかった。"
+  },
+  {
+   "band": "mid",
+   "category": "愛撫系",
+   "commandId": "com4",
+   "commandLabel": "フェラする",
+   "repetition": "first",
+   "text": "こちらの舌に合わせて、彼女の腰が小さく揺れる。声を堪える手が、シーツを掴んでいた。"
+  },
+  {
+   "band": "mid",
+   "category": "愛撫系",
+   "commandId": "com4",
+   "commandLabel": "フェラする",
+   "repetition": "repeat",
+   "text": "彼女の呼吸は、もう隠しきれなくなっていた。舌の届く所を、身体が探していた。"
+  },
+  {
+   "band": "high",
+   "category": "愛撫系",
+   "commandId": "com4",
+   "commandLabel": "フェラする",
+   "repetition": "first",
+   "text": "彼女は自ら脚を開いて、こちらを迎えた。求めることを、身体が先に決めていた。"
+  },
+  {
+   "band": "high",
+   "category": "愛撫系",
+   "commandId": "com4",
+   "commandLabel": "フェラする",
+   "repetition": "repeat",
+   "text": "彼女はこちらの名を小さく繰り返した。舌への応え方が、素直そのものだった。"
+  },
+  {
+   "band": "low",
+   "category": "愛撫系",
+   "commandId": "com7",
+   "commandLabel": "秘貝開帳",
+   "repetition": "first",
+   "text": "秘部を開いて見せるよう命じられ、彼女は震える手で自らを広げた。視線に晒され、頬が燃えた。"
+  },
+  {
+   "band": "low",
+   "category": "愛撫系",
+   "commandId": "com7",
+   "commandLabel": "秘貝開帳",
+   "repetition": "repeat",
+   "text": "開かれた秘部を晒し、彼女は目を逸らした。恥に震える指先が、まだ安定しなかった。"
+  },
+  {
+   "band": "mid",
+   "category": "愛撫系",
+   "commandId": "com7",
+   "commandLabel": "秘貝開帳",
+   "repetition": "first",
+   "text": "彼女は命じられるまま、自らを開いて見せた。恥ずかしさの中に、応えようとする意思が見えた。"
+  },
+  {
+   "band": "mid",
+   "category": "愛撫系",
+   "commandId": "com7",
+   "commandLabel": "秘貝開帳",
+   "repetition": "repeat",
+   "text": "晒されることへの震えは、小さくなっていた。視線を受け止める時間が、少しずつ伸びていた。"
+  },
+  {
+   "band": "high",
+   "category": "愛撫系",
+   "commandId": "com7",
+   "commandLabel": "秘貝開帳",
+   "repetition": "first",
+   "text": "彼女は自ら進んで開いて見せた。見られることが、もう罰ではなかった。"
+  },
+  {
+   "band": "high",
+   "category": "愛撫系",
+   "commandId": "com7",
+   "commandLabel": "秘貝開帳",
+   "repetition": "repeat",
+   "text": "彼女の指は迷わなかった。晒す姿に、応える悦びの色が混じっていた。"
+  },
+  {
+   "band": "low",
+   "category": "愛撫系",
+   "commandId": "com8",
+   "commandLabel": "指挿入れ",
+   "repetition": "first",
+   "text": "指が中に入ると、彼女は息を止めた。慣れない感覚に、身体が固くなった。"
+  },
+  {
+   "band": "low",
+   "category": "愛撫系",
+   "commandId": "com8",
+   "commandLabel": "指挿入れ",
+   "repetition": "repeat",
+   "text": "指の出し入れに、彼女は小さく震えた。まだ、身体の準備が追いついていなかった。"
+  },
+  {
+   "band": "mid",
+   "category": "愛撫系",
+   "commandId": "com8",
+   "commandLabel": "指挿入れ",
+   "repetition": "first",
+   "text": "指の動きに、彼女の内側が応え始めた。呼吸の乱れが、それを隠せていなかった。"
+  },
+  {
+   "band": "mid",
+   "category": "愛撫系",
+   "commandId": "com8",
+   "commandLabel": "指挿入れ",
+   "repetition": "repeat",
+   "text": "彼女は唇を噛んで声を堪えた。指を受け入れる感覚に、身体が慣れてきていた。"
+  },
+  {
+   "band": "high",
+   "category": "愛撫系",
+   "commandId": "com8",
+   "commandLabel": "指挿入れ",
+   "repetition": "first",
+   "text": "彼女は自ら腰を寄せ、指を深く迎えた。求める形を、身体が覚えていた。"
+  },
+  {
+   "band": "high",
+   "category": "愛撫系",
+   "commandId": "com8",
+   "commandLabel": "指挿入れ",
+   "repetition": "repeat",
+   "text": "指が動くたび、彼女の声が素直に漏れた。もう、堪える気はないようだった。"
+  },
+  {
+   "band": "low",
+   "category": "愛撫系",
+   "commandId": "com9",
+   "commandLabel": "アナル舐め",
+   "repetition": "first",
+   "text": "後ろの蕾を舌で舐められ、彼女は声を上げて身をすくめた。恥と驚きに、身体が震えた。"
+  },
+  {
+   "band": "low",
+   "category": "愛撫系",
+   "commandId": "com9",
+   "commandLabel": "アナル舐め",
+   "repetition": "repeat",
+   "text": "舌の感触に、彼女は顔を伏せて震えた。後ろを舐められる恥が、まだ新鮮だった。"
+  },
+  {
+   "band": "mid",
+   "category": "愛撫系",
+   "commandId": "com9",
+   "commandLabel": "アナル舐め",
+   "repetition": "first",
+   "text": "舌の動きに、彼女の腰が小さく揺れた。後ろの感覚に、身体が応え始めていた。"
+  },
+  {
+   "band": "mid",
+   "category": "愛撫系",
+   "commandId": "com9",
+   "commandLabel": "アナル舐め",
+   "repetition": "repeat",
+   "text": "彼女は声を堪えきれなくなっていた。後ろの蕾が、舌を求めるように開いていた。"
+  },
+  {
+   "band": "high",
+   "category": "愛撫系",
+   "commandId": "com9",
+   "commandLabel": "アナル舐め",
+   "repetition": "first",
+   "text": "彼女は自ら腰を寄せて、舌を迎えた。後ろで感じることを、もう恥じていなかった。"
+  },
+  {
+   "band": "high",
+   "category": "愛撫系",
+   "commandId": "com9",
+   "commandLabel": "アナル舐め",
+   "repetition": "repeat",
+   "text": "舐められるたび、彼女の身体が素直に応えた。声は、もう隠されていなかった。"
+  },
+  {
+   "band": "low",
+   "category": "道具使用",
+   "commandId": "com10",
+   "commandLabel": "振動の宝石",
+   "repetition": "first",
+   "text": "振動する宝石が秘部の芽に触れると、彼女は小さく跳ねた。強い刺激に、身体が固くなった。"
+  },
+  {
+   "band": "low",
+   "category": "道具使用",
+   "commandId": "com10",
+   "commandLabel": "振動の宝石",
+   "repetition": "repeat",
+   "text": "宝石の振動に、彼女は身をよじった。芽に集まる刺激に、まだ慣れていなかった。"
+  },
+  {
+   "band": "mid",
+   "category": "道具使用",
+   "commandId": "com10",
+   "commandLabel": "振動の宝石",
+   "repetition": "first",
+   "text": "振動に合わせて、彼女の呼吸が浅くなっていく。芽の感覚が、全身を支配し始めていた。"
+  },
+  {
+   "band": "mid",
+   "category": "道具使用",
+   "commandId": "com10",
+   "commandLabel": "振動の宝石",
+   "repetition": "repeat",
+   "text": "彼女は声を堪えきれなくなっていた。宝石が触れるたび、腰が小さく跳ねた。"
+  },
+  {
+   "band": "high",
+   "category": "道具使用",
+   "commandId": "com10",
+   "commandLabel": "振動の宝石",
+   "repetition": "first",
+   "text": "彼女は自ら宝石に腰を寄せた。刺激を求めることを、身体が先に覚えていた。"
+  },
+  {
+   "band": "high",
+   "category": "道具使用",
+   "commandId": "com10",
+   "commandLabel": "振動の宝石",
+   "repetition": "repeat",
+   "text": "宝石の振動に、彼女の応え方は素直だった。もっと、と目が訴えていた。"
+  },
+  {
+   "band": "low",
+   "category": "道具使用",
+   "commandId": "com11",
+   "commandLabel": "壺ワーム",
+   "repetition": "first",
+   "text": "振動する器具が中に入ると、彼女は息を呑んだ。内側から響く感覚に、身体が震えた。"
+  },
+  {
+   "band": "low",
+   "category": "道具使用",
+   "commandId": "com11",
+   "commandLabel": "壺ワーム",
+   "repetition": "repeat",
+   "text": "中の器具の振動に、彼女は小さく声を漏らした。まだ、感覚に振り回されていた。"
+  },
+  {
+   "band": "mid",
+   "category": "道具使用",
+   "commandId": "com11",
+   "commandLabel": "壺ワーム",
+   "repetition": "first",
+   "text": "器具の動きに、彼女の内側が応え始めた。呼吸の乱れが、隠しきれなくなっていた。"
+  },
+  {
+   "band": "mid",
+   "category": "道具使用",
+   "commandId": "com11",
+   "commandLabel": "壺ワーム",
+   "repetition": "repeat",
+   "text": "彼女はシーツを掴んで声を堪えた。内側の振動が、確かに彼女を変えていた。"
+  },
+  {
+   "band": "high",
+   "category": "道具使用",
+   "commandId": "com11",
+   "commandLabel": "壺ワーム",
+   "repetition": "first",
+   "text": "彼女は自ら腰を動かし、器具を深く迎えた。求める形を、身体が覚えていた。"
+  },
+  {
+   "band": "high",
+   "category": "道具使用",
+   "commandId": "com11",
+   "commandLabel": "壺ワーム",
+   "repetition": "repeat",
+   "text": "器具が響くたび、彼女の声が素直に漏れた。もう、堪える気はないようだった。"
+  },
+  {
+   "band": "low",
+   "category": "道具使用",
+   "commandId": "com12",
+   "commandLabel": "振動の杖",
+   "repetition": "first",
+   "text": "杖の先が秘部の芽に触れると、彼女は大きく身をすくめた。振動が強く、脚が震えた。"
+  },
+  {
+   "band": "low",
+   "category": "道具使用",
+   "commandId": "com12",
+   "commandLabel": "振動の杖",
+   "repetition": "repeat",
+   "text": "杖の振動に、彼女は声を殺した。芽への刺激に、身体がまだ追いついていなかった。"
+  },
+  {
+   "band": "mid",
+   "category": "道具使用",
+   "commandId": "com12",
+   "commandLabel": "振動の杖",
+   "repetition": "first",
+   "text": "振動に合わせて、彼女の腰が小さく跳ねる。芽の感覚が、思考を上書きし始めていた。"
+  },
+  {
+   "band": "mid",
+   "category": "道具使用",
+   "commandId": "com12",
+   "commandLabel": "振動の杖",
+   "repetition": "repeat",
+   "text": "彼女の呼吸は乱れきっていた。杖が触れるたび、全身が応えていた。"
+  },
+  {
+   "band": "high",
+   "category": "道具使用",
+   "commandId": "com12",
+   "commandLabel": "振動の杖",
+   "repetition": "first",
+   "text": "彼女は自ら杖に身を寄せた。強い刺激を、求める側になっていた。"
+  },
+  {
+   "band": "high",
+   "category": "道具使用",
+   "commandId": "com12",
+   "commandLabel": "振動の杖",
+   "repetition": "repeat",
+   "text": "杖の振動に、彼女は迷いなく応えた。声は、もう隠されていなかった。"
+  },
+  {
+   "band": "low",
+   "category": "道具使用",
+   "commandId": "com13",
+   "commandLabel": "アナルワーム",
+   "repetition": "first",
+   "text": "細い器具が後ろに入ると、彼女は小さく悲鳴を上げた。異物感に、身体が震え続けた。"
+  },
+  {
+   "band": "low",
+   "category": "道具使用",
+   "commandId": "com13",
+   "commandLabel": "アナルワーム",
+   "repetition": "repeat",
+   "text": "後ろに入ったままの器具に、彼女は落ち着かない様子だった。動くたび、感覚が意識に上った。"
+  },
+  {
+   "band": "mid",
+   "category": "道具使用",
+   "commandId": "com13",
+   "commandLabel": "アナルワーム",
+   "repetition": "first",
+   "text": "器具の存在に、彼女の身体が少しずつ慣れていった。後ろの感覚が、別の色を帯び始めていた。"
+  },
+  {
+   "band": "mid",
+   "category": "道具使用",
+   "commandId": "com13",
+   "commandLabel": "アナルワーム",
+   "repetition": "repeat",
+   "text": "彼女は後ろの感覚に、もう怯えていなかった。応えるような震えが、混じっていた。"
+  },
+  {
+   "band": "high",
+   "category": "道具使用",
+   "commandId": "com13",
+   "commandLabel": "アナルワーム",
+   "repetition": "first",
+   "text": "彼女は器具を入れたまま、自ら腰を揺らした。後ろで感じることを、受け入れていた。"
+  },
+  {
+   "band": "high",
+   "category": "道具使用",
+   "commandId": "com13",
+   "commandLabel": "アナルワーム",
+   "repetition": "repeat",
+   "text": "後ろの器具に、彼女の応え方は素直だった。もう、隠す気はないようだった。"
+  },
+  {
+   "band": "low",
+   "category": "道具使用",
+   "commandId": "com14",
+   "commandLabel": "クリキャップ",
+   "repetition": "first",
+   "text": "吸引のキャップが芽を包むと、彼女は声を上げた。吸われる感覚に、身体が跳ねた。"
+  },
+  {
+   "band": "low",
+   "category": "道具使用",
+   "commandId": "com14",
+   "commandLabel": "クリキャップ",
+   "repetition": "repeat",
+   "text": "キャップの吸引に、彼女は身をよじった。芽だけを責められる感覚に、まだ慣れなかった。"
+  },
+  {
+   "band": "mid",
+   "category": "道具使用",
+   "commandId": "com14",
+   "commandLabel": "クリキャップ",
+   "repetition": "first",
+   "text": "吸われるたび、彼女の呼吸が浅くなっていく。芽の感覚が、全身を支配し始めていた。"
+  },
+  {
+   "band": "mid",
+   "category": "道具使用",
+   "commandId": "com14",
+   "commandLabel": "クリキャップ",
+   "repetition": "repeat",
+   "text": "彼女は声を堪えきれなくなっていた。キャップの中で、芽が応え続けていた。"
+  },
+  {
+   "band": "high",
+   "category": "道具使用",
+   "commandId": "com14",
+   "commandLabel": "クリキャップ",
+   "repetition": "first",
+   "text": "彼女は自らキャップに身を寄せた。吸われる悦びを、求める側になっていた。"
+  },
+  {
+   "band": "high",
+   "category": "道具使用",
+   "commandId": "com14",
+   "commandLabel": "クリキャップ",
+   "repetition": "repeat",
+   "text": "吸引に、彼女の応え方は素直だった。もっと、と腰が訴えていた。"
+  },
+  {
+   "band": "low",
+   "category": "道具使用",
+   "commandId": "com15",
+   "commandLabel": "ニプルキャップ",
+   "repetition": "first",
+   "text": "乳首にキャップが吸い付くと、彼女は息を止めた。胸だけを責められる感覚に、戸惑った。"
+  },
+  {
+   "band": "low",
+   "category": "道具使用",
+   "commandId": "com15",
+   "commandLabel": "ニプルキャップ",
+   "repetition": "repeat",
+   "text": "乳首の吸引に、彼女は小さく震えた。胸の感覚が、意識の中心に居座っていた。"
+  },
+  {
+   "band": "mid",
+   "category": "道具使用",
+   "commandId": "com15",
+   "commandLabel": "ニプルキャップ",
+   "repetition": "first",
+   "text": "吸われるたび、彼女の呼吸が乱れていく。乳首の感覚が、全身に響き始めていた。"
+  },
+  {
+   "band": "mid",
+   "category": "道具使用",
+   "commandId": "com15",
+   "commandLabel": "ニプルキャップ",
+   "repetition": "repeat",
+   "text": "彼女は唇を噛んで声を堪えた。胸の応え方は、もう誤魔化せなかった。"
+  },
+  {
+   "band": "high",
+   "category": "道具使用",
+   "commandId": "com15",
+   "commandLabel": "ニプルキャップ",
+   "repetition": "first",
+   "text": "彼女は自ら胸を寄せて、キャップを迎えた。求める形を、身体が覚えていた。"
+  },
+  {
+   "band": "high",
+   "category": "道具使用",
+   "commandId": "com15",
+   "commandLabel": "ニプルキャップ",
+   "repetition": "repeat",
+   "text": "乳首への吸引に、彼女は素直に応えた。声は、もう隠されていなかった。"
+  },
+  {
+   "band": "low",
+   "category": "道具使用",
+   "commandId": "com16",
+   "commandLabel": "搾乳機",
+   "repetition": "first",
+   "text": "搾乳機が胸に吸い付くと、彼女は戸惑って身を固くした。機械に扱われる恥が、顔に出た。"
+  },
+  {
+   "band": "low",
+   "category": "道具使用",
+   "commandId": "com16",
+   "commandLabel": "搾乳機",
+   "repetition": "repeat",
+   "text": "機械のリズムに、彼女は小さく震えた。胸を吸われる感覚に、まだ慣れていなかった。"
+  },
+  {
+   "band": "mid",
+   "category": "道具使用",
+   "commandId": "com16",
+   "commandLabel": "搾乳機",
+   "repetition": "first",
+   "text": "搾乳機の吸引に、彼女の呼吸が少しずつ乱れていく。胸の感覚が、応え始めていた。"
+  },
+  {
+   "band": "mid",
+   "category": "道具使用",
+   "commandId": "com16",
+   "commandLabel": "搾乳機",
+   "repetition": "repeat",
+   "text": "彼女は声を堪えながら、機械の扱いを受け入れた。胸の先が、確かに反応していた。"
+  },
+  {
+   "band": "high",
+   "category": "道具使用",
+   "commandId": "com16",
+   "commandLabel": "搾乳機",
+   "repetition": "first",
+   "text": "彼女は自ら胸を差し出すように身を寄せた。機械に委ねることを、受け入れていた。"
+  },
+  {
+   "band": "high",
+   "category": "道具使用",
+   "commandId": "com16",
+   "commandLabel": "搾乳機",
+   "repetition": "repeat",
+   "text": "搾乳機のリズムに、彼女の応え方は素直だった。もう、恥だけではなかった。"
+  },
+  {
+   "band": "low",
+   "category": "道具使用",
+   "commandId": "com17",
+   "commandLabel": "オナホール",
+   "repetition": "first",
+   "text": "器具が秘部に押し当てられ、彼女は小さく跳ねた。包み込むような刺激に、身体が固くなった。"
+  },
+  {
+   "band": "low",
+   "category": "道具使用",
+   "commandId": "com17",
+   "commandLabel": "オナホール",
+   "repetition": "repeat",
+   "text": "器具の感触に、彼女は身をよじった。芽に集まる刺激に、まだ慣れていなかった。"
+  },
+  {
+   "band": "mid",
+   "category": "道具使用",
+   "commandId": "com17",
+   "commandLabel": "オナホール",
+   "repetition": "first",
+   "text": "器具の動きに合わせて、彼女の呼吸が浅くなっていく。芽の感覚が、全身を支配し始めていた。"
+  },
+  {
+   "band": "mid",
+   "category": "道具使用",
+   "commandId": "com17",
+   "commandLabel": "オナホール",
+   "repetition": "repeat",
+   "text": "彼女は声を堪えきれなくなっていた。器具が触れるたび、腰が小さく跳ねた。"
+  },
+  {
+   "band": "high",
+   "category": "道具使用",
+   "commandId": "com17",
+   "commandLabel": "オナホール",
+   "repetition": "first",
+   "text": "彼女は自ら器具に腰を寄せた。刺激を求めることを、身体が先に覚えていた。"
+  },
+  {
+   "band": "high",
+   "category": "道具使用",
+   "commandId": "com17",
+   "commandLabel": "オナホール",
+   "repetition": "repeat",
+   "text": "器具への、彼女の応え方は素直だった。もっと、と目が訴えていた。"
+  },
+  {
+   "band": "low",
+   "category": "道具使用",
+   "commandId": "com18",
+   "commandLabel": "シャワー",
+   "repetition": "first",
+   "text": "温水のシャワーが全身に降り注ぐ。彼女は身をすくめ、水の刺激から逃げるように俯いた。"
+  },
+  {
+   "band": "low",
+   "category": "道具使用",
+   "commandId": "com18",
+   "commandLabel": "シャワー",
+   "repetition": "repeat",
+   "text": "シャワーの水流に、彼女は小さく震えた。濡れた身体が、視線に晒されていた。"
+  },
+  {
+   "band": "mid",
+   "category": "道具使用",
+   "commandId": "com18",
+   "commandLabel": "シャワー",
+   "repetition": "first",
+   "text": "水の刺激に、彼女の呼吸が少しずつ乱れていく。温かさが、身体の力を抜いていった。"
+  },
+  {
+   "band": "mid",
+   "category": "道具使用",
+   "commandId": "com18",
+   "commandLabel": "シャワー",
+   "repetition": "repeat",
+   "text": "彼女は水流を受け止めるようになっていた。濡れた肌が、確かに応えていた。"
+  },
+  {
+   "band": "high",
+   "category": "道具使用",
+   "commandId": "com18",
+   "commandLabel": "シャワー",
+   "repetition": "first",
+   "text": "彼女は自ら水の中に身を差し出した。濡れることを、もう恥じていなかった。"
+  },
+  {
+   "band": "high",
+   "category": "道具使用",
+   "commandId": "com18",
+   "commandLabel": "シャワー",
+   "repetition": "repeat",
+   "text": "シャワーの下で、彼女の応え方は素直だった。水と一緒に、理性も流れていくようだった。"
+  },
+  {
+   "band": "low",
+   "category": "道具使用",
+   "commandId": "com19",
+   "commandLabel": "アナルビーズ",
+   "repetition": "first",
+   "text": "数珠つなぎのビーズが後ろに入ると、彼女は声を殺した。一つ入るたび、身体が震えた。"
+  },
+  {
+   "band": "low",
+   "category": "道具使用",
+   "commandId": "com19",
+   "commandLabel": "アナルビーズ",
+   "repetition": "repeat",
+   "text": "ビーズの感覚に、彼女はまだ慣れなかった。後ろの異物感が、意識を離れなかった。"
+  },
+  {
+   "band": "mid",
+   "category": "道具使用",
+   "commandId": "com19",
+   "commandLabel": "アナルビーズ",
+   "repetition": "first",
+   "text": "ビーズが動くたび、彼女の呼吸が浅くなっていく。後ろの感覚に、身体が応え始めていた。"
+  },
+  {
+   "band": "mid",
+   "category": "道具使用",
+   "commandId": "com19",
+   "commandLabel": "アナルビーズ",
+   "repetition": "repeat",
+   "text": "彼女は唇を噛んで声を堪えた。後ろは、もうビーズの形を覚えていた。"
+  },
+  {
+   "band": "high",
+   "category": "道具使用",
+   "commandId": "com19",
+   "commandLabel": "アナルビーズ",
+   "repetition": "first",
+   "text": "彼女は自ら腰を寄せ、ビーズを迎えた。後ろで求めることを、身体が覚えていた。"
+  },
+  {
+   "band": "high",
+   "category": "道具使用",
+   "commandId": "com19",
+   "commandLabel": "アナルビーズ",
+   "repetition": "repeat",
+   "text": "ビーズが抜き差しされるたび、彼女の声が素直に漏れた。もう、隠す気はないようだった。"
+  },
+  {
+   "band": "low",
+   "category": "セックス系",
+   "commandId": "com21",
+   "commandLabel": "後背位",
+   "repetition": "first",
+   "text": "後ろから入れられ、彼女はシーツを掴んだ。顔の見えない体勢が、不安と羞恥を煽った。"
+  },
+  {
+   "band": "low",
+   "category": "セックス系",
+   "commandId": "com21",
+   "commandLabel": "後背位",
+   "repetition": "repeat",
+   "text": "後背の体勢に、彼女はまだ緊張していた。それでも、身体は受け入れていた。"
+  },
+  {
+   "band": "mid",
+   "category": "セックス系",
+   "commandId": "com21",
+   "commandLabel": "後背位",
+   "repetition": "first",
+   "text": "後ろからの動きに、彼女の声が途切れ途切れに漏れる。身体はもう拒んでいなかった。"
+  },
+  {
+   "band": "mid",
+   "category": "セックス系",
+   "commandId": "com21",
+   "commandLabel": "後背位",
+   "repetition": "repeat",
+   "text": "彼女の腰が、こちらの動きに応じ始めた。後ろからでも、応え方は素直だった。"
+  },
+  {
+   "band": "high",
+   "category": "セックス系",
+   "commandId": "com21",
+   "commandLabel": "後背位",
+   "repetition": "first",
+   "text": "彼女は自ら腰を寄せてきた。後ろから求めることを、もう恥じていなかった。"
+  },
+  {
+   "band": "high",
+   "category": "セックス系",
+   "commandId": "com21",
+   "commandLabel": "後背位",
+   "repetition": "repeat",
+   "text": "彼女はこちらの動きに合わせて腰を振った。声は、もう堪えられていなかった。"
+  },
+  {
+   "band": "low",
+   "category": "セックス系",
+   "commandId": "com22",
+   "commandLabel": "対面座位",
+   "repetition": "first",
+   "text": "向かい合って跨がされ、彼女は視線を逸らした。近すぎる距離と一体感に、身が固くなった。"
+  },
+  {
+   "band": "low",
+   "category": "セックス系",
+   "commandId": "com22",
+   "commandLabel": "対面座位",
+   "repetition": "repeat",
+   "text": "対面の体勢に、彼女はまだ恥ずかしそうだった。それでも、離れようとはしなかった。"
+  },
+  {
+   "band": "mid",
+   "category": "セックス系",
+   "commandId": "com22",
+   "commandLabel": "対面座位",
+   "repetition": "first",
+   "text": "目と目が合う距離で、彼女の声が漏れる。身体の応えを、隠す場所がなかった。"
+  },
+  {
+   "band": "mid",
+   "category": "セックス系",
+   "commandId": "com22",
+   "commandLabel": "対面座位",
+   "repetition": "repeat",
+   "text": "彼女はこちらの首に腕を回した。対面の近さが、もう怖くなくなっていた。"
+  },
+  {
+   "band": "high",
+   "category": "セックス系",
+   "commandId": "com22",
+   "commandLabel": "対面座位",
+   "repetition": "first",
+   "text": "彼女は自ら腰を動かし始めた。向かい合って求めることを、受け入れていた。"
+  },
+  {
+   "band": "high",
+   "category": "セックス系",
+   "commandId": "com22",
+   "commandLabel": "対面座位",
+   "repetition": "repeat",
+   "text": "彼女は離れようとしなかった。近さそのものが、彼女の求める形になっていた。"
+  },
+  {
+   "band": "low",
+   "category": "セックス系",
+   "commandId": "com23",
+   "commandLabel": "背面座位",
+   "repetition": "first",
+   "text": "背中越しに抱えられて跨がされ、彼女は身を固くした。見えない相手に、委ねるしかなかった。"
+  },
+  {
+   "band": "low",
+   "category": "セックス系",
+   "commandId": "com23",
+   "commandLabel": "背面座位",
+   "repetition": "repeat",
+   "text": "背面の体勢に、彼女はまだ戸惑っていた。それでも、身体は受け入れていた。"
+  },
+  {
+   "band": "mid",
+   "category": "セックス系",
+   "commandId": "com23",
+   "commandLabel": "背面座位",
+   "repetition": "first",
+   "text": "背に感じる体温と動きに、彼女の声が漏れる。身体はもう拒んでいなかった。"
+  },
+  {
+   "band": "mid",
+   "category": "セックス系",
+   "commandId": "com23",
+   "commandLabel": "背面座位",
+   "repetition": "repeat",
+   "text": "彼女の腰が、こちらの動きに応じ始めた。背中越しでも、応え方は素直だった。"
+  },
+  {
+   "band": "high",
+   "category": "セックス系",
+   "commandId": "com23",
+   "commandLabel": "背面座位",
+   "repetition": "first",
+   "text": "彼女は自ら腰を寄せ、深く迎えた。背を預けることに、迷いがなかった。"
+  },
+  {
+   "band": "high",
+   "category": "セックス系",
+   "commandId": "com23",
+   "commandLabel": "背面座位",
+   "repetition": "repeat",
+   "text": "彼女は体重をこちらに預けきった。委ねることが、彼女の形になっていた。"
+  },
+  {
+   "band": "low",
+   "category": "セックス系",
+   "commandId": "com24",
+   "commandLabel": "逆レイプ",
+   "repetition": "first",
+   "text": "無理やり跨がされ、彼女は戸惑って身を固くした。自ら動くことへの抵抗が、顔に出た。"
+  },
+  {
+   "band": "low",
+   "category": "セックス系",
+   "commandId": "com24",
+   "commandLabel": "逆レイプ",
+   "repetition": "repeat",
+   "text": "上になる体勢に、彼女はまだ慣れなかった。腰の動きは、ぎこちなかった。"
+  },
+  {
+   "band": "mid",
+   "category": "セックス系",
+   "commandId": "com24",
+   "commandLabel": "逆レイプ",
+   "repetition": "first",
+   "text": "彼女の腰が、少しずつ自分のリズムを持ち始めた。感じていることを、隠せなくなっていた。"
+  },
+  {
+   "band": "mid",
+   "category": "セックス系",
+   "commandId": "com24",
+   "commandLabel": "逆レイプ",
+   "repetition": "repeat",
+   "text": "彼女は声を堪えながら腰を動かした。身体の方が、正直だった。"
+  },
+  {
+   "band": "high",
+   "category": "セックス系",
+   "commandId": "com24",
+   "commandLabel": "逆レイプ",
+   "repetition": "first",
+   "text": "彼女は自ら求めて腰を振った。攻める側の形が、彼女に馴染んでいた。"
+  },
+  {
+   "band": "high",
+   "category": "セックス系",
+   "commandId": "com24",
+   "commandLabel": "逆レイプ",
+   "repetition": "repeat",
+   "text": "彼女の動きに迷いはなかった。欲しいままに動く姿は、素直そのものだった。"
+  },
+  {
+   "band": "low",
+   "category": "セックス系",
+   "commandId": "com25",
+   "commandLabel": "逆アナルレイプ",
+   "repetition": "first",
+   "text": "攻める側に立たされ、彼女は戸惑って身を固くした。慣れない役割に、顔が赤くなった。"
+  },
+  {
+   "band": "low",
+   "category": "セックス系",
+   "commandId": "com25",
+   "commandLabel": "逆アナルレイプ",
+   "repetition": "repeat",
+   "text": "逆の立場に、彼女はまだ慣れなかった。動きはぎこちなく、視線が泳いだ。"
+  },
+  {
+   "band": "mid",
+   "category": "セックス系",
+   "commandId": "com25",
+   "commandLabel": "逆アナルレイプ",
+   "repetition": "first",
+   "text": "彼女の動きが、少しずつ的確になっていく。自分の身体の昂ぶりを、隠せなくなっていた。"
+  },
+  {
+   "band": "mid",
+   "category": "セックス系",
+   "commandId": "com25",
+   "commandLabel": "逆アナルレイプ",
+   "repetition": "repeat",
+   "text": "彼女は声を堪えながら続けた。攻める側でも、身体は正直だった。"
+  },
+  {
+   "band": "high",
+   "category": "セックス系",
+   "commandId": "com25",
+   "commandLabel": "逆アナルレイプ",
+   "repetition": "first",
+   "text": "彼女は自ら求めるように動いた。攻める形が、彼女を昂ぶらせていた。"
+  },
+  {
+   "band": "high",
+   "category": "セックス系",
+   "commandId": "com25",
+   "commandLabel": "逆アナルレイプ",
+   "repetition": "repeat",
+   "text": "彼女の動きに迷いはなかった。役割を、自分のものにしていた。"
+  },
+  {
+   "band": "low",
+   "category": "セックス系",
+   "commandId": "com27",
+   "commandLabel": "後背位アナル",
+   "repetition": "first",
+   "text": "後ろから後ろの穴に入れられ、彼女は悲鳴を殺した。普通ではない感覚に、身体が震えた。"
+  },
+  {
+   "band": "low",
+   "category": "セックス系",
+   "commandId": "com27",
+   "commandLabel": "後背位アナル",
+   "repetition": "repeat",
+   "text": "後背のアナルに、彼女はまだ慣れなかった。抵抗は、もう形だけだった。"
+  },
+  {
+   "band": "mid",
+   "category": "セックス系",
+   "commandId": "com27",
+   "commandLabel": "後背位アナル",
+   "repetition": "first",
+   "text": "後ろからの動きに、彼女の声が途切れ途切れに漏れる。身体は応え始めていた。"
+  },
+  {
+   "band": "mid",
+   "category": "セックス系",
+   "commandId": "com27",
+   "commandLabel": "後背位アナル",
+   "repetition": "repeat",
+   "text": "彼女は唇を噛んで声を堪えた。後ろの身体は、この感覚にも慣れてきていた。"
+  },
+  {
+   "band": "high",
+   "category": "セックス系",
+   "commandId": "com27",
+   "commandLabel": "後背位アナル",
+   "repetition": "first",
+   "text": "彼女は自ら腰を寄せて、後ろで迎えた。委ねることが、彼女の中で形になっていた。"
+  },
+  {
+   "band": "high",
+   "category": "セックス系",
+   "commandId": "com27",
+   "commandLabel": "後背位アナル",
+   "repetition": "repeat",
+   "text": "彼女の応え方は素直だった。後ろで求めることを、もう恥じていなかった。"
+  },
+  {
+   "band": "low",
+   "category": "セックス系",
+   "commandId": "com28",
+   "commandLabel": "対面座位アナル",
+   "repetition": "first",
+   "text": "向かい合って後ろの穴で跨がされ、彼女は視線を逸らした。恥と異物感に、身が固くなった。"
+  },
+  {
+   "band": "low",
+   "category": "セックス系",
+   "commandId": "com28",
+   "commandLabel": "対面座位アナル",
+   "repetition": "repeat",
+   "text": "対面のアナルに、彼女はまだ震えていた。それでも、離れようとはしなかった。"
+  },
+  {
+   "band": "mid",
+   "category": "セックス系",
+   "commandId": "com28",
+   "commandLabel": "対面座位アナル",
+   "repetition": "first",
+   "text": "目が合う距離で、彼女の声が漏れる。後ろの感覚への応えを、隠す場所がなかった。"
+  },
+  {
+   "band": "mid",
+   "category": "セックス系",
+   "commandId": "com28",
+   "commandLabel": "対面座位アナル",
+   "repetition": "repeat",
+   "text": "彼女はこちらの首に腕を回した。後ろで感じながら、近さも受け入れていた。"
+  },
+  {
+   "band": "high",
+   "category": "セックス系",
+   "commandId": "com28",
+   "commandLabel": "対面座位アナル",
+   "repetition": "first",
+   "text": "彼女は自ら腰を動かし、後ろで迎えた。求める形を、身体が覚えていた。"
+  },
+  {
+   "band": "high",
+   "category": "セックス系",
+   "commandId": "com28",
+   "commandLabel": "対面座位アナル",
+   "repetition": "repeat",
+   "text": "彼女は離れようとしなかった。後ろの悦びを、向かい合って受け止めていた。"
+  },
+  {
+   "band": "low",
+   "category": "セックス系",
+   "commandId": "com29",
+   "commandLabel": "背面座位アナル",
+   "repetition": "first",
+   "text": "背中越しに後ろの穴で抱えられ、彼女は身を固くした。見えない相手に、委ねるしかなかった。"
+  },
+  {
+   "band": "low",
+   "category": "セックス系",
+   "commandId": "com29",
+   "commandLabel": "背面座位アナル",
+   "repetition": "repeat",
+   "text": "背面のアナルに、彼女はまだ戸惑っていた。それでも、身体は受け入れていた。"
+  },
+  {
+   "band": "mid",
+   "category": "セックス系",
+   "commandId": "com29",
+   "commandLabel": "背面座位アナル",
+   "repetition": "first",
+   "text": "背に感じる動きに、彼女の声が漏れる。後ろの身体は、もう拒んでいなかった。"
+  },
+  {
+   "band": "mid",
+   "category": "セックス系",
+   "commandId": "com29",
+   "commandLabel": "背面座位アナル",
+   "repetition": "repeat",
+   "text": "彼女の腰が、こちらの動きに応じ始めた。背中越しでも、応え方は素直だった。"
+  },
+  {
+   "band": "high",
+   "category": "セックス系",
+   "commandId": "com29",
+   "commandLabel": "背面座位アナル",
+   "repetition": "first",
+   "text": "彼女は自ら腰を寄せ、後ろで深く迎えた。背を預けることに、迷いがなかった。"
+  },
+  {
+   "band": "high",
+   "category": "セックス系",
+   "commandId": "com29",
+   "commandLabel": "背面座位アナル",
+   "repetition": "repeat",
+   "text": "彼女は体重をこちらに預けきった。後ろで委ねることが、彼女の形になっていた。"
+  },
+  {
+   "band": "low",
+   "category": "奉仕系",
+   "commandId": "com30",
+   "commandLabel": "手淫",
+   "repetition": "first",
+   "text": "彼女は戸惑いながら手を伸ばした。慣れない奉仕に、指先が震えた。"
+  },
+  {
+   "band": "low",
+   "category": "奉仕系",
+   "commandId": "com30",
+   "commandLabel": "手淫",
+   "repetition": "repeat",
+   "text": "手の動きは、まだぎこちなかった。それでも、彼女は奉仕を止めなかった。"
+  },
+  {
+   "band": "mid",
+   "category": "奉仕系",
+   "commandId": "com30",
+   "commandLabel": "手淫",
+   "repetition": "first",
+   "text": "彼女の手の動きが、少しずつ的確になっていく。喜ばせようとしているのが分かった。"
+  },
+  {
+   "band": "mid",
+   "category": "奉仕系",
+   "commandId": "com30",
+   "commandLabel": "手淫",
+   "repetition": "repeat",
+   "text": "合間にこちらを見上げる目が、評価を待つように揺れていた。"
+  },
+  {
+   "band": "high",
+   "category": "奉仕系",
+   "commandId": "com30",
+   "commandLabel": "手淫",
+   "repetition": "first",
+   "text": "彼女は自分から手を伸ばした。奉仕すること自体に、昂ぶりを見せていた。"
+  },
+  {
+   "band": "high",
+   "category": "奉仕系",
+   "commandId": "com30",
+   "commandLabel": "手淫",
+   "repetition": "repeat",
+   "text": "彼女の指は迷わなかった。終わった後も、名残惜しそうにこちらを見ていた。"
+  },
+  {
+   "band": "low",
+   "category": "奉仕系",
+   "commandId": "com32",
+   "commandLabel": "パイズリ",
+   "repetition": "first",
+   "text": "胸で挟むよう命じられ、彼女は真っ赤になった。慣れない奉仕に、動きがぎこちなかった。"
+  },
+  {
+   "band": "low",
+   "category": "奉仕系",
+   "commandId": "com32",
+   "commandLabel": "パイズリ",
+   "repetition": "repeat",
+   "text": "胸の奉仕に、彼女はまだ恥ずかしそうだった。それでも、止めようとはしなかった。"
+  },
+  {
+   "band": "mid",
+   "category": "奉仕系",
+   "commandId": "com32",
+   "commandLabel": "パイズリ",
+   "repetition": "first",
+   "text": "彼女の胸の動きが、少しずつリズムを持ち始めた。奉仕に、意思が見え始めていた。"
+  },
+  {
+   "band": "mid",
+   "category": "奉仕系",
+   "commandId": "com32",
+   "commandLabel": "パイズリ",
+   "repetition": "repeat",
+   "text": "彼女は合間にこちらを見上げた。応えようとする気持ちが、動きに出ていた。"
+  },
+  {
+   "band": "high",
+   "category": "奉仕系",
+   "commandId": "com32",
+   "commandLabel": "パイズリ",
+   "repetition": "first",
+   "text": "彼女は自ら胸を寄せて奉仕した。委ねるだけではない、求める色があった。"
+  },
+  {
+   "band": "high",
+   "category": "奉仕系",
+   "commandId": "com32",
+   "commandLabel": "パイズリ",
+   "repetition": "repeat",
+   "text": "彼女の奉仕は素直だった。終わりを、惜しむようにすら見えた。"
+  },
+  {
+   "band": "low",
+   "category": "奉仕系",
+   "commandId": "com33",
+   "commandLabel": "素股",
+   "repetition": "first",
+   "text": "脚の間に挟むよう命じられ、彼女は身を固くした。擦れる感覚に、戸惑いが顔に出た。"
+  },
+  {
+   "band": "low",
+   "category": "奉仕系",
+   "commandId": "com33",
+   "commandLabel": "素股",
+   "repetition": "repeat",
+   "text": "素股の奉仕に、彼女はまだ慣れなかった。それでも、脚を閉じたまま応え続けていた。"
+  },
+  {
+   "band": "mid",
+   "category": "奉仕系",
+   "commandId": "com33",
+   "commandLabel": "素股",
+   "repetition": "first",
+   "text": "擦れるたび、彼女の身体も応え始めていた。奉仕のはずが、感じているのは彼女も同じだった。"
+  },
+  {
+   "band": "mid",
+   "category": "奉仕系",
+   "commandId": "com33",
+   "commandLabel": "素股",
+   "repetition": "repeat",
+   "text": "彼女の呼吸が乱れていく。脚の間の感覚に、身体が正直になっていた。"
+  },
+  {
+   "band": "high",
+   "category": "奉仕系",
+   "commandId": "com33",
+   "commandLabel": "素股",
+   "repetition": "first",
+   "text": "彼女は自ら脚を絡めるように寄せた。求める色が、動きに混じっていた。"
+  },
+  {
+   "band": "high",
+   "category": "奉仕系",
+   "commandId": "com33",
+   "commandLabel": "素股",
+   "repetition": "repeat",
+   "text": "彼女の応え方は素直だった。擦れる刺激を、自分も求めていた。"
+  },
+  {
+   "band": "low",
+   "category": "奉仕系",
+   "commandId": "com34",
+   "commandLabel": "騎乗位",
+   "repetition": "first",
+   "text": "上に跨がされ、彼女は戸惑って身を固くした。自ら動くことへの抵抗が、顔に出た。"
+  },
+  {
+   "band": "low",
+   "category": "奉仕系",
+   "commandId": "com34",
+   "commandLabel": "騎乗位",
+   "repetition": "repeat",
+   "text": "騎乗の体勢に、彼女はまだ慣れなかった。腰の動きは、ぎこちなかった。"
+  },
+  {
+   "band": "mid",
+   "category": "奉仕系",
+   "commandId": "com34",
+   "commandLabel": "騎乗位",
+   "repetition": "first",
+   "text": "彼女の腰が、少しずつ自分のリズムを持ち始めた。感じていることを、隠せなくなっていた。"
+  },
+  {
+   "band": "mid",
+   "category": "奉仕系",
+   "commandId": "com34",
+   "commandLabel": "騎乗位",
+   "repetition": "repeat",
+   "text": "彼女の腰の動きに、意思が見え始めた。受けるだけの体勢では、なくなっていた。"
+  },
+  {
+   "band": "high",
+   "category": "奉仕系",
+   "commandId": "com34",
+   "commandLabel": "騎乗位",
+   "repetition": "first",
+   "text": "彼女は自ら求めて腰を振った。動く悦びを、身体が覚えていた。"
+  },
+  {
+   "band": "high",
+   "category": "奉仕系",
+   "commandId": "com34",
+   "commandLabel": "騎乗位",
+   "repetition": "repeat",
+   "text": "彼女はもう、命じられる前に動いていた。求める形が、彼女のものになっていた。"
+  },
+  {
+   "band": "low",
+   "category": "奉仕系",
+   "commandId": "com35",
+   "commandLabel": "泡踊り",
+   "repetition": "first",
+   "text": "泡にまみれて身体を擦りつけるよう命じられ、彼女は真っ赤になった。滑る感覚に、身が固くなった。"
+  },
+  {
+   "band": "low",
+   "category": "奉仕系",
+   "commandId": "com35",
+   "commandLabel": "泡踊り",
+   "repetition": "repeat",
+   "text": "泡の奉仕に、彼女はまだ恥ずかしそうだった。それでも、身体を預け続けていた。"
+  },
+  {
+   "band": "mid",
+   "category": "奉仕系",
+   "commandId": "com35",
+   "commandLabel": "泡踊り",
+   "repetition": "first",
+   "text": "泡越しの密着に、彼女の呼吸が少しずつ乱れていく。擦れる感覚に、身体が応え始めていた。"
+  },
+  {
+   "band": "mid",
+   "category": "奉仕系",
+   "commandId": "com35",
+   "commandLabel": "泡踊り",
+   "repetition": "repeat",
+   "text": "彼女の動きが滑らかになっていく。奉仕に、意思が見え始めていた。"
+  },
+  {
+   "band": "high",
+   "category": "奉仕系",
+   "commandId": "com35",
+   "commandLabel": "泡踊り",
+   "repetition": "first",
+   "text": "彼女は自ら身体を寄せて、泡にまみれた。奉仕そのものを、楽しむ色があった。"
+  },
+  {
+   "band": "high",
+   "category": "奉仕系",
+   "commandId": "com35",
+   "commandLabel": "泡踊り",
+   "repetition": "repeat",
+   "text": "彼女の応え方は素直だった。滑る密着を、自分も求めていた。"
+  },
+  {
+   "band": "low",
+   "category": "奉仕系",
+   "commandId": "com36",
+   "commandLabel": "騎乗位アナル",
+   "repetition": "first",
+   "text": "後ろの穴で上に跨がされ、彼女は悲鳴を殺した。自ら動くことへの抵抗が、顔に出た。"
+  },
+  {
+   "band": "low",
+   "category": "奉仕系",
+   "commandId": "com36",
+   "commandLabel": "騎乗位アナル",
+   "repetition": "repeat",
+   "text": "後ろの騎乗に、彼女はまだ慣れなかった。腰の動きは、ぎこちなかった。"
+  },
+  {
+   "band": "mid",
+   "category": "奉仕系",
+   "commandId": "com36",
+   "commandLabel": "騎乗位アナル",
+   "repetition": "first",
+   "text": "彼女の腰が、少しずつリズムを持ち始めた。後ろで感じていることを、隠せなくなっていた。"
+  },
+  {
+   "band": "mid",
+   "category": "奉仕系",
+   "commandId": "com36",
+   "commandLabel": "騎乗位アナル",
+   "repetition": "repeat",
+   "text": "彼女は声を堪えながら腰を動かした。後ろの身体の方が、正直だった。"
+  },
+  {
+   "band": "high",
+   "category": "奉仕系",
+   "commandId": "com36",
+   "commandLabel": "騎乗位アナル",
+   "repetition": "first",
+   "text": "彼女は自ら求めて腰を振った。後ろで動く悦びを、身体が覚えていた。"
+  },
+  {
+   "band": "high",
+   "category": "奉仕系",
+   "commandId": "com36",
+   "commandLabel": "騎乗位アナル",
+   "repetition": "repeat",
+   "text": "彼女の動きに迷いはなかった。後ろで欲しいままに動く姿は、素直そのものだった。"
+  },
+  {
+   "band": "low",
+   "category": "奉仕系",
+   "commandId": "com37",
+   "commandLabel": "アナル奉仕",
+   "repetition": "first",
+   "text": "後ろを舐めるよう命じられ、彼女は青ざめた。屈辱に震えながらも、舌を伸ばした。"
+  },
+  {
+   "band": "low",
+   "category": "奉仕系",
+   "commandId": "com37",
+   "commandLabel": "アナル奉仕",
+   "repetition": "repeat",
+   "text": "アナルへの奉仕に、彼女はまだ震えていた。それでも、舌は止まらなかった。"
+  },
+  {
+   "band": "mid",
+   "category": "奉仕系",
+   "commandId": "com37",
+   "commandLabel": "アナル奉仕",
+   "repetition": "first",
+   "text": "彼女の奉仕が、少しずつ形になっていく。屈辱より、応えようとする意思が見えた。"
+  },
+  {
+   "band": "mid",
+   "category": "奉仕系",
+   "commandId": "com37",
+   "commandLabel": "アナル奉仕",
+   "repetition": "repeat",
+   "text": "彼女は合間にこちらを見上げた。評価を待つ目が、揺れていた。"
+  },
+  {
+   "band": "high",
+   "category": "奉仕系",
+   "commandId": "com37",
+   "commandLabel": "アナル奉仕",
+   "repetition": "first",
+   "text": "彼女は自分から奉仕に及んだ。屈辱だったはずの行為が、彼女の形になっていた。"
+  },
+  {
+   "band": "high",
+   "category": "奉仕系",
+   "commandId": "com37",
+   "commandLabel": "アナル奉仕",
+   "repetition": "repeat",
+   "text": "彼女の舌は迷わなかった。終わった後も、名残惜しそうにこちらを見ていた。"
+  },
+  {
+   "band": "low",
+   "category": "奉仕系",
+   "commandId": "com38",
+   "commandLabel": "足コキ",
+   "repetition": "first",
+   "text": "足で奉仕するよう命じられ、彼女は真っ赤になった。慣れない動きに、脚が震えた。"
+  },
+  {
+   "band": "low",
+   "category": "奉仕系",
+   "commandId": "com38",
+   "commandLabel": "足コキ",
+   "repetition": "repeat",
+   "text": "足の奉仕は、まだぎこちなかった。それでも、彼女は止めようとはしなかった。"
+  },
+  {
+   "band": "mid",
+   "category": "奉仕系",
+   "commandId": "com38",
+   "commandLabel": "足コキ",
+   "repetition": "first",
+   "text": "彼女の足の動きが、少しずつ的確になっていく。喜ばせようとしているのが分かった。"
+  },
+  {
+   "band": "mid",
+   "category": "奉仕系",
+   "commandId": "com38",
+   "commandLabel": "足コキ",
+   "repetition": "repeat",
+   "text": "彼女は合間にこちらを見上げた。応えようとする気持ちが、動きに出ていた。"
+  },
+  {
+   "band": "high",
+   "category": "奉仕系",
+   "commandId": "com38",
+   "commandLabel": "足コキ",
+   "repetition": "first",
+   "text": "彼女は自ら脚を伸ばして奉仕した。求める色が、動きに混じっていた。"
+  },
+  {
+   "band": "high",
+   "category": "奉仕系",
+   "commandId": "com38",
+   "commandLabel": "足コキ",
+   "repetition": "repeat",
+   "text": "彼女の脚は迷わなかった。奉仕そのものに、昂ぶりを見せていた。"
+  },
+  {
+   "band": "low",
+   "category": "SM系",
+   "commandId": "com40",
+   "commandLabel": "スパンキング",
+   "repetition": "first",
+   "text": "尻を打たれ、彼女は声を上げて身をすくめた。痛みと恥に、身体が震えた。"
+  },
+  {
+   "band": "low",
+   "category": "SM系",
+   "commandId": "com40",
+   "commandLabel": "スパンキング",
+   "repetition": "repeat",
+   "text": "打たれるたび、彼女は小さく跳ねた。痛みへの震えは、まだ収まらなかった。"
+  },
+  {
+   "band": "mid",
+   "category": "SM系",
+   "commandId": "com40",
+   "commandLabel": "スパンキング",
+   "repetition": "first",
+   "text": "打撃のリズムに、彼女の身体が応え始めていた。痛みが、別の色を帯び始めていた。"
+  },
+  {
+   "band": "mid",
+   "category": "SM系",
+   "commandId": "com40",
+   "commandLabel": "スパンキング",
+   "repetition": "repeat",
+   "text": "彼女は声を堪えて受け続けた。尻の熱が、身体全体に響いていた。"
+  },
+  {
+   "band": "high",
+   "category": "SM系",
+   "commandId": "com40",
+   "commandLabel": "スパンキング",
+   "repetition": "first",
+   "text": "彼女は自ら尻を差し出すように身を寄せた。打たれることを、受け入れていた。"
+  },
+  {
+   "band": "high",
+   "category": "SM系",
+   "commandId": "com40",
+   "commandLabel": "スパンキング",
+   "repetition": "repeat",
+   "text": "彼女の応え方は素直だった。痛みを、求める色すら混じっていた。"
+  },
+  {
+   "band": "low",
+   "category": "SM系",
+   "commandId": "com41",
+   "commandLabel": "鞭",
+   "repetition": "first",
+   "text": "鞭が肌を打つ音に、彼女は身をすくめた。痛みに、悲鳴が漏れた。"
+  },
+  {
+   "band": "low",
+   "category": "SM系",
+   "commandId": "com41",
+   "commandLabel": "鞭",
+   "repetition": "repeat",
+   "text": "鞭の痛みに、彼女はまだ震え続けていた。それでも、逃げようとはしなかった。"
+  },
+  {
+   "band": "mid",
+   "category": "SM系",
+   "commandId": "com41",
+   "commandLabel": "鞭",
+   "repetition": "first",
+   "text": "彼女は声を堪えて鞭を受け続けた。痛みに耐える姿に、意思が見えた。"
+  },
+  {
+   "band": "mid",
+   "category": "SM系",
+   "commandId": "com41",
+   "commandLabel": "鞭",
+   "repetition": "repeat",
+   "text": "打たれるたび、彼女の身体が応えていた。痛みが、彼女を変えていった。"
+  },
+  {
+   "band": "high",
+   "category": "SM系",
+   "commandId": "com41",
+   "commandLabel": "鞭",
+   "repetition": "first",
+   "text": "彼女は自ら鞭の前に身を晒した。受けることを、自分の形にしていた。"
+  },
+  {
+   "band": "high",
+   "category": "SM系",
+   "commandId": "com41",
+   "commandLabel": "鞭",
+   "repetition": "repeat",
+   "text": "彼女の応え方は素直だった。痛みの先にあるものを、知っている目だった。"
+  },
+  {
+   "band": "low",
+   "category": "SM系",
+   "commandId": "com42",
+   "commandLabel": "針",
+   "repetition": "first",
+   "text": "針が肌に触れ、彼女は息を止めた。刺さる瞬間の痛みに、身体が強張った。"
+  },
+  {
+   "band": "low",
+   "category": "SM系",
+   "commandId": "com42",
+   "commandLabel": "針",
+   "repetition": "repeat",
+   "text": "針の痛みに、彼女は小さく震えた。まだ、恐怖が先に立っていた。"
+  },
+  {
+   "band": "mid",
+   "category": "SM系",
+   "commandId": "com42",
+   "commandLabel": "針",
+   "repetition": "first",
+   "text": "彼女は声を殺して針を受け続けた。痛みに、耐える形ができてきていた。"
+  },
+  {
+   "band": "mid",
+   "category": "SM系",
+   "commandId": "com42",
+   "commandLabel": "針",
+   "repetition": "repeat",
+   "text": "刺さるたび、彼女の呼吸が浅くなった。痛みが、感覚の中心に居座っていた。"
+  },
+  {
+   "band": "high",
+   "category": "SM系",
+   "commandId": "com42",
+   "commandLabel": "針",
+   "repetition": "first",
+   "text": "彼女は自ら肌を差し出した。針を受けることを、受け入れていた。"
+  },
+  {
+   "band": "high",
+   "category": "SM系",
+   "commandId": "com42",
+   "commandLabel": "針",
+   "repetition": "repeat",
+   "text": "彼女の応え方は静かだった。痛みを、自分のものにしていた。"
+  },
+  {
+   "band": "low",
+   "category": "SM系",
+   "commandId": "com43",
+   "commandLabel": "アイマスク",
+   "repetition": "first",
+   "text": "目隠しをされ、彼女は不安そうに身を固くした。見えないことが、恐怖を膨らませた。"
+  },
+  {
+   "band": "low",
+   "category": "SM系",
+   "commandId": "com43",
+   "commandLabel": "アイマスク",
+   "repetition": "repeat",
+   "text": "視界を奪われ、彼女は小さく震えた。次の刺激を、待つしかなかった。"
+  },
+  {
+   "band": "mid",
+   "category": "SM系",
+   "commandId": "com43",
+   "commandLabel": "アイマスク",
+   "repetition": "first",
+   "text": "見えない分、触れる感覚が鋭くなっていく。彼女の呼吸が、少しずつ乱れていった。"
+  },
+  {
+   "band": "mid",
+   "category": "SM系",
+   "commandId": "com43",
+   "commandLabel": "アイマスク",
+   "repetition": "repeat",
+   "text": "彼女は目隠しのまま、こちらの気配を探っていた。委ねる形が、できてきていた。"
+  },
+  {
+   "band": "high",
+   "category": "SM系",
+   "commandId": "com43",
+   "commandLabel": "アイマスク",
+   "repetition": "first",
+   "text": "彼女は自ら目隠しを受け入れた。見えない世界を、こちらに委ねていた。"
+  },
+  {
+   "band": "high",
+   "category": "SM系",
+   "commandId": "com43",
+   "commandLabel": "アイマスク",
+   "repetition": "repeat",
+   "text": "彼女の応え方は素直だった。闇の中で、感覚だけが彼女を導いていた。"
+  },
+  {
+   "band": "low",
+   "category": "SM系",
+   "commandId": "com44",
+   "commandLabel": "縄",
+   "repetition": "first",
+   "text": "縄が身体に食い込み、彼女は身を固くした。動けない恥と不安に、震えた。"
+  },
+  {
+   "band": "low",
+   "category": "SM系",
+   "commandId": "com44",
+   "commandLabel": "縄",
+   "repetition": "repeat",
+   "text": "縛られたままの時間に、彼女はまだ慣れなかった。縄の感触が、意識を離れなかった。"
+  },
+  {
+   "band": "mid",
+   "category": "SM系",
+   "commandId": "com44",
+   "commandLabel": "縄",
+   "repetition": "first",
+   "text": "縄の圧迫に、彼女の呼吸が少しずつ変わっていく。拘束が、別の感覚を連れてきていた。"
+  },
+  {
+   "band": "mid",
+   "category": "SM系",
+   "commandId": "com44",
+   "commandLabel": "縄",
+   "repetition": "repeat",
+   "text": "彼女は縛られたまま、こちらの手を待っていた。委ねる形が、できてきていた。"
+  },
+  {
+   "band": "high",
+   "category": "SM系",
+   "commandId": "com44",
+   "commandLabel": "縄",
+   "repetition": "first",
+   "text": "彼女は自ら縄に身を委ねた。縛られることを、受け入れていた。"
+  },
+  {
+   "band": "high",
+   "category": "SM系",
+   "commandId": "com44",
+   "commandLabel": "縄",
+   "repetition": "repeat",
+   "text": "彼女の応え方は素直だった。縄の中で、安心すら見せ始めていた。"
+  },
+  {
+   "band": "low",
+   "category": "SM系",
+   "commandId": "com45",
+   "commandLabel": "ボールギャグ",
+   "repetition": "first",
+   "text": "口にギャグを噛まされ、彼女は声を失った。涎を止められない恥に、頬が燃えた。"
+  },
+  {
+   "band": "low",
+   "category": "SM系",
+   "commandId": "com45",
+   "commandLabel": "ボールギャグ",
+   "repetition": "repeat",
+   "text": "ギャグのまま、彼女は小さく震えた。声が出せないことが、不安を煽っていた。"
+  },
+  {
+   "band": "mid",
+   "category": "SM系",
+   "commandId": "com45",
+   "commandLabel": "ボールギャグ",
+   "repetition": "first",
+   "text": "声を奪われた分、彼女の身体の応えが大きくなる。目が、必死に何かを訴えていた。"
+  },
+  {
+   "band": "mid",
+   "category": "SM系",
+   "commandId": "com45",
+   "commandLabel": "ボールギャグ",
+   "repetition": "repeat",
+   "text": "彼女はギャグ越しに、くぐもった声を漏らした。応える術を、身体が探していた。"
+  },
+  {
+   "band": "high",
+   "category": "SM系",
+   "commandId": "com45",
+   "commandLabel": "ボールギャグ",
+   "repetition": "first",
+   "text": "彼女は自ら口を開けて、ギャグを迎えた。奪われることを、受け入れていた。"
+  },
+  {
+   "band": "high",
+   "category": "SM系",
+   "commandId": "com45",
+   "commandLabel": "ボールギャグ",
+   "repetition": "repeat",
+   "text": "彼女の目は素直だった。声がなくても、応え方は隠せなかった。"
+  },
+  {
+   "band": "low",
+   "category": "SM系",
+   "commandId": "com46",
+   "commandLabel": "浣腸器＋プラグ",
+   "repetition": "first",
+   "text": "腸内を洗われ、彼女は苦しさに声を上げた。プラグで留められ、恥と圧迫感に震えた。"
+  },
+  {
+   "band": "low",
+   "category": "SM系",
+   "commandId": "com46",
+   "commandLabel": "浣腸器＋プラグ",
+   "repetition": "repeat",
+   "text": "浣腸の苦しさに、彼女はまだ慣れなかった。プラグの存在が、意識を離れなかった。"
+  },
+  {
+   "band": "mid",
+   "category": "SM系",
+   "commandId": "com46",
+   "commandLabel": "浣腸器＋プラグ",
+   "repetition": "first",
+   "text": "洗浄と圧迫に、彼女の身体が応え始めていた。苦しさの奥に、別の感覚が見えていた。"
+  },
+  {
+   "band": "mid",
+   "category": "SM系",
+   "commandId": "com46",
+   "commandLabel": "浣腸器＋プラグ",
+   "repetition": "repeat",
+   "text": "彼女は声を堪えて受け続けた。後ろの感覚が、彼女を変えていった。"
+  },
+  {
+   "band": "high",
+   "category": "SM系",
+   "commandId": "com46",
+   "commandLabel": "浣腸器＋プラグ",
+   "repetition": "first",
+   "text": "彼女は自ら体勢を整えて、受け入れた。委ねることが、彼女の中で形になっていた。"
+  },
+  {
+   "band": "high",
+   "category": "SM系",
+   "commandId": "com46",
+   "commandLabel": "浣腸器＋プラグ",
+   "repetition": "repeat",
+   "text": "彼女の応え方は素直だった。後ろの圧迫を、もう拒んでいなかった。"
+  },
+  {
+   "band": "low",
+   "category": "SM系",
+   "commandId": "com47",
+   "commandLabel": "ボンデージ装着",
+   "repetition": "first",
+   "text": "拘束具を着けられ、彼女は身を固くした。自由を奪う装いに、戸惑いが顔に出た。"
+  },
+  {
+   "band": "low",
+   "category": "SM系",
+   "commandId": "com47",
+   "commandLabel": "ボンデージ装着",
+   "repetition": "repeat",
+   "text": "ボンデージの締め付けに、彼女はまだ慣れなかった。動くたび、装具の存在を意識した。"
+  },
+  {
+   "band": "mid",
+   "category": "SM系",
+   "commandId": "com47",
+   "commandLabel": "ボンデージ装着",
+   "repetition": "first",
+   "text": "装具に包まれた身体が、少しずつ熱を持っていく。彼女の呼吸が、変わり始めていた。"
+  },
+  {
+   "band": "mid",
+   "category": "SM系",
+   "commandId": "com47",
+   "commandLabel": "ボンデージ装着",
+   "repetition": "repeat",
+   "text": "彼女は装具のまま、こちらの手を待っていた。委ねる形が、できてきていた。"
+  },
+  {
+   "band": "high",
+   "category": "SM系",
+   "commandId": "com47",
+   "commandLabel": "ボンデージ装着",
+   "repetition": "first",
+   "text": "彼女は自ら装具に身を委ねた。縛られる姿を、受け入れていた。"
+  },
+  {
+   "band": "high",
+   "category": "SM系",
+   "commandId": "com47",
+   "commandLabel": "ボンデージ装着",
+   "repetition": "repeat",
+   "text": "彼女の応え方は素直だった。装具姿が、彼女の形になっていた。"
+  },
+  {
+   "band": "low",
+   "category": "SM系",
+   "commandId": "com48",
+   "commandLabel": "足コキする",
+   "repetition": "first",
+   "text": "足の裏が秘部に触れ、彼女は声を上げて身をすくめた。踏まれるような刺激に、戸惑った。"
+  },
+  {
+   "band": "low",
+   "category": "SM系",
+   "commandId": "com48",
+   "commandLabel": "足コキする",
+   "repetition": "repeat",
+   "text": "足での刺激に、彼女はまだ慣れなかった。擦れる感覚に、身体が震えた。"
+  },
+  {
+   "band": "mid",
+   "category": "SM系",
+   "commandId": "com48",
+   "commandLabel": "足コキする",
+   "repetition": "first",
+   "text": "足の動きに合わせて、彼女の呼吸が浅くなっていく。秘部の感覚が、応え始めていた。"
+  },
+  {
+   "band": "mid",
+   "category": "SM系",
+   "commandId": "com48",
+   "commandLabel": "足コキする",
+   "repetition": "repeat",
+   "text": "彼女は声を堪えきれなくなっていた。足に擦られる恥と感覚が、混じり合っていた。"
+  },
+  {
+   "band": "high",
+   "category": "SM系",
+   "commandId": "com48",
+   "commandLabel": "足コキする",
+   "repetition": "first",
+   "text": "彼女は自ら足に腰を寄せた。求めることを、身体が先に覚えていた。"
+  },
+  {
+   "band": "high",
+   "category": "SM系",
+   "commandId": "com48",
+   "commandLabel": "足コキする",
+   "repetition": "repeat",
+   "text": "彼女の応え方は素直だった。足への擦りつけを、自分も求めていた。"
+  },
+  {
+   "band": "low",
+   "category": "SM系",
+   "commandId": "com49",
+   "commandLabel": "アナル電極",
+   "repetition": "first",
+   "text": "後ろに電極が入ると、彼女は小さく悲鳴を上げた。電流の刺激に、身体が跳ねた。"
+  },
+  {
+   "band": "low",
+   "category": "SM系",
+   "commandId": "com49",
+   "commandLabel": "アナル電極",
+   "repetition": "repeat",
+   "text": "電極の刺激に、彼女はまだ慣れなかった。後ろから響く感覚に、震え続けていた。"
+  },
+  {
+   "band": "mid",
+   "category": "SM系",
+   "commandId": "com49",
+   "commandLabel": "アナル電極",
+   "repetition": "first",
+   "text": "電流のリズムに、彼女の身体が応え始めていた。後ろの感覚が、全身に響いていた。"
+  },
+  {
+   "band": "mid",
+   "category": "SM系",
+   "commandId": "com49",
+   "commandLabel": "アナル電極",
+   "repetition": "repeat",
+   "text": "彼女は声を堪えきれなくなっていた。後ろは、もう電極の形を覚えていた。"
+  },
+  {
+   "band": "high",
+   "category": "SM系",
+   "commandId": "com49",
+   "commandLabel": "アナル電極",
+   "repetition": "first",
+   "text": "彼女は自ら腰を寄せ、電極を深く迎えた。後ろで求めることを、受け入れていた。"
+  },
+  {
+   "band": "high",
+   "category": "SM系",
+   "commandId": "com49",
+   "commandLabel": "アナル電極",
+   "repetition": "repeat",
+   "text": "彼女の応え方は素直だった。電流の刺激を、自分も求めていた。"
+  },
+  {
+   "band": "low",
+   "category": "特殊",
+   "commandId": "com50",
+   "commandLabel": "ローション",
+   "repetition": "first",
+   "text": "ローションが肌に伸ばされ、彼女は小さく身をすくめた。滑る手の感触に、戸惑った。"
+  },
+  {
+   "band": "low",
+   "category": "特殊",
+   "commandId": "com50",
+   "commandLabel": "ローション",
+   "repetition": "repeat",
+   "text": "ローションの滑りに、彼女はまだ慣れなかった。手が触れるたび、小さく震えた。"
+  },
+  {
+   "band": "mid",
+   "category": "特殊",
+   "commandId": "com50",
+   "commandLabel": "ローション",
+   "repetition": "first",
+   "text": "滑る手に合わせて、彼女の呼吸が少しずつ変わっていく。身体の準備が、整えられていった。"
+  },
+  {
+   "band": "mid",
+   "category": "特殊",
+   "commandId": "com50",
+   "commandLabel": "ローション",
+   "repetition": "repeat",
+   "text": "彼女はローションの感触を受け入れていた。肌の応え方が、素直になっていた。"
+  },
+  {
+   "band": "high",
+   "category": "特殊",
+   "commandId": "com50",
+   "commandLabel": "ローション",
+   "repetition": "first",
+   "text": "彼女は自らローションの手に身を寄せた。滑る感覚を、求める側になっていた。"
+  },
+  {
+   "band": "high",
+   "category": "特殊",
+   "commandId": "com50",
+   "commandLabel": "ローション",
+   "repetition": "repeat",
+   "text": "彼女の肌は素直に応えた。ローションの時間が、彼女の合図になっていた。"
+  },
+  {
+   "band": "low",
+   "category": "特殊",
+   "commandId": "com51",
+   "commandLabel": "媚薬",
+   "repetition": "first",
+   "text": "媚薬が効き始め、彼女は戸惑って身をすくめた。自分の身体の変化に、怯えが見えた。"
+  },
+  {
+   "band": "low",
+   "category": "特殊",
+   "commandId": "com51",
+   "commandLabel": "媚薬",
+   "repetition": "repeat",
+   "text": "媚薬の熱に、彼女はまだ振り回されていた。火照りを、抑えられていなかった。"
+  },
+  {
+   "band": "mid",
+   "category": "特殊",
+   "commandId": "com51",
+   "commandLabel": "媚薬",
+   "repetition": "first",
+   "text": "彼女の呼吸が浅くなっていく。媚薬が、身体の応えを鋭くしていた。"
+  },
+  {
+   "band": "mid",
+   "category": "特殊",
+   "commandId": "com51",
+   "commandLabel": "媚薬",
+   "repetition": "repeat",
+   "text": "彼女は火照りに声を漏らした。薬の力を借りて、身体が正直になっていた。"
+  },
+  {
+   "band": "high",
+   "category": "特殊",
+   "commandId": "com51",
+   "commandLabel": "媚薬",
+   "repetition": "first",
+   "text": "彼女は自ら身を寄せてきた。媚薬の熱を、求める形に変えていた。"
+  },
+  {
+   "band": "high",
+   "category": "特殊",
+   "commandId": "com51",
+   "commandLabel": "媚薬",
+   "repetition": "repeat",
+   "text": "彼女の応え方は素直だった。熱に浮かされた目が、もう隠していなかった。"
+  },
+  {
+   "band": "low",
+   "category": "特殊",
+   "commandId": "com52",
+   "commandLabel": "利尿剤",
+   "repetition": "first",
+   "text": "利尿剤が効き始め、彼女は落ち着かなく身をよじった。尿意を堪える姿が、晒されていた。"
+  },
+  {
+   "band": "low",
+   "category": "特殊",
+   "commandId": "com52",
+   "commandLabel": "利尿剤",
+   "repetition": "repeat",
+   "text": "尿意に、彼女はまだ必死に耐えていた。堪えること自体が、調教になっていた。"
+  },
+  {
+   "band": "mid",
+   "category": "特殊",
+   "commandId": "com52",
+   "commandLabel": "利尿剤",
+   "repetition": "first",
+   "text": "彼女の我慢が、限界に近づいていく。身体の訴えを、隠せなくなっていた。"
+  },
+  {
+   "band": "mid",
+   "category": "特殊",
+   "commandId": "com52",
+   "commandLabel": "利尿剤",
+   "repetition": "repeat",
+   "text": "彼女は震えながら尿意と戦っていた。許可を待つ目が、揺れていた。"
+  },
+  {
+   "band": "high",
+   "category": "特殊",
+   "commandId": "com52",
+   "commandLabel": "利尿剤",
+   "repetition": "first",
+   "text": "彼女は許可を求めるようにこちらを見た。委ねる形が、こんな所にも出ていた。"
+  },
+  {
+   "band": "high",
+   "category": "特殊",
+   "commandId": "com52",
+   "commandLabel": "利尿剤",
+   "repetition": "repeat",
+   "text": "彼女はもう、堪えることを諦めかけていた。身体の正直さが、彼女を変えていた。"
+  },
+  {
+   "band": "low",
+   "category": "特殊",
+   "commandId": "com53",
+   "commandLabel": "水晶球",
+   "repetition": "first",
+   "text": "水晶球が淡く光り、彼女の姿を映し始めた。見られている感覚に、彼女は身を固くした。"
+  },
+  {
+   "band": "low",
+   "category": "特殊",
+   "commandId": "com53",
+   "commandLabel": "水晶球",
+   "repetition": "repeat",
+   "text": "球の光に晒され、彼女はまだ落ち着かなかった。視線の代わりの光が、意識に残った。"
+  },
+  {
+   "band": "mid",
+   "category": "特殊",
+   "commandId": "com53",
+   "commandLabel": "水晶球",
+   "repetition": "first",
+   "text": "映し出される自分の姿に、彼女の呼吸が変わっていく。晒されることが、感覚を鋭くしていた。"
+  },
+  {
+   "band": "mid",
+   "category": "特殊",
+   "commandId": "com53",
+   "commandLabel": "水晶球",
+   "repetition": "repeat",
+   "text": "彼女は球の前で、もう逃げようとしなかった。見られる形を、受け入れ始めていた。"
+  },
+  {
+   "band": "high",
+   "category": "特殊",
+   "commandId": "com53",
+   "commandLabel": "水晶球",
+   "repetition": "first",
+   "text": "彼女は自ら球の前に身を晒した。映されることを、受け入れていた。"
+  },
+  {
+   "band": "high",
+   "category": "特殊",
+   "commandId": "com53",
+   "commandLabel": "水晶球",
+   "repetition": "repeat",
+   "text": "彼女の応え方は素直だった。球の光の中で、隠すものはなくなっていた。"
+  },
+  {
+   "band": "low",
+   "category": "特殊",
+   "commandId": "com54",
+   "commandLabel": "野外プレイ",
+   "repetition": "first",
+   "text": "外に連れ出され、彼女は人の気配に怯えた。見つかる恐怖が、身体を固くした。"
+  },
+  {
+   "band": "low",
+   "category": "特殊",
+   "commandId": "com54",
+   "commandLabel": "野外プレイ",
+   "repetition": "repeat",
+   "text": "野外の空気に、彼女はまだ慣れなかった。音がするたび、小さく跳ねた。"
+  },
+  {
+   "band": "mid",
+   "category": "特殊",
+   "commandId": "com54",
+   "commandLabel": "野外プレイ",
+   "repetition": "first",
+   "text": "見つかるかもしれない緊張が、彼女の感覚を鋭くしていた。呼吸が、浅くなっていく。"
+  },
+  {
+   "band": "mid",
+   "category": "特殊",
+   "commandId": "com54",
+   "commandLabel": "野外プレイ",
+   "repetition": "repeat",
+   "text": "彼女は外でも、こちらの側を離れなかった。委ねる形が、外でも変わらなかった。"
+  },
+  {
+   "band": "high",
+   "category": "特殊",
+   "commandId": "com54",
+   "commandLabel": "野外プレイ",
+   "repetition": "first",
+   "text": "彼女は自ら外の空気を受け入れた。晒される緊張を、昂ぶりに変えていた。"
+  },
+  {
+   "band": "high",
+   "category": "特殊",
+   "commandId": "com54",
+   "commandLabel": "野外プレイ",
+   "repetition": "repeat",
+   "text": "彼女の応え方は素直だった。野外の解放感が、彼女を変えていた。"
+  },
+  {
+   "band": "low",
+   "category": "特殊",
+   "commandId": "com55",
+   "commandLabel": "何もしない",
+   "repetition": "first",
+   "text": "何もされず、彼女は不安そうにこちらを見た。待たされる時間が、緊張を膨らませた。"
+  },
+  {
+   "band": "low",
+   "category": "特殊",
+   "commandId": "com55",
+   "commandLabel": "何もしない",
+   "repetition": "repeat",
+   "text": "静かな時間が流れ、彼女は小さく身をすくめた。次に来るものを、想像していた。"
+  },
+  {
+   "band": "mid",
+   "category": "特殊",
+   "commandId": "com55",
+   "commandLabel": "何もしない",
+   "repetition": "first",
+   "text": "何もされない時間が、彼女の感覚を鋭くしていた。小さな音にも、身体が応えた。"
+  },
+  {
+   "band": "mid",
+   "category": "特殊",
+   "commandId": "com55",
+   "commandLabel": "何もしない",
+   "repetition": "repeat",
+   "text": "彼女は待つことに慣れていった。委ねる形が、静けさの中にもあった。"
+  },
+  {
+   "band": "high",
+   "category": "特殊",
+   "commandId": "com55",
+   "commandLabel": "何もしない",
+   "repetition": "first",
+   "text": "彼女は静けさの中で、こちらを待っていた。求める目が、もう隠せなかった。"
+  },
+  {
+   "band": "high",
+   "category": "特殊",
+   "commandId": "com55",
+   "commandLabel": "何もしない",
+   "repetition": "repeat",
+   "text": "彼女の応え方は、待つ姿そのものだった。何もしない時間が、彼女を変えていた。"
+  },
+  {
+   "band": "low",
+   "category": "特殊",
+   "commandId": "com57",
+   "commandLabel": "羞恥プレイ",
+   "repetition": "first",
+   "text": "恥ずかしい言葉と姿勢を強いられ、彼女は真っ赤になって俯いた。羞恥に、身体が震えた。"
+  },
+  {
+   "band": "low",
+   "category": "特殊",
+   "commandId": "com57",
+   "commandLabel": "羞恥プレイ",
+   "repetition": "repeat",
+   "text": "羞恥の調教に、彼女はまだ震え続けていた。それでも、逃げようとはしなかった。"
+  },
+  {
+   "band": "mid",
+   "category": "特殊",
+   "commandId": "com57",
+   "commandLabel": "羞恥プレイ",
+   "repetition": "first",
+   "text": "恥の中で、彼女の身体が応え始めていた。隠したい気持ちと、裏腹だった。"
+  },
+  {
+   "band": "mid",
+   "category": "特殊",
+   "commandId": "com57",
+   "commandLabel": "羞恥プレイ",
+   "repetition": "repeat",
+   "text": "彼女は恥に耐えながら受け続けた。羞恥が、感覚を鋭くしていた。"
+  },
+  {
+   "band": "high",
+   "category": "特殊",
+   "commandId": "com57",
+   "commandLabel": "羞恥プレイ",
+   "repetition": "first",
+   "text": "彼女は自ら恥を晒すようになっていた。羞恥を、昂ぶりに変えていた。"
+  },
+  {
+   "band": "high",
+   "category": "特殊",
+   "commandId": "com57",
+   "commandLabel": "羞恥プレイ",
+   "repetition": "repeat",
+   "text": "彼女の応え方は素直だった。恥ずかしいはずの姿が、彼女の形になっていた。"
+  },
+  {
+   "band": "low",
+   "category": "特殊",
+   "commandId": "com58",
+   "commandLabel": "お風呂場プレイ",
+   "repetition": "first",
+   "text": "湯気の中で肌を晒され、彼女は身をすくめた。湯と視線の両方に、戸惑った。"
+  },
+  {
+   "band": "low",
+   "category": "特殊",
+   "commandId": "com58",
+   "commandLabel": "お風呂場プレイ",
+   "repetition": "repeat",
+   "text": "風呂場の熱気に、彼女はまだ慣れなかった。濡れた肌が、視線に晒されていた。"
+  },
+  {
+   "band": "mid",
+   "category": "特殊",
+   "commandId": "com58",
+   "commandLabel": "お風呂場プレイ",
+   "repetition": "first",
+   "text": "湯の温かさが、彼女の力を抜いていく。身体の応えが、素直になっていった。"
+  },
+  {
+   "band": "mid",
+   "category": "特殊",
+   "commandId": "com58",
+   "commandLabel": "お風呂場プレイ",
+   "repetition": "repeat",
+   "text": "彼女は湯の中で、こちらの手を受け入れていた。温かさが、警戒を溶かしていた。"
+  },
+  {
+   "band": "high",
+   "category": "特殊",
+   "commandId": "com58",
+   "commandLabel": "お風呂場プレイ",
+   "repetition": "first",
+   "text": "彼女は自ら湯の中に身を寄せた。風呂場の時間を、求める側になっていた。"
+  },
+  {
+   "band": "high",
+   "category": "特殊",
+   "commandId": "com58",
+   "commandLabel": "お風呂場プレイ",
+   "repetition": "repeat",
+   "text": "彼女の応え方は素直だった。湯気の中で、隠すものはなくなっていた。"
+  },
+  {
+   "band": "low",
+   "category": "特殊",
+   "commandId": "com59",
+   "commandLabel": "新妻プレイ",
+   "repetition": "first",
+   "text": "新妻のように振る舞うよう命じられ、彼女は戸惑って俯いた。慣れない役に、声が震えた。"
+  },
+  {
+   "band": "low",
+   "category": "特殊",
+   "commandId": "com59",
+   "commandLabel": "新妻プレイ",
+   "repetition": "repeat",
+   "text": "新妻の役に、彼女はまだ照れていた。それでも、応えようとする意思は見えた。"
+  },
+  {
+   "band": "mid",
+   "category": "特殊",
+   "commandId": "com59",
+   "commandLabel": "新妻プレイ",
+   "repetition": "first",
+   "text": "彼女の振る舞いが、少しずつ形になっていく。役の中に、本音が混じり始めていた。"
+  },
+  {
+   "band": "mid",
+   "category": "特殊",
+   "commandId": "com59",
+   "commandLabel": "新妻プレイ",
+   "repetition": "repeat",
+   "text": "彼女は役を演じながら、確かにこちらを求めていた。線引きが、曖昧になっていた。"
+  },
+  {
+   "band": "high",
+   "category": "特殊",
+   "commandId": "com59",
+   "commandLabel": "新妻プレイ",
+   "repetition": "first",
+   "text": "彼女は自ら新妻として振る舞った。役と本心の境が、もうなかった。"
+  },
+  {
+   "band": "high",
+   "category": "特殊",
+   "commandId": "com59",
+   "commandLabel": "新妻プレイ",
+   "repetition": "repeat",
+   "text": "彼女の応え方は素直だった。『妻』の形が、彼女に馴染んでいた。"
+  },
+  {
+   "band": "low",
+   "category": "ハード",
+   "commandId": "com80",
+   "commandLabel": "イラマチオ",
+   "repetition": "first",
+   "text": "喉の奥まで押し込まれ、彼女は涙目になって身をすくめた。苦しさに、身体が震えた。"
+  },
+  {
+   "band": "low",
+   "category": "ハード",
+   "commandId": "com80",
+   "commandLabel": "イラマチオ",
+   "repetition": "repeat",
+   "text": "イラマチオの苦しさに、彼女はまだ慣れなかった。それでも、奉仕は止まらなかった。"
+  },
+  {
+   "band": "mid",
+   "category": "ハード",
+   "commandId": "com80",
+   "commandLabel": "イラマチオ",
+   "repetition": "first",
+   "text": "彼女の喉が、少しずつ受け入れ方を覚えていく。苦しさの中に、応える意思が見えた。"
+  },
+  {
+   "band": "mid",
+   "category": "ハード",
+   "commandId": "com80",
+   "commandLabel": "イラマチオ",
+   "repetition": "repeat",
+   "text": "彼女は涙を浮かべながら続けた。奉仕の形が、できてきていた。"
+  },
+  {
+   "band": "high",
+   "category": "ハード",
+   "commandId": "com80",
+   "commandLabel": "イラマチオ",
+   "repetition": "first",
+   "text": "彼女は自ら深く咥え込んだ。苦しいはずの奉仕が、彼女の形になっていた。"
+  },
+  {
+   "band": "high",
+   "category": "ハード",
+   "commandId": "com80",
+   "commandLabel": "イラマチオ",
+   "repetition": "repeat",
+   "text": "彼女の応え方は素直だった。終わった後も、名残惜しそうにこちらを見ていた。"
+  },
+  {
+   "band": "low",
+   "category": "ハード",
+   "commandId": "com81",
+   "commandLabel": "フィストファック",
+   "repetition": "first",
+   "text": "拳が中に入ると、彼女は悲鳴を上げて身をすくめた。限界近い圧迫感に、身体が震えた。"
+  },
+  {
+   "band": "low",
+   "category": "ハード",
+   "commandId": "com81",
+   "commandLabel": "フィストファック",
+   "repetition": "repeat",
+   "text": "拳の感覚に、彼女はまだ慣れなかった。内側の圧迫が、意識を支配していた。"
+  },
+  {
+   "band": "mid",
+   "category": "ハード",
+   "commandId": "com81",
+   "commandLabel": "フィストファック",
+   "repetition": "first",
+   "text": "彼女の内側が、拳の形に応え始めていた。呼吸の乱れが、隠しきれなくなっていた。"
+  },
+  {
+   "band": "mid",
+   "category": "ハード",
+   "commandId": "com81",
+   "commandLabel": "フィストファック",
+   "repetition": "repeat",
+   "text": "彼女は声を堪えて受け続けた。身体が、この感覚にも形を合わせていった。"
+  },
+  {
+   "band": "high",
+   "category": "ハード",
+   "commandId": "com81",
+   "commandLabel": "フィストファック",
+   "repetition": "first",
+   "text": "彼女は自ら腰を寄せ、拳を深く迎えた。委ねることが、彼女の中で形になっていた。"
+  },
+  {
+   "band": "high",
+   "category": "ハード",
+   "commandId": "com81",
+   "commandLabel": "フィストファック",
+   "repetition": "repeat",
+   "text": "彼女の応え方は素直だった。限界の感覚を、自分も求めていた。"
+  },
+  {
+   "band": "low",
+   "category": "ハード",
+   "commandId": "com82",
+   "commandLabel": "アナルフィスト",
+   "repetition": "first",
+   "text": "拳が後ろに入ると、彼女は悲鳴を殺した。限界近い圧迫感に、身体が震え続けた。"
+  },
+  {
+   "band": "low",
+   "category": "ハード",
+   "commandId": "com82",
+   "commandLabel": "アナルフィスト",
+   "repetition": "repeat",
+   "text": "後ろの拳の感覚に、彼女はまだ慣れなかった。異物感が、意識を離れなかった。"
+  },
+  {
+   "band": "mid",
+   "category": "ハード",
+   "commandId": "com82",
+   "commandLabel": "アナルフィスト",
+   "repetition": "first",
+   "text": "彼女の後ろが、拳の形に応え始めていた。戸惑いより先に、身体が動いていた。"
+  },
+  {
+   "band": "mid",
+   "category": "ハード",
+   "commandId": "com82",
+   "commandLabel": "アナルフィスト",
+   "repetition": "repeat",
+   "text": "彼女は声を堪えて受け続けた。後ろの身体が、この感覚にも形を合わせていった。"
+  },
+  {
+   "band": "high",
+   "category": "ハード",
+   "commandId": "com82",
+   "commandLabel": "アナルフィスト",
+   "repetition": "first",
+   "text": "彼女は自ら腰を寄せ、後ろで拳を迎えた。委ねることが、彼女の中で形になっていた。"
+  },
+  {
+   "band": "high",
+   "category": "ハード",
+   "commandId": "com82",
+   "commandLabel": "アナルフィスト",
+   "repetition": "repeat",
+   "text": "彼女の応え方は素直だった。後ろの限界を、自分も求めていた。"
+  },
+  {
+   "band": "low",
+   "category": "ハード",
+   "commandId": "com83",
+   "commandLabel": "両穴フィスト",
+   "repetition": "first",
+   "text": "両方の穴に拳が入ると、彼女は声を上げて身をすくめた。二重の圧迫感に、意識が揺れた。"
+  },
+  {
+   "band": "low",
+   "category": "ハード",
+   "commandId": "com83",
+   "commandLabel": "両穴フィスト",
+   "repetition": "repeat",
+   "text": "両穴の感覚に、彼女はまだ慣れなかった。身体の中心が、支配されていた。"
+  },
+  {
+   "band": "mid",
+   "category": "ハード",
+   "commandId": "com83",
+   "commandLabel": "両穴フィスト",
+   "repetition": "first",
+   "text": "彼女の身体が、両方の形に応え始めていた。呼吸の乱れが、隠しきれなくなっていた。"
+  },
+  {
+   "band": "mid",
+   "category": "ハード",
+   "commandId": "com83",
+   "commandLabel": "両穴フィスト",
+   "repetition": "repeat",
+   "text": "彼女は声を堪えて受け続けた。二つの感覚が、彼女を変えていった。"
+  },
+  {
+   "band": "high",
+   "category": "ハード",
+   "commandId": "com83",
+   "commandLabel": "両穴フィスト",
+   "repetition": "first",
+   "text": "彼女は自ら体勢を整えて、両方を迎えた。委ねることが、彼女の中で形になっていた。"
+  },
+  {
+   "band": "high",
+   "category": "ハード",
+   "commandId": "com83",
+   "commandLabel": "両穴フィスト",
+   "repetition": "repeat",
+   "text": "彼女の応え方は素直だった。両穴で求めることを、もう恥じていなかった。"
+  },
+  {
+   "band": "low",
+   "category": "ハード",
+   "commandId": "com85",
+   "commandLabel": "放尿",
+   "repetition": "first",
+   "text": "排泄を見せるよう命じられ、彼女は青ざめた。震えながらも、抵抗は続かなかった。"
+  },
+  {
+   "band": "low",
+   "category": "ハード",
+   "commandId": "com85",
+   "commandLabel": "放尿",
+   "repetition": "repeat",
+   "text": "放尿の恥に、彼女はまだ震え続けていた。それでも、命じられるままに応えた。"
+  },
+  {
+   "band": "mid",
+   "category": "ハード",
+   "commandId": "com85",
+   "commandLabel": "放尿",
+   "repetition": "first",
+   "text": "彼女は恥に耐えながら、こちらの前で流した。晒すことが、彼女を変えていった。"
+  },
+  {
+   "band": "mid",
+   "category": "ハード",
+   "commandId": "com85",
+   "commandLabel": "放尿",
+   "repetition": "repeat",
+   "text": "彼女の震えは、小さくなっていた。恥の形が、少しずつ変わっていた。"
+  },
+  {
+   "band": "high",
+   "category": "ハード",
+   "commandId": "com85",
+   "commandLabel": "放尿",
+   "repetition": "first",
+   "text": "彼女は自ら体勢を取って、見せた。晒すことを、受け入れていた。"
+  },
+  {
+   "band": "high",
+   "category": "ハード",
+   "commandId": "com85",
+   "commandLabel": "放尿",
+   "repetition": "repeat",
+   "text": "彼女の応え方は素直だった。恥ずかしいはずの行為が、彼女の形になっていた。"
+  },
+  {
+   "band": "low",
+   "category": "ハード",
+   "commandId": "com87",
+   "commandLabel": "ピアシング",
+   "repetition": "first",
+   "text": "乳首に針が通り、彼女は声を上げて身をすくめた。痛みと、残る感覚に震えた。"
+  },
+  {
+   "band": "low",
+   "category": "ハード",
+   "commandId": "com87",
+   "commandLabel": "ピアシング",
+   "repetition": "repeat",
+   "text": "ピアスの感覚に、彼女はまだ慣れなかった。触れるたび、胸の先が意識に上った。"
+  },
+  {
+   "band": "mid",
+   "category": "ハード",
+   "commandId": "com87",
+   "commandLabel": "ピアシング",
+   "repetition": "first",
+   "text": "痛みの跡が、彼女の感覚を鋭くしていた。胸の飾りが、身体の一部になっていった。"
+  },
+  {
+   "band": "mid",
+   "category": "ハード",
+   "commandId": "com87",
+   "commandLabel": "ピアシング",
+   "repetition": "repeat",
+   "text": "彼女はピアスの重みを受け入れていた。応える胸の感覚が、素直になっていた。"
+  },
+  {
+   "band": "high",
+   "category": "ハード",
+   "commandId": "com87",
+   "commandLabel": "ピアシング",
+   "repetition": "first",
+   "text": "彼女は自ら胸を差し出して、飾りを迎えた。痛みを、自分の印にしていた。"
+  },
+  {
+   "band": "high",
+   "category": "ハード",
+   "commandId": "com87",
+   "commandLabel": "ピアシング",
+   "repetition": "repeat",
+   "text": "彼女の応え方は素直だった。ピアスの感覚を、自分も求めていた。"
+  },
+  {
+   "band": "low",
+   "category": "ハード",
+   "commandId": "com90",
+   "commandLabel": "ニプルファック",
+   "repetition": "first",
+   "text": "乳首に挿れられ、彼女は声を上げて身をすくめた。あり得ない感覚に、身体が震えた。"
+  },
+  {
+   "band": "low",
+   "category": "ハード",
+   "commandId": "com90",
+   "commandLabel": "ニプルファック",
+   "repetition": "repeat",
+   "text": "乳首の感覚に、彼女はまだ慣れなかった。胸だけが、意識の中心に居座っていた。"
+  },
+  {
+   "band": "mid",
+   "category": "ハード",
+   "commandId": "com90",
+   "commandLabel": "ニプルファック",
+   "repetition": "first",
+   "text": "乳首の内側が、動きに応え始めていた。彼女の呼吸が、浅くなっていく。"
+  },
+  {
+   "band": "mid",
+   "category": "ハード",
+   "commandId": "com90",
+   "commandLabel": "ニプルファック",
+   "repetition": "repeat",
+   "text": "彼女は声を堪えきれなくなっていた。胸の応え方が、もう誤魔化せなかった。"
+  },
+  {
+   "band": "high",
+   "category": "ハード",
+   "commandId": "com90",
+   "commandLabel": "ニプルファック",
+   "repetition": "first",
+   "text": "彼女は自ら胸を寄せて、迎えた。乳首で求めることを、受け入れていた。"
+  },
+  {
+   "band": "high",
+   "category": "ハード",
+   "commandId": "com90",
+   "commandLabel": "ニプルファック",
+   "repetition": "repeat",
+   "text": "彼女の応え方は素直だった。胸の感覚を、自分も求めていた。"
+  },
+  {
+   "band": "low",
+   "category": "着衣・脱衣",
+   "commandId": "com110",
+   "commandLabel": "服の着脱",
+   "repetition": "first",
+   "text": "服の着脱を命じられ、彼女は戸惑って手を止めた。脱ぐことも着ることも、こちらの許可次第だった。"
+  },
+  {
+   "band": "low",
+   "category": "着衣・脱衣",
+   "commandId": "com110",
+   "commandLabel": "服の着脱",
+   "repetition": "repeat",
+   "text": "着替えの手つきは、まだぎこちなかった。服一枚にも、緊張が残っていた。"
+  },
+  {
+   "band": "mid",
+   "category": "着衣・脱衣",
+   "commandId": "com110",
+   "commandLabel": "服の着脱",
+   "repetition": "first",
+   "text": "彼女は命じられるまま、滑らかに着替えた。服の状態を、こちらに委ねていた。"
+  },
+  {
+   "band": "mid",
+   "category": "着衣・脱衣",
+   "commandId": "com110",
+   "commandLabel": "服の着脱",
+   "repetition": "repeat",
+   "text": "彼女の手つきに迷いがなくなっていく。着脱そのものが、合図になっていた。"
+  },
+  {
+   "band": "high",
+   "category": "着衣・脱衣",
+   "commandId": "com110",
+   "commandLabel": "服の着脱",
+   "repetition": "first",
+   "text": "彼女は自ら服に手をかけた。着るも脱ぐも、こちらの望む形が彼女の形だった。"
+  },
+  {
+   "band": "high",
+   "category": "着衣・脱衣",
+   "commandId": "com110",
+   "commandLabel": "服の着脱",
+   "repetition": "repeat",
+   "text": "彼女の応え方は素直だった。服の状態すら、彼女の素直さの印になっていた。"
+  },
+  {
+   "band": "low",
+   "category": "セックス系",
+   "commandId": "com120",
+   "commandLabel": "挿入Gスポ責め",
+   "repetition": "first",
+   "text": "挿入したまま、奥の一点を責めるよう命じた。彼女は戸惑い、浅く息を乱した。"
+  },
+  {
+   "band": "low",
+   "category": "セックス系",
+   "commandId": "com120",
+   "commandLabel": "挿入Gスポ責め",
+   "repetition": "repeat",
+   "text": "奥を責める動きに、彼女はまだ慣れなかった。小さく、逃げるように身をよじった。"
+  },
+  {
+   "band": "mid",
+   "category": "セックス系",
+   "commandId": "com120",
+   "commandLabel": "挿入Gスポ責め",
+   "repetition": "first",
+   "text": "奥一点への刺激に、彼女の腰が少しずつ反応し始めた。感じ方が、変わってきていた。"
+  },
+  {
+   "band": "mid",
+   "category": "セックス系",
+   "commandId": "com120",
+   "commandLabel": "挿入Gスポ責め",
+   "repetition": "repeat",
+   "text": "奥を責めるたび、彼女の内側が応えるようになっていた。声が、少し漏れた。"
+  },
+  {
+   "band": "high",
+   "category": "セックス系",
+   "commandId": "com120",
+   "commandLabel": "挿入Gスポ責め",
+   "repetition": "first",
+   "text": "奥を責めると、彼女は自ら腰を寄せてきた。求める先が、はっきりしていた。"
+  },
+  {
+   "band": "high",
+   "category": "セックス系",
+   "commandId": "com120",
+   "commandLabel": "挿入Gスポ責め",
+   "repetition": "repeat",
+   "text": "彼女は奥への刺激を、自分から迎えにいった。もう、教える必要はなかった。"
+  },
+  {
+   "band": "low",
+   "category": "セックス系",
+   "commandId": "com121",
+   "commandLabel": "挿入子宮口責め",
+   "repetition": "first",
+   "text": "一番奥まで届かせ、彼女は息を詰めた。初めての圧迫に、身体が固くなった。"
+  },
+  {
+   "band": "low",
+   "category": "セックス系",
+   "commandId": "com121",
+   "commandLabel": "挿入子宮口責め",
+   "repetition": "repeat",
+   "text": "奥の圧迫に、彼女はまだ身構えた。それでも、受け入れる形だけは崩れなかった。"
+  },
+  {
+   "band": "mid",
+   "category": "セックス系",
+   "commandId": "com121",
+   "commandLabel": "挿入子宮口責め",
+   "repetition": "first",
+   "text": "奥への圧迫に、彼女の反応が少しずつ変わっていく。苦しさより、別の色が混じり始めていた。"
+  },
+  {
+   "band": "mid",
+   "category": "セックス系",
+   "commandId": "com121",
+   "commandLabel": "挿入子宮口責め",
+   "repetition": "repeat",
+   "text": "奥まで届くたび、彼女の声の質が変わった。慣れが、形になっていた。"
+  },
+  {
+   "band": "high",
+   "category": "セックス系",
+   "commandId": "com121",
+   "commandLabel": "挿入子宮口責め",
+   "repetition": "first",
+   "text": "奥を圧されると、彼女は自分から深く迎えた。限界の先を、求めていた。"
+  },
+  {
+   "band": "high",
+   "category": "セックス系",
+   "commandId": "com121",
+   "commandLabel": "挿入子宮口責め",
+   "repetition": "repeat",
+   "text": "彼女は奥の圧迫を、昂ぶりとして受け取っていた。迎える動きに、迷いがなかった。"
+  },
+  {
+   "band": "low",
+   "category": "奉仕系",
+   "commandId": "com123",
+   "commandLabel": "パイズリフェラ",
+   "repetition": "first",
+   "text": "胸と口の両方で奉仕するよう命じると、彼女は真っ赤になって俯いた。動きは、ぎこちなかった。"
+  },
+  {
+   "band": "low",
+   "category": "奉仕系",
+   "commandId": "com123",
+   "commandLabel": "パイズリフェラ",
+   "repetition": "repeat",
+   "text": "両方での奉仕に、彼女はまだ戸惑っていた。順番を間違えそうになりながら、続けた。"
+  },
+  {
+   "band": "mid",
+   "category": "奉仕系",
+   "commandId": "com123",
+   "commandLabel": "パイズリフェラ",
+   "repetition": "first",
+   "text": "胸と口の奉仕に、彼女のリズムが生まれ始めた。使い分けが、少しずつ様になっていた。"
+  },
+  {
+   "band": "mid",
+   "category": "奉仕系",
+   "commandId": "com123",
+   "commandLabel": "パイズリフェラ",
+   "repetition": "repeat",
+   "text": "彼女の奉仕は滑らかになっていた。合間に見上げる目に、慣れが見えた。"
+  },
+  {
+   "band": "high",
+   "category": "奉仕系",
+   "commandId": "com123",
+   "commandLabel": "パイズリフェラ",
+   "repetition": "first",
+   "text": "彼女は自ら胸と口を使い分けて奉仕した。両方で、同時に求めてきた。"
+  },
+  {
+   "band": "high",
+   "category": "奉仕系",
+   "commandId": "com123",
+   "commandLabel": "パイズリフェラ",
+   "repetition": "repeat",
+   "text": "彼女の奉仕に、迷いはなかった。終わりを惜しむように、動きが緩やかになった。"
+  },
+  {
+   "band": "low",
+   "category": "奉仕系",
+   "commandId": "com124",
+   "commandLabel": "ディープスロート",
+   "repetition": "first",
+   "text": "喉の奥まで咥えるよう命じると、彼女は涙目になった。それでも、口は離さなかった。"
+  },
+  {
+   "band": "low",
+   "category": "奉仕系",
+   "commandId": "com124",
+   "commandLabel": "ディープスロート",
+   "repetition": "repeat",
+   "text": "奥まで咥える奉仕に、彼女はまだ苦しそうだった。けれど、止めようとはしなかった。"
+  },
+  {
+   "band": "mid",
+   "category": "奉仕系",
+   "commandId": "com124",
+   "commandLabel": "ディープスロート",
+   "repetition": "first",
+   "text": "喉の奥で受け止める動きが、少しずつ安定していった。彼女なりのコツを、掴んでいた。"
+  },
+  {
+   "band": "mid",
+   "category": "奉仕系",
+   "commandId": "com124",
+   "commandLabel": "ディープスロート",
+   "repetition": "repeat",
+   "text": "彼女の喉は、受け入れる形を覚えていた。合間の呼吸も、乱れなくなっていた。"
+  },
+  {
+   "band": "high",
+   "category": "奉仕系",
+   "commandId": "com124",
+   "commandLabel": "ディープスロート",
+   "repetition": "first",
+   "text": "彼女は自分から喉の奥まで迎え入れた。深く、長く、奉仕を続けた。"
+  },
+  {
+   "band": "high",
+   "category": "奉仕系",
+   "commandId": "com124",
+   "commandLabel": "ディープスロート",
+   "repetition": "repeat",
+   "text": "彼女の奉仕は深かった。奥で受け止めることが、彼女の昂ぶりになっていた。"
+  },
+  {
+   "band": "low",
+   "category": "奉仕系",
+   "commandId": "com125",
+   "commandLabel": "フェラ自慰",
+   "repetition": "first",
+   "text": "奉仕しながら自分も触るよう命じると、彼女は耳まで赤くした。手は、震えていた。"
+  },
+  {
+   "band": "low",
+   "category": "奉仕系",
+   "commandId": "com125",
+   "commandLabel": "フェラ自慰",
+   "repetition": "repeat",
+   "text": "両方の動きに、彼女はまだ追いつけなかった。それでも、どちらも止めなかった。"
+  },
+  {
+   "band": "mid",
+   "category": "奉仕系",
+   "commandId": "com125",
+   "commandLabel": "フェラ自慰",
+   "repetition": "first",
+   "text": "奉仕と自分の手が、少しずつ同じリズムを持ち始めた。彼女の声が、変わっていった。"
+  },
+  {
+   "band": "mid",
+   "category": "奉仕系",
+   "commandId": "com125",
+   "commandLabel": "フェラ自慰",
+   "repetition": "repeat",
+   "text": "彼女は奉仕しながら、自分を昂ぶらせることを覚えていた。動きに、意思があった。"
+  },
+  {
+   "band": "high",
+   "category": "奉仕系",
+   "commandId": "com125",
+   "commandLabel": "フェラ自慰",
+   "repetition": "first",
+   "text": "彼女は奉仕しながら、自らを激しく昂ぶらせた。両方とも、止まらなかった。"
+  },
+  {
+   "band": "high",
+   "category": "奉仕系",
+   "commandId": "com125",
+   "commandLabel": "フェラ自慰",
+   "repetition": "repeat",
+   "text": "彼女の奉仕と昂ぶりは、一つになっていた。見せることを、隠さなかった。"
+  },
+  {
+   "band": "low",
+   "category": "奉仕系",
+   "commandId": "com126",
+   "commandLabel": "手コキフェラ",
+   "repetition": "first",
+   "text": "手と口の両方で奉仕するよう命じると、彼女は慌てて頷いた。手つきは、まだ拙かった。"
+  },
+  {
+   "band": "low",
+   "category": "奉仕系",
+   "commandId": "com126",
+   "commandLabel": "手コキフェラ",
+   "repetition": "repeat",
+   "text": "両方での奉仕に、彼女の手はまだ迷っていた。それでも、口は止まらなかった。"
+  },
+  {
+   "band": "mid",
+   "category": "奉仕系",
+   "commandId": "com126",
+   "commandLabel": "手コキフェラ",
+   "repetition": "first",
+   "text": "手と口の奉仕が、少しずつ噛み合うようになっていた。彼女なりの順序が、できていた。"
+  },
+  {
+   "band": "mid",
+   "category": "奉仕系",
+   "commandId": "com126",
+   "commandLabel": "手コキフェラ",
+   "repetition": "repeat",
+   "text": "彼女の両手と口は、慣れた動きを見せていた。応えようとする気持ちが、出ていた。"
+  },
+  {
+   "band": "high",
+   "category": "奉仕系",
+   "commandId": "com126",
+   "commandLabel": "手コキフェラ",
+   "repetition": "first",
+   "text": "彼女は手と口を自在に使い分けて奉仕した。どちらも、的確だった。"
+  },
+  {
+   "band": "high",
+   "category": "奉仕系",
+   "commandId": "com126",
+   "commandLabel": "手コキフェラ",
+   "repetition": "repeat",
+   "text": "彼女の奉仕は淀みなかった。求められる前に、次の動きへ移っていた。"
+  },
+  {
+   "band": "low",
+   "category": "奉仕系",
+   "commandId": "com127",
+   "commandLabel": "バキュームフェラ",
+   "repetition": "first",
+   "text": "強く吸う奉仕を命じると、彼女は頬をへこませて応えた。力加減は、まだ分からなかった。"
+  },
+  {
+   "band": "low",
+   "category": "奉仕系",
+   "commandId": "com127",
+   "commandLabel": "バキュームフェラ",
+   "repetition": "repeat",
+   "text": "吸う奉仕に、彼女はまだ遠慮があった。それでも、言われた強さを目指していた。"
+  },
+  {
+   "band": "mid",
+   "category": "奉仕系",
+   "commandId": "com127",
+   "commandLabel": "バキュームフェラ",
+   "repetition": "first",
+   "text": "吸い付く動きに、彼女のリズムが生まれていた。強さの加減も、覚え始めていた。"
+  },
+  {
+   "band": "mid",
+   "category": "奉仕系",
+   "commandId": "com127",
+   "commandLabel": "バキュームフェラ",
+   "repetition": "repeat",
+   "text": "彼女の奉仕は、吸う動きを中心に安定していた。目だけが、評価を待っていた。"
+  },
+  {
+   "band": "high",
+   "category": "奉仕系",
+   "commandId": "com127",
+   "commandLabel": "バキュームフェラ",
+   "repetition": "first",
+   "text": "彼女は自ら強く吸い付いて奉仕した。離す瞬間まで、名残惜しそうだった。"
+  },
+  {
+   "band": "high",
+   "category": "奉仕系",
+   "commandId": "com127",
+   "commandLabel": "バキュームフェラ",
+   "repetition": "repeat",
+   "text": "彼女の吸う奉仕は激しかった。求めることが、形になっていた。"
+  },
+  {
+   "band": "low",
+   "category": "セックス系",
+   "commandId": "com128",
+   "commandLabel": "正常位・キス",
+   "repetition": "first",
+   "text": "体位を保ったまま口づけると、彼女は驚いて身を固くした。応える余裕は、まだなかった。"
+  },
+  {
+   "band": "low",
+   "category": "セックス系",
+   "commandId": "com128",
+   "commandLabel": "正常位・キス",
+   "repetition": "repeat",
+   "text": "重なったままの口づけに、彼女はまだ慣れなかった。呼吸が、乱れていた。"
+  },
+  {
+   "band": "mid",
+   "category": "セックス系",
+   "commandId": "com128",
+   "commandLabel": "正常位・キス",
+   "repetition": "first",
+   "text": "重なりながらの口づけに、彼女が少しずつ応え始めた。距離の近さが、形になっていた。"
+  },
+  {
+   "band": "mid",
+   "category": "セックス系",
+   "commandId": "com128",
+   "commandLabel": "正常位・キス",
+   "repetition": "repeat",
+   "text": "彼女は体位の中で、口づけに応える余裕を持ち始めていた。目を、閉じた。"
+  },
+  {
+   "band": "high",
+   "category": "セックス系",
+   "commandId": "com128",
+   "commandLabel": "正常位・キス",
+   "repetition": "first",
+   "text": "彼女は自ら顔を寄せて口づけを求めた。重なる距離が、そのまま昂ぶりになっていた。"
+  },
+  {
+   "band": "high",
+   "category": "セックス系",
+   "commandId": "com128",
+   "commandLabel": "正常位・キス",
+   "repetition": "repeat",
+   "text": "彼女の口づけは積極的だった。離れる瞬間を、惜しんでいた。"
+  },
+  {
+   "band": "low",
+   "category": "セックス系",
+   "commandId": "com129",
+   "commandLabel": "正常位・胸愛撫",
+   "repetition": "first",
+   "text": "体位を保ったまま胸に触れると、彼女は小さく声を漏らした。逃げる場所は、なかった。"
+  },
+  {
+   "band": "low",
+   "category": "セックス系",
+   "commandId": "com129",
+   "commandLabel": "正常位・胸愛撫",
+   "repetition": "repeat",
+   "text": "重なったまま胸を愛撫され、彼女はまだ身を固くしていた。それでも、受け止めた。"
+  },
+  {
+   "band": "mid",
+   "category": "セックス系",
+   "commandId": "com129",
+   "commandLabel": "正常位・胸愛撫",
+   "repetition": "first",
+   "text": "体位の中での愛撫に、彼女の反応が少しずつ素直になっていった。重なる熱が、効いていた。"
+  },
+  {
+   "band": "mid",
+   "category": "セックス系",
+   "commandId": "com129",
+   "commandLabel": "正常位・胸愛撫",
+   "repetition": "repeat",
+   "text": "彼女は愛撫に応えるように、身体を預け始めていた。抵抗は、形だけになっていた。"
+  },
+  {
+   "band": "high",
+   "category": "セックス系",
+   "commandId": "com129",
+   "commandLabel": "正常位・胸愛撫",
+   "repetition": "first",
+   "text": "彼女は体位の中で、自ら胸を押し付けるようにした。求める動きだった。"
+  },
+  {
+   "band": "high",
+   "category": "セックス系",
+   "commandId": "com129",
+   "commandLabel": "正常位・胸愛撫",
+   "repetition": "repeat",
+   "text": "彼女の反応は素直だった。愛撫されることが、そのまま悦びになっていた。"
+  },
+  {
+   "band": "low",
+   "category": "セックス系",
+   "commandId": "com130",
+   "commandLabel": "正常位SP",
+   "repetition": "first",
+   "text": "複数の刺激を重ねると、彼女は処理しきれずに乱れた。声が、途切れ途切れになった。"
+  },
+  {
+   "band": "low",
+   "category": "セックス系",
+   "commandId": "com130",
+   "commandLabel": "正常位SP",
+   "repetition": "repeat",
+   "text": "重なる刺激に、彼女はまだ追いつけなかった。身体が、あちこちで反応していた。"
+  },
+  {
+   "band": "mid",
+   "category": "セックス系",
+   "commandId": "com130",
+   "commandLabel": "正常位SP",
+   "repetition": "first",
+   "text": "重なる刺激に、彼女の反応が噛み合い始めた。一つひとつが、別の昂ぶりを呼んでいた。"
+  },
+  {
+   "band": "mid",
+   "category": "セックス系",
+   "commandId": "com130",
+   "commandLabel": "正常位SP",
+   "repetition": "repeat",
+   "text": "彼女は複数の刺激を、受け止められるようになっていた。声が、重なった。"
+  },
+  {
+   "band": "high",
+   "category": "セックス系",
+   "commandId": "com130",
+   "commandLabel": "正常位SP",
+   "repetition": "first",
+   "text": "彼女は重なる刺激の全部を、自ら迎えにいった。昂ぶりが、連鎖していた。"
+  },
+  {
+   "band": "high",
+   "category": "セックス系",
+   "commandId": "com130",
+   "commandLabel": "正常位SP",
+   "repetition": "repeat",
+   "text": "彼女の身体は、刺激の全部に応えていた。もう、隠すものはなかった。"
+  },
+  {
+   "band": "low",
+   "category": "セックス系",
+   "commandId": "com131",
+   "commandLabel": "後背位・胸愛撫",
+   "repetition": "first",
+   "text": "後ろからの体位のまま胸に触れると、彼女は振り返りそうになって堪えた。"
+  },
+  {
+   "band": "low",
+   "category": "セックス系",
+   "commandId": "com131",
+   "commandLabel": "後背位・胸愛撫",
+   "repetition": "repeat",
+   "text": "見えない位置からの愛撫に、彼女はまだ身構えた。それでも、体位は崩れなかった。"
+  },
+  {
+   "band": "mid",
+   "category": "セックス系",
+   "commandId": "com131",
+   "commandLabel": "後背位・胸愛撫",
+   "repetition": "first",
+   "text": "後ろからの愛撫に、彼女の反応が少しずつ素直になっていった。見えない分、感じ方が鋭かった。"
+  },
+  {
+   "band": "mid",
+   "category": "セックス系",
+   "commandId": "com131",
+   "commandLabel": "後背位・胸愛撫",
+   "repetition": "repeat",
+   "text": "彼女は見えない刺激に、身体で応えるようになっていた。声が、先に出た。"
+  },
+  {
+   "band": "high",
+   "category": "セックス系",
+   "commandId": "com131",
+   "commandLabel": "後背位・胸愛撫",
+   "repetition": "first",
+   "text": "彼女は後ろからの愛撫に、自ら身体を寄せた。見えない相手を、求めていた。"
+  },
+  {
+   "band": "high",
+   "category": "セックス系",
+   "commandId": "com131",
+   "commandLabel": "後背位・胸愛撫",
+   "repetition": "repeat",
+   "text": "彼女の反応はまっすぐだった。愛撫のたびに、求める形になっていった。"
+  },
+  {
+   "band": "low",
+   "category": "セックス系",
+   "commandId": "com132",
+   "commandLabel": "後背位・スパンキング",
+   "repetition": "first",
+   "text": "体位を保ったまま尻を打つと、彼女は驚いて跳ねた。痛みと昂ぶりが、混ざっていた。"
+  },
+  {
+   "band": "low",
+   "category": "セックス系",
+   "commandId": "com132",
+   "commandLabel": "後背位・スパンキング",
+   "repetition": "repeat",
+   "text": "打たれるたび、彼女は小さく声を上げた。まだ、受け止め方を知らなかった。"
+  },
+  {
+   "band": "mid",
+   "category": "セックス系",
+   "commandId": "com132",
+   "commandLabel": "後背位・スパンキング",
+   "repetition": "first",
+   "text": "打つ刺激と体位が重なり、彼女の反応が変わっていった。痛みの奥に、別の色が見えた。"
+  },
+  {
+   "band": "mid",
+   "category": "セックス系",
+   "commandId": "com132",
+   "commandLabel": "後背位・スパンキング",
+   "repetition": "repeat",
+   "text": "彼女は打たれるリズムに、身体を合わせ始めていた。声の質が、変わっていた。"
+  },
+  {
+   "band": "high",
+   "category": "セックス系",
+   "commandId": "com132",
+   "commandLabel": "後背位・スパンキング",
+   "repetition": "first",
+   "text": "彼女は打たれることを、自ら求めるように腰を寄せた。痛みが、昂ぶりに変わっていた。"
+  },
+  {
+   "band": "high",
+   "category": "セックス系",
+   "commandId": "com132",
+   "commandLabel": "後背位・スパンキング",
+   "repetition": "repeat",
+   "text": "彼女の反応は素直だった。次の一打を、待つ形になっていた。"
+  },
+  {
+   "band": "low",
+   "category": "セックス系",
+   "commandId": "com133",
+   "commandLabel": "立ちバック",
+   "repetition": "first",
+   "text": "立ったままの体位に、彼女は壁に手をついて堪えた。脚が、小さく震えた。"
+  },
+  {
+   "band": "low",
+   "category": "セックス系",
+   "commandId": "com133",
+   "commandLabel": "立ちバック",
+   "repetition": "repeat",
+   "text": "立位の不安定さに、彼女はまだ慣れなかった。それでも、倒れはしなかった。"
+  },
+  {
+   "band": "mid",
+   "category": "セックス系",
+   "commandId": "com133",
+   "commandLabel": "立ちバック",
+   "repetition": "first",
+   "text": "立ったままの体位に、彼女のリズムが生まれ始めた。不安定さが、昂ぶりに混ざっていた。"
+  },
+  {
+   "band": "mid",
+   "category": "セックス系",
+   "commandId": "com133",
+   "commandLabel": "立ちバック",
+   "repetition": "repeat",
+   "text": "彼女は立位の中で、自分の支え方を覚えていた。動きが、安定していた。"
+  },
+  {
+   "band": "high",
+   "category": "セックス系",
+   "commandId": "com133",
+   "commandLabel": "立ちバック",
+   "repetition": "first",
+   "text": "彼女は立ったまま、自ら腰を使って応えた。不安定さを、楽しむようにすら見えた。"
+  },
+  {
+   "band": "high",
+   "category": "セックス系",
+   "commandId": "com133",
+   "commandLabel": "立ちバック",
+   "repetition": "repeat",
+   "text": "彼女の動きは大胆だった。支えを求める手だけが、名残だった。"
+  },
+  {
+   "band": "low",
+   "category": "セックス系",
+   "commandId": "com134",
+   "commandLabel": "後背位SP",
+   "repetition": "first",
+   "text": "後ろからの体位に刺激を重ねると、彼女は受け止めきれずに乱れた。"
+  },
+  {
+   "band": "low",
+   "category": "セックス系",
+   "commandId": "com134",
+   "commandLabel": "後背位SP",
+   "repetition": "repeat",
+   "text": "重なる刺激に、彼女はまだ追いつけなかった。見えない分、反応が大きかった。"
+  },
+  {
+   "band": "mid",
+   "category": "セックス系",
+   "commandId": "com134",
+   "commandLabel": "後背位SP",
+   "repetition": "first",
+   "text": "後ろからの刺激の重なりに、彼女が少しずつ噛み合っていった。声が、重なった。"
+  },
+  {
+   "band": "mid",
+   "category": "セックス系",
+   "commandId": "com134",
+   "commandLabel": "後背位SP",
+   "repetition": "repeat",
+   "text": "彼女は複数の刺激を、身体で受け止められるようになっていた。"
+  },
+  {
+   "band": "high",
+   "category": "セックス系",
+   "commandId": "com134",
+   "commandLabel": "後背位SP",
+   "repetition": "first",
+   "text": "彼女は後ろからの刺激の全部を、自ら迎えた。昂ぶりが、連鎖していた。"
+  },
+  {
+   "band": "high",
+   "category": "セックス系",
+   "commandId": "com134",
+   "commandLabel": "後背位SP",
+   "repetition": "repeat",
+   "text": "彼女の身体は、見えない刺激の全部に応えていた。求める形だった。"
+  },
+  {
+   "band": "low",
+   "category": "愛撫系",
+   "commandId": "com135",
+   "commandLabel": "セルフクンニ",
+   "repetition": "first",
+   "text": "自分で自分を舐めるよう命じると、彼女は信じられないものを見る目をした。身体は、まだ固かった。"
+  },
+  {
+   "band": "low",
+   "category": "愛撫系",
+   "commandId": "com135",
+   "commandLabel": "セルフクンニ",
+   "repetition": "repeat",
+   "text": "自分の身体への奉仕に、彼女はまだ戸惑っていた。姿勢を保つのが、やっとだった。"
+  },
+  {
+   "band": "mid",
+   "category": "愛撫系",
+   "commandId": "com135",
+   "commandLabel": "セルフクンニ",
+   "repetition": "first",
+   "text": "自分の身体に届く動きが、少しずつ様になっていった。彼女の声が、変わり始めた。"
+  },
+  {
+   "band": "mid",
+   "category": "愛撫系",
+   "commandId": "com135",
+   "commandLabel": "セルフクンニ",
+   "repetition": "repeat",
+   "text": "彼女は自分の昂ぶりを、自分で作ることを覚え始めていた。"
+  },
+  {
+   "band": "high",
+   "category": "愛撫系",
+   "commandId": "com135",
+   "commandLabel": "セルフクンニ",
+   "repetition": "first",
+   "text": "彼女は自ら進んで自分の身体を昂ぶらせた。見られることが、そのまま熱になっていた。"
+  },
+  {
+   "band": "high",
+   "category": "愛撫系",
+   "commandId": "com135",
+   "commandLabel": "セルフクンニ",
+   "repetition": "repeat",
+   "text": "彼女の動きに、ためらいはなかった。自分で自分を、求める形になっていた。"
+  }
+ ]
+}

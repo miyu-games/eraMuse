@@ -1,0 +1,248 @@
+;«Œð‹Zp‚ÌLvUPˆ—‚Æ‚»‚Ì‰Â”Û”»’è
+;eraIm@s_ver.0.17ƒÀd‚ÌƒXƒNƒŠƒvƒg‚ðƒx[ƒX‚Éˆ—‚ðŠÈ—ª‰»
+;eraIM@S‚©‚ç“±“ü‚µ‚Ü‚µ‚½(eramaou)
+
+
+;-------------------------------------------------
+;«Œð‹Zp‚ÌLvUP
+;-------------------------------------------------
+@ABLUP14
+DRAWLINE
+;PRINTL “z—ê‚Ì«sˆ×‚Ì‹Zp‚ðUP‚µ‚Ü‚·
+;PRINTL «Œð‹Zp‚ª‚‚¢‚ÆA«sˆ×‚ÌÛ‚É‘ŠŽè‚ðƒC‚©‚¹‚â‚·‚­‚È‚è‚Ü‚·
+;PRINTL ddddddddddddddddddddddddddddddddddddddd
+;«Œð‹Zp‚ÌãŒÀ‚Í10
+IF ABL:14 >= 10
+	PRINTW Šù‚ÉMAX‚Å‚·
+	RETURN 0
+;•òŽd‹Zp{«Œð‹Zp‚Í11ˆÈã‚É‚È‚ç‚È‚¢
+ELSEIF ABL:13 + ABL:14 >= 10
+	PRINTFORMW •òŽd‹Zp({ABL:13}){«Œð‹Zp({ABL:14})‚ÌãŒÀ‚Í10‚Å‚·
+	RETURN 0
+ENDIF
+
+;•K—v‚ÈK“¾‚ÌŽì
+A = 0
+;•K—v‚È«ŒðŒoŒ±
+B = 0
+
+;ðŒ•Ê‚É‚n‚j‚©ƒ_ƒ‚©‚ð‹L˜^‚·‚é
+;K“¾‚ÌŽì‚É‚æ‚é‰Â”ÛiI=0:‰ÂAI&1:Žì•s‘«AI&2:ŒoŒ±•s‘«j
+I = 0
+
+CALL DECIDE_ABLUP14
+
+;Lv5‚Ü‚Å‚Í‹ZI‚ª«Œð‹Zp+1Lv‚Å‚È‚¢‚Æ‚¢‚¯‚È‚¢
+SIF ABL:14 < 5
+	PRINTFORML %ABLNAME:12%{ABL:14 + 1}LVˆÈã(Œ»Ý{ABL:12}LV)‚©‚Â
+
+PRINTFORM [0] - %PALAMNAME:7%‚ÌŽì~{JUEL:7}/{A} cc
+IF I == 0
+	PRINT ‚n‚j
+ELSE
+	SIF I & 1
+		PRINT Žì•s‘« 
+	SIF I & 2
+		PRINT ŒoŒ±•s‘« 
+	SIF I & 4
+		PRINT ”\—Í•s‘«
+ENDIF
+PRINTL 
+PRINTFORML       %EXPNAME:5%@{EXP:5}/{B}
+
+PRINTL [100] - ‚â‚ß‚é
+
+INPUT
+IF (RESULT < 0 || RESULT > 0) && RESULT != 100
+	RESTART
+ELSEIF I != 0 && RESULT == 0
+	PRINTL ðŒ‚ð–ž‚½‚µ‚Ä‚¢‚Ü‚¹‚ñ
+	RESTART
+ELSEIF RESULT == 100
+	RETURN 0
+ENDIF
+
+ABL:14 += 1
+SIF RESULT == 0
+	JUEL:7 -= A
+
+PRINTFORML %ABLNAME:14%‚ÌƒŒƒxƒ‹‚ª{ABL:14}‚É‚È‚è‚Ü‚µ‚½
+
+RETURN 0
+
+;--------------------------------------------------
+;«Œð‹Zp‚ÌLvUP‰Â”Û”»’è
+;--------------------------------------------------
+@DECIDE_ABLUP14
+SIF ABL:13 + ABL:14 >= 10
+	RETURN 0
+
+;”»’è•Ï”‚ð‹ó‚É
+A = 0
+B = 0
+I = 0
+
+IF ABL:14 == 0
+	A = 1
+	B = 3
+ELSEIF ABL:14 == 1
+	A = 10
+	B = 10
+ELSEIF ABL:14 == 2
+	A = 100
+	B = 30
+ELSEIF ABL:14 == 3
+	A = 1500
+	B = 80
+ELSEIF ABL:14 == 4
+	A = 4000
+	B = 100
+ELSEIF ABL:14 == 5
+	A = 5000
+	B = 130
+ELSEIF ABL:14 == 6
+	A = 6500
+	B = 160
+ELSEIF ABL:14 == 7
+	A = 8000
+	B = 200
+ELSEIF ABL:14 == 8
+	A = 10000
+	B = 250
+ELSEIF ABL:14 == 9
+	A = 15000
+	B = 300
+ENDIF
+
+;ˆêü‰z‚¦‚È‚¢
+IF TALENT:27
+	IF ABL:14 == 3
+		TIMES A , 1.50
+		TIMES B , 1.50
+	ELSEIF ABL:14 == 4
+		TIMES A , 2.00
+		TIMES B , 2.00
+	ELSEIF ABL:14 == 5
+		TIMES A , 2.50
+		TIMES B , 2.50
+	ELSEIF ABL:14 >= 6
+		TIMES A , 3.00
+		TIMES B , 3.00
+	ENDIF
+ENDIF
+
+;‘f’¼
+IF TALENT:13
+	TIMES A , 0.90
+	TIMES B , 0.95
+ENDIF
+;–³ŠÖS
+IF TALENT:21
+	TIMES A , 1.10
+	TIMES B , 1.05
+ENDIF
+;Š´î–R‚µ‚¢
+IF TALENT:22
+	TIMES A , 1.10
+	TIMES B , 1.05
+ENDIF
+;DŠïS
+IF TALENT:23
+	TIMES A , 0.95
+	TIMES B , 0.95
+ENDIF
+;•ÛŽç“I
+IF TALENT:24
+	TIMES A , 1.20
+	TIMES B , 1.10
+ENDIF
+
+;—}ˆ³
+IF TALENT:32
+	TIMES A , 1.10
+	TIMES B , 1.05
+;‰ð•ú
+ELSEIF TALENT:33
+	TIMES A , 0.90
+	TIMES B , 0.95
+ENDIF
+
+;’ïR
+IF TALENT:34
+	TIMES A , 1.20
+	TIMES B , 1.10
+ENDIF
+
+;’p‚¶‚ç‚¢
+IF TALENT:35
+	TIMES A , 1.10
+	TIMES B , 1.05
+;’p”–‚¢
+ELSEIF TALENT:36
+	TIMES A , 0.95
+	TIMES B , 0.95
+ENDIF
+
+;K“¾‘‚¢
+IF TALENT:50
+	TIMES A , 0.80
+	TIMES B , 0.80
+;K“¾’x‚¢
+ELSEIF TALENT:51
+	TIMES A , 1.50
+	TIMES B , 1.20
+ENDIF
+
+;Œ£g“I
+IF TALENT:63
+	TIMES A , 0.95
+	TIMES B , 0.95
+ENDIF
+;‰˜‚ê–³Ž‹
+IF TALENT:64
+	TIMES A , 0.95
+	TIMES B , 0.95
+ENDIF
+
+;«Œð’†“Å
+IF ABL:30 < 3
+	TIMES A , 1.00
+	TIMES B , 1.00
+ELSEIF ABL:30 < 6
+	TIMES A , 0.95
+	TIMES B , 0.95
+ELSEIF ABL:30 < 8
+	TIMES A , 0.90
+	TIMES B , 0.90
+ELSEIF ABL:30 < 10
+	TIMES A , 0.85
+	TIMES B , 0.85
+ELSE
+	TIMES A , 0.80
+	TIMES B , 0.80
+ENDIF
+
+;Å’á‚Å‚à1‰ñE1ŒÂ‚Í•K—v
+SIF A < 1
+	A = 1
+SIF B < 1
+	B = 1
+
+;K“¾‚ÌŽì‚Í‘«‚è‚Ä‚¢‚éH
+SIF JUEL:7 < A
+	I |= 1
+;«ŒðŒoŒ±‚ª•K—v
+SIF EXP:5 < B
+	I |= 2
+;Lv4‚Ü‚Å‚Í‹ZI‚ª•K—v
+SIF ABL:12 < 5 && ABL:12 < ABL:14 + 1
+	I |= 4
+
+IF I == 0
+	RETURN 1
+ELSE
+	RETURN 0
+ENDIF
+;
+;
+;
