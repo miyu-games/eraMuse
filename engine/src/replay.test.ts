@@ -55,6 +55,17 @@ describe("reconstructMessage", () => {
       .toEqual({ op: "setdialogue", text: "あ" });
   });
 
+  test("charcopy は解決済み id（copiedId）を明示 id として再構成する", () => {
+    const w: string[] = [];
+    expect(reconstructMessage(
+      { op: "charcopy", characterId: "base", copiedId: "base_2", newName: "素体タイプ（2）" }, ctx, w))
+      .toEqual({ op: "charcopy", characterId: "base", newId: "base_2", newName: "素体タイプ（2）" });
+    expect(w).toEqual([]);
+    // copiedId が無い旧形式は要求時の newId に落ちる
+    expect(reconstructMessage({ op: "charcopy", characterId: "base", newId: "base_x" }, ctx, w))
+      .toEqual({ op: "charcopy", characterId: "base", newId: "base_x" });
+  });
+
   test("setdialogue の本文が無い旧形式は警告して空で再生する", () => {
     const w: string[] = [];
     const msg = reconstructMessage({ op: "setdialogue" }, ctx, w);
@@ -161,6 +172,86 @@ describe("統合: 実セッションの再生", () => {
     expect(verdict.final.stateEqual).toBe(true);
     expect(verdict.final.trainerRecordEqual).toBe(true);
     expect(verdict.final.rngRollsSource).toBe(verdict.final.rngRollsReplay);
+    expect(verdict.ok).toBe(true);
+  }, 120_000);
+});
+
+describe("統合: 名前を付けて新規（charcopy）", () => {
+  test("コピー作成→新規開始→数手実行→リプレイ一致", async () => {
+    const root = mkdtempSync(join(tmpdir(), "eramuse-charcopy-"));
+    const srcHome = join(root, "src_home");
+    const workHome = join(root, "replay_home");
+    mkdirSync(join(srcHome, "data"), { recursive: true });
+    mkdirSync(join(srcHome, "characters"), { recursive: true });
+    mkdirSync(join(srcHome, "logs"), { recursive: true });
+    for (const f of readdirSync(join(ENGINE_HOME, "data"))) {
+      copyFileSync(join(ENGINE_HOME, "data", f), join(srcHome, "data", f));
+    }
+
+    const eng = new EngineProcess(join(SRC_DIR, "cli.ts"), srcHome);
+    try {
+      // 自動付番: base → base_2 → base_3（名前は元の名前＋（n））
+      let r = await eng.send({ op: "charcopy", characterId: "base" });
+      expect(r.ok).toBe(true);
+      expect(r.characterId).toBe("base_2");
+      expect(r.name).toBe("素体タイプ（2）");
+      r = await eng.send({ op: "charcopy", characterId: "base" });
+      expect(r.ok).toBe(true);
+      expect(r.characterId).toBe("base_3");
+
+      // 明示 id＋名前の微調整。定義（素質・見た目）が引き継がれる側。
+      r = await eng.send({ op: "charcopy", characterId: "shiori", newId: "shiori_b", newName: "栞・別ラン" });
+      expect(r.ok).toBe(true);
+      expect(r.name).toBe("栞・別ラン");
+      // 冪等: 同じコピーの作り直しは成功扱い（alreadyExisted）
+      r = await eng.send({ op: "charcopy", characterId: "shiori", newId: "shiori_b", newName: "栞・別ラン" });
+      expect(r.ok).toBe(true);
+      expect(r.alreadyExisted).toBe(true);
+      // 衝突: 中身の違う既存 id・未知の元は失敗
+      r = await eng.send({ op: "charcopy", characterId: "base", newId: "shiori" });
+      expect(r.ok).toBe(false);
+      r = await eng.send({ op: "charcopy", characterId: "nope" });
+      expect(r.ok).toBe(false);
+
+      // コピー先を開始すると定義が効いている（名前・素質）
+      r = await eng.send({ op: "start", characterId: "shiori_b", fresh: true, trainerId: "default" });
+      expect(r.ok).toBe(true);
+      expect(r.resumed).toBe(false);
+      const shioriSave = JSON.parse(readFileSync(join(srcHome, "characters", "shiori_b.json"), "utf8"));
+      expect(shioriSave.characterName).toBe("栞・別ラン");
+      expect(shioriSave.traitIds).toContain("kaifuku_hayai");
+      // 元キャラのセーブは作られていない（コピーは定義だけ）
+      expect(existsSync(join(srcHome, "characters", "shiori.json"))).toBe(false);
+
+      // 本命フロー: base_2 を新規開始して数手＋セッション中の charcopy
+      // （base_2 の op ログに charcopy が記録され、再生対象になる）
+      r = await eng.send({ op: "start", characterId: "base_2", fresh: true, trainerId: "default", seed: 12345 });
+      expect(r.ok).toBe(true);
+      expect(r.resumed).toBe(false);
+      for (const c of ["talk", "caress"]) {
+        const rr = await eng.send({ op: "execute", command: c });
+        expect(rr.ok).toBe(true);
+      }
+      r = await eng.send({ op: "charcopy", characterId: "base_2" });
+      expect(r.ok).toBe(true);
+      expect(r.characterId).toBe("base_2_2");
+      await eng.send({ op: "setdialogue", text: "「……っ」" });
+      r = await eng.send({ op: "end" });
+      expect(r.ok).toBe(true);
+    } finally {
+      eng.close();
+    }
+
+    const logPath = join(srcHome, "logs", "base_2.jsonl");
+    expect(existsSync(logPath)).toBe(true);
+    const recs = readFileSync(logPath, "utf8").split("\n").filter((l) => l.trim()).map((l) => JSON.parse(l));
+    const copyRec = recs.find((x: any) => x.op === "charcopy");
+    expect(copyRec?.copiedId).toBe("base_2_2");
+
+    const verdict = await replayLog({ sourceHome: srcHome, logPath, workHome });
+    expect(verdict.mismatches).toEqual([]);
+    expect(verdict.final.snapshotEqual).toBe(true);
+    expect(verdict.final.stateEqual).toBe(true);
     expect(verdict.ok).toBe(true);
   }, 120_000);
 });

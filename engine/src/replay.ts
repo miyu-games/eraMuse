@@ -137,6 +137,22 @@ export function reconstructMessage(
       }
       return { op: rec.op, candidateId: rec.candidateId };
     }
+    case "charcopy": {
+      // コピー元は記録の characterId（charcopy では複製元を指す）。
+      // 解決済みの新 id（copiedId）を明示 id として作り直すことで、
+      // 自動付番の結果が再生環境の辞書状態に左右されず決定的になる
+      // （起点データにコピーが含まれている場合はエンジン側の冪等判定
+      // で成功扱いになる）。
+      if (rec.characterId === undefined && rec.copiedId === undefined) {
+        warnings.push("charcopy: コピー元が記録されていない旧形式ログ");
+        return null;
+      }
+      const msg: any = { op: "charcopy", characterId: rec.characterId ?? ctx.characterId };
+      if (rec.copiedId !== undefined) msg.newId = rec.copiedId;
+      else if (rec.newId !== undefined) msg.newId = rec.newId;
+      if (typeof rec.newName === "string") msg.newName = rec.newName;
+      return msg;
+    }
     case "settraitflag": {
       if (rec.traitId === undefined) {
         warnings.push("settraitflag: traitId が記録されていない旧形式ログ");

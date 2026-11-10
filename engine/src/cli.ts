@@ -1,8 +1,11 @@
 // eraMuse engine adapter for the dedicated shell (方式A wiring).
 // stdin/stdout JSON-lines driver: one JSON object per line in, one per line out.
 // Ops: start / execute / end / buy / buyitem / next (alias: nextday) / ending / extend / getstate / setdialogue
+//      charcopy (duplicate a registered character's DEFINITION under a new
+//      id — 「名前を付けて新規」; state/saves are never copied)
 //      poolgen / pool / poolshow / pooldelete / poolregister (candidate pool,
-//      records live in characters.json with registered: 0 until promoted)
+//      records carry registered: 0 until promoted; runtime-born records are
+//      persisted to data/characters_added.json, never into characters.json)
 //      traitflags / settraitflag (trait master: per-trait random appearance)
 //      trainers (trainer profiles + their persistent progress)
 //      buytrainerskill (pre-start purchase of ITEM:52【技巧Lv】from the
@@ -12,6 +15,15 @@
 // between the two is whether the chat layer is alive — see ../layout.json):
 //   <home>/data/        dictionaries (narration.json / kojo.json / characters.json
 //                        / trainers.json — trainer profiles)
+//                        characters.json is the SHIPPED dictionary and is
+//                        never rewritten by the engine; definitions born at
+//                        runtime (charcopy copies, poolgen candidates,
+//                        poolregister promotions of shipped records) live in
+//                        data/characters_added.json instead, so a shell
+//                        transfer that refreshes the shipped dictionary can
+//                        no longer delete a created character (measured
+//                        2026-11-11: base_2 lost its definition that way and
+//                        became unstartable while its save remained).
 //   <home>/characters/  per-character save files: <characterId>.json (portable)
 //   <home>/logs/        per-character op logs:    <characterId>.jsonl
 //   <home>/trainers_state.json
@@ -73,6 +85,31 @@ function loadDict() {
     kojo.set(key, e.texts);
   }
   const chars = JSON.parse(readFileSync(join(dataDir, "characters.json"), "utf8"));
+  // 配布辞書の素の状態（実行時差分を characters_added.json へ書き分ける
+  // ための基準）。id 集合と、各 id の shipped な registered 値を持つ。
+  const shippedIds = new Set<string>(chars.characters.map((c: any) => c.id));
+  const shippedRegistered = new Map<string, number>(
+    chars.characters.map((c: any) => [c.id, c.registered === 0 ? 0 : 1]),
+  );
+  // 実行時定義のマージ: tombstone（deleted）を落とし、added のレコードで
+  // 同 id を置換／末尾に追加する。ファイルが無い・壊れている場合は配布
+  // 辞書だけで起動する（実行時エントリが無いだけ）。
+  try {
+    const addedPath = join(dataDir, "characters_added.json");
+    if (existsSync(addedPath)) {
+      const added = JSON.parse(readFileSync(addedPath, "utf8"));
+      const deleted = new Set<string>(Array.isArray(added?.deleted) ? added.deleted : []);
+      if (deleted.size) {
+        chars.characters = chars.characters.filter((c: any) => !deleted.has(c.id));
+      }
+      for (const rec of added?.characters ?? []) {
+        if (!rec || typeof rec.id !== "string" || deleted.has(rec.id)) continue;
+        const i = chars.characters.findIndex((c: any) => c.id === rec.id);
+        if (i >= 0) chars.characters[i] = rec;
+        else chars.characters.push(rec);
+      }
+    }
+  } catch { /* added file is optional runtime data; never sink the dictionary */ }
   const charDefs = new Map<string, any>();
   const poolDefs = new Map<string, any>();
   for (const c of chars.characters) {
@@ -80,10 +117,10 @@ function loadDict() {
     if (c.registered === 0) poolDefs.set(c.id, c);
     else charDefs.set(c.id, c);
   }
-  return { narration, kojo, charDefs, poolDefs, charsDoc: chars };
+  return { narration, kojo, charDefs, poolDefs, charsDoc: chars, shippedIds, shippedRegistered };
 }
 
-const { narration, kojo, charDefs, poolDefs, charsDoc } = loadDict();
+const { narration, kojo, charDefs, poolDefs, charsDoc, shippedIds, shippedRegistered } = loadDict();
 
 // ---------------------------------------------------------------- trainers
 // Trainer profiles (data/trainers.json): the trainer is also a character,
@@ -284,8 +321,53 @@ function linkTrainerToStore(fallbackTrainerId: string) {
   state.trainerLinked = true;
 }
 
+/** 実行時差分だけを data/characters_added.json へ書く。配布辞書
+ * characters.json 自体は決して書き換えない——殻の転送で辞書が差し
+ * 替わっても、実行時に作ったエントリ（charcopy／poolgen／昇格した
+ * 候補）は added 側に残り続ける。差分の定義:
+ *  - 配布に無い id のレコードは丸ごと実行時所有。
+ *  - 配布にある id は、registered が shipped 値から変わった時だけ
+ *    上書きレコードとして持つ（poolregister の昇格）。
+ *  - 配布にあって現在 Doc に無い id は tombstone（pooldelete）。 */
 function persistChars() {
-  writeFileSync(join(dataDir, "characters.json"), JSON.stringify(charsDoc, null, 2));
+  const runtime: any[] = [];
+  const present = new Set<string>();
+  for (const c of charsDoc.characters) {
+    present.add(c.id);
+    if (!shippedIds.has(c.id)) { runtime.push(c); continue; }
+    if ((c.registered === 0 ? 0 : 1) !== shippedRegistered.get(c.id)) runtime.push(c);
+  }
+  const deleted = [...shippedIds].filter((id) => !present.has(id));
+  writeFileSync(
+    join(dataDir, "characters_added.json"),
+    JSON.stringify({ characters: runtime, deleted }, null, 2),
+  );
+}
+
+/** キー順を吸収した正規化文字列（深い等値判定用）。charcopy の冪等判定
+ * （リプレイで同じコピーを二度作らない）で使う。 */
+function canonicalJson(value: any): string {
+  if (Array.isArray(value)) return `[${value.map(canonicalJson).join(",")}]`;
+  if (value && typeof value === "object") {
+    const keys = Object.keys(value).filter((k) => value[k] !== undefined).sort();
+    return `{${keys.map((k) => `${JSON.stringify(k)}:${canonicalJson(value[k])}`).join(",")}}`;
+  }
+  return JSON.stringify(value) ?? "null";
+}
+
+/** キャラ定義のうち「定義」に属する部分だけを深いコピーで取り出す
+ * （状態・セーブ・候補プールの簿記は含めない）。charcopy の複製形。 */
+function definitionCopyOf(src: any, id: string, name: string): any {
+  const rec: any = {
+    id,
+    name,
+    note: src.note ?? "",
+    personality: src.personality ?? "sunao",
+    traits: JSON.parse(JSON.stringify(src.traits ?? [])),
+    initOverrides: JSON.parse(JSON.stringify(src.initOverrides ?? {})),
+  };
+  if (src.look) rec.look = JSON.parse(JSON.stringify(src.look));
+  return rec;
 }
 
 function loadTraitMaster(): TraitMaster {
@@ -399,6 +481,13 @@ function appendOpLog(msg: any, out: any, logFrom: number) {
   if (msg.text !== undefined) rec.text = msg.text;
   if (msg.days !== undefined) rec.days = msg.days;
   if (msg.candidateId !== undefined) rec.candidateId = msg.candidateId;
+  if (msg.newId !== undefined) rec.newId = msg.newId;
+  if (msg.newName !== undefined) rec.newName = msg.newName;
+  if (msg.op === "charcopy" && out?.ok) {
+    // 解決済みの新しい id。再生側はこれを明示 id として作り直す（自動
+    // 付番の結果が再生環境の辞書状態に左右されないようにするため）。
+    rec.copiedId = out.characterId;
+  }
   if (msg.traitId !== undefined) rec.traitId = msg.traitId;
   if (msg.random !== undefined) rec.random = msg.random ? 1 : 0;
   if (msg.seed !== undefined) rec.requestSeed = msg.seed;
@@ -491,9 +580,18 @@ function handle(msg: any): any {
     case "start": {
       const c = charDefs.get(msg.characterId);
       if (!c) {
+        // セーブだけ残って定義が無い状態は「知らないキャラ」と区別する
+        // （辞書側の欠落で開始できないケースの切り分け用）。
+        const orphanSave = typeof msg.characterId === "string"
+          && existsSync(statePath(msg.characterId));
         out = poolDefs.has(msg.characterId)
           ? { ok: false, reason: `candidate not registered: ${msg.characterId} (poolregister が必要)` }
-          : { ok: false, reason: `unknown character: ${msg.characterId}` };
+          : {
+              ok: false,
+              reason: orphanSave
+                ? `unknown character: ${msg.characterId}（セーブは存在しますが定義がありません）`
+                : `unknown character: ${msg.characterId}`,
+            };
         break;
       }
       // 調教主の指定（任意）。未知の id は明示エラーにする。未指定は default。
@@ -626,6 +724,71 @@ function handle(msg: any): any {
       charDefs.set(msg.candidateId, rec);
       persistChars();
       out = { ok: true, registered: msg.candidateId, candidate: candidateSheet(rec) };
+      break;
+    }
+    case "charcopy": {
+      // 名前を付けて新規: 既存キャラの「定義」だけを複製して新しい
+      // エントリを立てる。状態（セーブ）は複製しない——新しいエントリ
+      // にはセーブが無く、そのまま新規開始できる。元キャラのセーブは
+      // 一切触らない（従来の新規＝破棄とは別の導線）。
+      const src = charDefs.get(msg.characterId);
+      if (!src) {
+        out = poolDefs.has(msg.characterId)
+          ? { ok: false, reason: `candidate not registered: ${msg.characterId}（候補は先に poolregister してください）` }
+          : { ok: false, reason: `unknown character: ${msg.characterId}` };
+        break;
+      }
+      const wantName = typeof msg.newName === "string" && msg.newName.trim() ? msg.newName : null;
+      let newId: string | null = null;
+      let autoN: number | null = null;
+      if (typeof msg.newId === "string" && msg.newId) {
+        // 明示 id: セーブファイル名になるため安全な文字だけを許す。
+        if (!/^[A-Za-z0-9_-]+$/.test(msg.newId)) {
+          out = { ok: false, reason: `invalid id: ${msg.newId}` };
+          break;
+        }
+        newId = msg.newId;
+      } else {
+        // 自動付番: <元id>_<n>（n は 2 から）。定義・候補・既存セーブの
+        // どれとも重ならない最初の番号を使う。
+        let n = 2;
+        while (charDefs.has(`${src.id}_${n}`) || poolDefs.has(`${src.id}_${n}`)
+          || existsSync(statePath(`${src.id}_${n}`))) n++;
+        autoN = n;
+        newId = `${src.id}_${n}`;
+      }
+      const name = wantName ?? (() => {
+        if (autoN !== null) return `${src.name}（${autoN}）`;
+        const m = /_(\d+)$/.exec(newId!);
+        return m ? `${src.name}（${m[1]}）` : `${src.name}（コピー）`;
+      })();
+      const rec = definitionCopyOf(src, newId, name);
+      if (poolDefs.has(newId)) {
+        out = { ok: false, reason: `id already in use: ${newId}` };
+        break;
+      }
+      const existing = charDefs.get(newId);
+      if (existing) {
+        // 冪等判定: 同じ定義のコピーが既にあるなら成功扱いにする
+        // （リプレイでは起点データにコピーが含まれているため、二度目
+        // の作成が軌跡の不一致にならないように）。中身の違う同名 id は
+        // 本物の衝突として失敗させる。
+        const existingProj = definitionCopyOf(existing, newId, existing.name);
+        if (canonicalJson(existingProj) === canonicalJson(rec)) {
+          out = { ok: true, characterId: newId, sourceId: src.id, name: existing.name, alreadyExisted: true };
+        } else {
+          out = { ok: false, reason: `id already in use: ${newId}` };
+        }
+        break;
+      }
+      if (existsSync(statePath(newId))) {
+        out = { ok: false, reason: `id already in use (orphan save exists): ${newId}` };
+        break;
+      }
+      charsDoc.characters.push(rec);
+      charDefs.set(newId, rec);
+      persistChars();
+      out = { ok: true, characterId: newId, sourceId: src.id, name };
       break;
     }
     case "traitflags": {
