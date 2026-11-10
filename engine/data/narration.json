@@ -867,55 +867,7 @@
   {
    "band": "low",
    "category": "道具使用",
-   "commandId": "com14",
-   "commandLabel": "クリキャップ",
-   "repetition": "first",
-   "text": "吸引のキャップが芽を包むと、彼女は声を上げた。吸われる感覚に、身体が跳ねた。"
-  },
-  {
-   "band": "low",
-   "category": "道具使用",
-   "commandId": "com14",
-   "commandLabel": "クリキャップ",
-   "repetition": "repeat",
-   "text": "キャップの吸引に、彼女は身をよじった。芽だけを責められる感覚に、まだ慣れなかった。"
-  },
-  {
-   "band": "mid",
-   "category": "道具使用",
-   "commandId": "com14",
-   "commandLabel": "クリキャップ",
-   "repetition": "first",
-   "text": "吸われるたび、彼女の呼吸が浅くなっていく。芽の感覚が、全身を支配し始めていた。"
-  },
-  {
-   "band": "mid",
-   "category": "道具使用",
-   "commandId": "com14",
-   "commandLabel": "クリキャップ",
-   "repetition": "repeat",
-   "text": "彼女は声を堪えきれなくなっていた。キャップの中で、芽が応え続けていた。"
-  },
-  {
-   "band": "high",
-   "category": "道具使用",
-   "commandId": "com14",
-   "commandLabel": "クリキャップ",
-   "repetition": "first",
-   "text": "彼女は自らキャップに身を寄せた。吸われる悦びを、求める側になっていた。"
-  },
-  {
-   "band": "high",
-   "category": "道具使用",
-   "commandId": "com14",
-   "commandLabel": "クリキャップ",
-   "repetition": "repeat",
-   "text": "吸引に、彼女の応え方は素直だった。もっと、と腰が訴えていた。"
-  },
-  {
-   "band": "low",
-   "category": "道具使用",
-   "commandId": "com15",
+   "commandId": "rotor_b",
    "commandLabel": "ニプルキャップ",
    "repetition": "first",
    "text": "乳首にキャップが吸い付くと、彼女は息を止めた。胸だけを責められる感覚に、戸惑った。"
@@ -923,7 +875,7 @@
   {
    "band": "low",
    "category": "道具使用",
-   "commandId": "com15",
+   "commandId": "rotor_b",
    "commandLabel": "ニプルキャップ",
    "repetition": "repeat",
    "text": "乳首の吸引に、彼女は小さく震えた。胸の感覚が、意識の中心に居座っていた。"
@@ -931,7 +883,7 @@
   {
    "band": "mid",
    "category": "道具使用",
-   "commandId": "com15",
+   "commandId": "rotor_b",
    "commandLabel": "ニプルキャップ",
    "repetition": "first",
    "text": "吸われるたび、彼女の呼吸が乱れていく。乳首の感覚が、全身に響き始めていた。"
@@ -939,7 +891,7 @@
   {
    "band": "mid",
    "category": "道具使用",
-   "commandId": "com15",
+   "commandId": "rotor_b",
    "commandLabel": "ニプルキャップ",
    "repetition": "repeat",
    "text": "彼女は唇を噛んで声を堪えた。胸の応え方は、もう誤魔化せなかった。"
@@ -947,7 +899,7 @@
   {
    "band": "high",
    "category": "道具使用",
-   "commandId": "com15",
+   "commandId": "rotor_b",
    "commandLabel": "ニプルキャップ",
    "repetition": "first",
    "text": "彼女は自ら胸を寄せて、キャップを迎えた。求める形を、身体が覚えていた。"
@@ -955,7 +907,7 @@
   {
    "band": "high",
    "category": "道具使用",
-   "commandId": "com15",
+   "commandId": "rotor_b",
    "commandLabel": "ニプルキャップ",
    "repetition": "repeat",
    "text": "乳首への吸引に、彼女は素直に応えた。声は、もう隠されていなかった。"

@@ -1173,6 +1173,7 @@ pushLog(s, "notice", `${s.characterName}は媚薬への依存から脱した`, {
 }
 s.lub = 0;
 s.prevCommandId = null;
+s.prevPrevCommandId = null;
 s.prev = null;
 for (const p of KAI_PARAM_IDS) s.params[p] = 0;
 s.exSession = emptyExMap();
@@ -1191,6 +1192,8 @@ s.yieldSession = 0;
 s.denialSession = { hate: 0, discomfort: 0, gloom: 0 };
 s.filmedSession = false;
 s.toolInsertedV = false; // TEQUIP はセッション内スコープ
+s.sceneTequip = 0;
+s.tequipToys = {};
 s.sessionSeq += 1;
 s.collapsed = false;
 s.phase = "play";
@@ -1545,6 +1548,20 @@ trainerLinked: boolean;
 /** TEQUIP:11（バイブ挿入中）の最小写像。com11 の実行でトグルし、
  * セッション開始で false に戻る。挿入系コマンドの COMABLE が参照。 */
 toolInsertedV: boolean;
+/** シーンプレイの TEQUIP 最小写像（セッション内スコープ）:
+ * 0 = なし、54 = 野外プレイ中、57 = 羞恥プレイ中、58 = お風呂場
+ * プレイ中、59 = 新妻プレイ中。原作では別々の TEQUIP フラグだが、
+ * 各 COMABLE が相互に開始を禁じるため同時に立つことはなく、
+ * 単一フィールドで受ける。対応コマンドの実行でトグルする
+ * （原作の「解除はいつでも可能」の形）。 */
+sceneTequip: number;
+/** 装備系 TEQUIP の最小写像（セッション内スコープ）: TEQUIP 番号
+ * 文字列 → 1（装着中）。対象は 13 アナルバイブ / 16 搾乳機 /
+ * 17 オナホール / 19 アナルビーズ / 22 利尿剤の効果持続 /
+ * 43 アイマスク / 44 縄 / 45 ボールギャグ / 46 浣腸プラグ /
+ * 49 アナル電極。対応コマンドの実行でトグルする（22 のみ
+ * com52 の使用で立ち、再使用は unlock 側で禁じる）。 */
+tequipToys: Record<string, number>;
 /** 体内媚薬残留度（eraMaou CFLAG:31）。com51 の使用で +1、
  * 7日ごとの処理で −1（@APHRODISIAC_ADDICT）。 */
 aphroResidue: number;
@@ -1570,6 +1587,11 @@ look: LookData | null;
 usedCommands: string[];
 /** 前手のコマンドID（CUPチェーンの連続実行判定用）。セッション開始でリセット。 */
 prevCommandId: string | null;
+/** 前々回のコマンドID（eraMaou TFLAG:59 の写像。複合コマンドの派生
+ * 条件が「前々回 × 前回」の組み合わせを読むため保持する）。
+ * セッション開始でリセット。旧形式の保存状態には無いので
+ * normalizeState が null で補完する。 */
+prevPrevCommandId: string | null;
 exp: Record<string, number>;
 dailyExp: Record<string, number>;
 prev: string | null;
@@ -1755,8 +1777,33 @@ ns[`item_${idStr}`] = s.inventory?.[idStr]?? 0;
 }
 // 調教者の技巧Lv（COMABLE の ABL:PLAYER:12 ゲートの写像）
 ns["trainer_skill"] = s.trainerSkill?? 0;
+// 調教師シートの性別（COMABLE の TALENT:PLAYER:121/122 の写像。
+// シート参照の初の実例: 調教師プロフィールの sheet.sex が正本で、
+// セッションはその作業コピーを保持する）
+ns["trainer_male"] = s.trainerSex === "male"? 1: 0;
+ns["trainer_futanari"] = s.trainerSex === "futanari"? 1: 0;
+// 対象の性別系素質（TALENT:121/122 の写像。素質マスタの
+// futanari / otokonoko がデータの置き場）
+ns["target_futanari"] = (s.traitIds?? []).includes("futanari")? 1: 0;
+ns["target_male"] = (s.traitIds?? []).includes("otokonoko")? 1: 0;
+// 超乳（TALENT:119 の写像）。素質マスタに該当素質がまだ無いため
+// 常に 0（材料が揃うまで com90 はマスク側で受ける）。
+ns["talent_chounyu"] = (s.traitIds?? []).includes("chounyu")? 1: 0;
 // TEQUIP:11（バイブ挿入中）の写像
 ns["tool_v"] = s.toolInsertedV? 1: 0;
+// シーンプレイ TEQUIP（54/57/58/59）の写像
+ns["scene_mode"] = s.sceneTequip?? 0;
+ns["scene_outdoor"] = s.sceneTequip === 54? 1: 0;
+ns["scene_shame"] = s.sceneTequip === 57? 1: 0;
+ns["scene_bath"] = s.sceneTequip === 58? 1: 0;
+ns["scene_wife"] = s.sceneTequip === 59? 1: 0;
+// 装備系 TEQUIP の写像（tequipToys の各キー）
+for (const n of [13, 16, 17, 19, 22, 43, 44, 45, 46, 49]) {
+ns[`tequip_${n}`] = s.tequipToys?.[String(n)]?? 0;
+}
+// ピアシング装着歴（COM_ABLE87 の CFLAG:7 写像。部位選択が無い
+// ため「装着したことがあるか」の初回フラグで受ける）
+ns["pierce_done"] = s.abnormalPierceDone? 1: 0;
 // 種族（COM135 セルフクンニの TALENT:314 写像。look.race で判定）
 ns["race_dullahan"] = s.look?.race === "デュラハン"? 1: 0;
 return ns;
@@ -2010,13 +2057,36 @@ s.fallenCount = (s.fallenCount?? 0) + 1; // FLAG:30（堕とした人数）
 return acquired;
 }
 
+/** マスク対象コマンド（2026-11-10 試遊フィードバック対応）:
+ * 一覧に出さず、直接の実行指定も受け付けない。定義・地の文・
+ * 口上のセルは残す。
+ * - com120〜134: 原作では複合コマンドは基本コマンド実行時に条件が
+ *   揃うと自動で派生するもので、一覧から選ぶものではない。一覧の
+ *   マスクは維持し、実行は派生解決（resolveDerivation）経由でのみ
+ *   起きる。
+ * - com135 セルフクンニ: 複合ではなく種族前提のコマンド。前提
+ *   データが無いためマスク据え置き。
+ * - com90 ニプルファック: 前提の超乳（TALENT:119）の判定材料が
+ *   現行データ（素質マスタ・LookData）に無いためマスクに倒す。
+ *   unlock 自体は実測形に直してある。
+ * - com47 ボンデージ装着: 原作では助手プレイ専用（COM_ABLE47 は
+ *   ASSIPLAY を必須とする）。助手システムが無いためマスク。
+ * - com110 服の着脱: 原作では着衣システム（FLAG:37）稼働時のみ
+ *   実行可能。着衣システムが無いためマスク。 */
+export const MASKED_COMMANDS: ReadonlySet<string> = new Set([
+"com120", "com121", "com123", "com124", "com125", "com126", "com127",
+"com128", "com129", "com130", "com131", "com132", "com133", "com134",
+"com135", "com90", "com47", "com110",
+]);
+
 /** 固定の開始条件（素体タイプ／調教／現代）で見えるコマンド */
 export function visibleCommands(s: GameState): CommandDef[] {
-return COMMANDS.filter((c) =>!c.world || c.world === s.worldId);
+return COMMANDS.filter((c) => (!c.world || c.world === s.worldId) && !MASKED_COMMANDS.has(c.id));
 }
 
 export function isUnlocked(s: GameState, cmd: CommandDef): boolean {
 if (cmd.world && cmd.world!== s.worldId) return false;
+if (MASKED_COMMANDS.has(cmd.id)) return false;
 return evalExpr(cmd.unlock, namespaceOf(s))!== 0;
 }
 
@@ -2036,8 +2106,7 @@ com10: "kai_c",
 com11: "kai_v",
 com12: "kai_c",
 com13: "kai_a",
-com14: "kai_c",
-com15: "kai_b",
+rotor_b: "kai_b",
 com16: "kai_b",
 com17: "kai_c",
 com19: "kai_a",
@@ -2394,6 +2463,17 @@ if (typeof s.trainerLinked !== "boolean") s.trainerLinked = false;
 if (!Array.isArray(s.trainerTraits)) s.trainerTraits = [];
 if (typeof s.trainerEjacMax !== "number" || !(s.trainerEjacMax > 0)) s.trainerEjacMax = RESOURCE_MAX.ejac;
 if (typeof s.toolInsertedV !== "boolean") s.toolInsertedV = false;
+if (typeof s.sceneTequip !== "number") s.sceneTequip = 0;
+if (s.tequipToys === null || typeof s.tequipToys !== "object" || Array.isArray(s.tequipToys)) s.tequipToys = {};
+// ローター統合（2026-11-10 項目E）の所持移行: 廃止した独立アイテム
+// ITEM:7【クリバイブ】/ ITEM:8【ニプルバイブ】を持っていたセーブは
+// ITEM:0【ローター】所持へ読み替え、旧キーは除く。
+if (s.inventory && typeof s.inventory === "object") {
+  const hadAbsorbed = (s.inventory["7"] ?? 0) > 0 || (s.inventory["8"] ?? 0) > 0;
+  if (hadAbsorbed && !((s.inventory["0"] ?? 0) > 0)) s.inventory["0"] = 1;
+  delete s.inventory["7"];
+  delete s.inventory["8"];
+}
 if (s.look !== null && (typeof s.look !== "object" || Array.isArray(s.look))) s.look = null;
 // 精飲絶頂・媚薬中毒レイヤー追加前の保存状態の補完（全て 0 / false
 // から数え直す。過去分は遡らない）
@@ -2427,6 +2507,7 @@ if (typeof s.sessionSeq !== "number" || s.sessionSeq < 1) s.sessionSeq = 1;
 if (typeof s.collapsed !== "boolean") s.collapsed = false;
 s.pendingPurchases = [];
 if (s.prevCommandId!== null && typeof s.prevCommandId!== "string") s.prevCommandId = null;
+if (s.prevPrevCommandId!== null && typeof s.prevPrevCommandId!== "string") s.prevPrevCommandId = null;
 return s;
 }
 
@@ -2548,6 +2629,8 @@ trainerTraits: [...(trainer?.traits?? [])],
 trainerEjacMax: typeof trainer?.ejacMax === "number" && trainer.ejacMax > 0? trainer.ejacMax: RESOURCE_MAX.ejac,
 trainerLinked: true,
 toolInsertedV: false,
+sceneTequip: 0,
+tequipToys: {},
 aphroResidue: 0,
 aphroAddict: false,
 aphroDosed: false,
@@ -2558,6 +2641,7 @@ seiinTaste: false,
 look: def.look?? null,
 usedCommands: [],
 prevCommandId: null,
+prevPrevCommandId: null,
 exp: {},
 dailyExp: {},
 prev: null,
@@ -2593,11 +2677,178 @@ return s;
 export interface ExecuteResult {
 ok: boolean;
 reason?: string;
+/** 実際に実行されたコマンドID（複合への派生が起きた場合は派生先）。
+ * 実行が成立しなかった手では付けない。 */
+commandId?: string;
+/** 実際に実行されたコマンドの表示名。 */
+commandLabel?: string;
+/** 派生元（押された基礎コマンド）のID。派生が起きなかった手では null。 */
+derivedFrom?: string | null;
 }
 
 /** 辞書キー: コマンドID | 帯域 | 反復区分 */
 export function narrationKey(commandId: string, band: string, repetition: string): string {
 return `${commandId}|${band}|${repetition}`;
+}
+
+// ---------------------------------------------------------------- 複合コマンドの派生
+
+/** 派生先コマンドの実行可否（eraMaou @COM_ABLE120〜134 の写像）。
+ * 一覧表示の unlock とは別物: 複合の unlock には「派生文脈でのみ
+ * 開く」ための prev_* 項が混ざっているため、派生判定では使わない。
+ * 【欠け】FLAG:71（追加コマンド許可設定）・未熟（TALENT:135）と
+ * 調教者サドの代替・貞操封印（TALENT:273）・着衣条件・
+ * 性交技術（ABL:14）の代替路・パイズリフェラの胸サイズ素質
+ * （TALENT:109/110/114/116/119）は、対応する素質・能力・
+ * システムが試作に無いため落とす（基礎コマンド側の扱いと同一）。
+ * フェラ系（123〜127）の調教者性別ゲート（TALENT:PLAYER:121/122、
+ * PBAND 代替なし）は、基礎コマンド側の判断（女性調教師でも実行可
+ * として unlock に付けない・判断待ち）に合わせて付けない。 */
+const DERIVE_ABLE: Record<string, string> = {
+com120: "tool_v == 0 && target_male == 0 && (trainer_male >= 1 || trainer_futanari >= 1 || item_4 >= 1) && (scene_bath == 0 || item_13 >= 1)",
+com121: "tool_v == 0 && target_male == 0 && (trainer_male >= 1 || trainer_futanari >= 1 || item_4 >= 1) && (scene_bath == 0 || item_13 >= 1)",
+com123: "(abl_obedience >= 3 || abl_skill >= 3 || abl_service >= 3) && tequip_44 == 0 && tequip_45 == 0",
+com124: "(abl_obedience >= 3 || abl_skill >= 3 || abl_service >= 3) && tequip_44 == 0 && tequip_45 == 0",
+com125: "(abl_obedience >= 3 || abl_skill >= 3 || abl_service >= 3) && tequip_44 == 0 && tequip_45 == 0",
+com126: "(abl_obedience >= 3 || abl_skill >= 3 || abl_service >= 3) && tequip_44 == 0 && tequip_45 == 0",
+com127: "(abl_obedience >= 3 || abl_skill >= 3 || abl_service >= 3) && tequip_44 == 0 && tequip_45 == 0",
+com128: "trainer_skill >= 3 && tool_v == 0 && target_male == 0 && (trainer_male >= 1 || trainer_futanari >= 1 || item_4 >= 1) && (scene_bath == 0 || item_13 >= 1)",
+com129: "trainer_skill >= 3 && tool_v == 0 && target_male == 0 && (trainer_male >= 1 || trainer_futanari >= 1 || item_4 >= 1) && (scene_bath == 0 || item_13 >= 1)",
+com130: "trainer_skill >= 5 && tool_v == 0 && target_male == 0 && (trainer_male >= 1 || trainer_futanari >= 1 || item_4 >= 1) && (scene_bath == 0 || item_13 >= 1)",
+com131: "trainer_skill >= 3 && tool_v == 0 && target_male == 0 && (trainer_male >= 1 || trainer_futanari >= 1 || item_4 >= 1) && (scene_bath == 0 || item_13 >= 1)",
+com132: "trainer_skill >= 3 && tool_v == 0 && target_male == 0 && (trainer_male >= 1 || trainer_futanari >= 1 || item_4 >= 1) && (scene_bath == 0 || item_13 >= 1)",
+com133: "trainer_skill >= 4 && tool_v == 0 && target_male == 0 && (trainer_male >= 1 || trainer_futanari >= 1 || item_4 >= 1) && (scene_bath == 0 || item_13 >= 1)",
+com134: "trainer_skill >= 5 && tool_v == 0 && target_male == 0 && (trainer_male >= 1 || trainer_futanari >= 1 || item_4 >= 1) && (scene_bath == 0 || item_13 >= 1)",
+};
+
+function deriveAble(s: GameState, targetId: string): boolean {
+const expr = DERIVE_ABLE[targetId];
+if (!expr) return false;
+return evalExpr(expr, namespaceOf(s))!== 0;
+}
+
+/** RAND:11（0〜10 の一様乱数。エンジン共通の roll を使う） */
+function rand11(s: GameState): number {
+return Math.floor(roll(s) * 11);
+}
+
+/**
+ * 挿入Gスポ責め／挿入子宮口責めへの派生（COMF20/21/22/23/34 の共通形）。
+ * A = 欲情帯 × RAND:11 + RAND:11 × V感覚。欲情帯は PALAM:5（試作では
+ * desireSession の蓄積）を PALAMLV（100/500/3000/10000）で帯化した
+ * 1〜5。A が基礎コマンドごとの閾値以上なら子宮口（com121）、未満なら
+ * Gスポ（com120）。選ばれた側の COM_ABLE が通らなければ派生しない
+ * （他方への振り替えはしない——原作の分岐どおり）。
+ */
+function deriveGSpotOrCervix(s: GameState, threshold: number): string | null {
+const lust = s.desireSession?? 0;
+const lv = lust < 100? 1: lust < 500? 2: lust < 3000? 3: lust < 10000? 4: 5;
+let a = lv * rand11(s);
+a += rand11(s) * (s.abilities?.["sense_v"]?? 0);
+const target = a >= threshold? "com121": "com120";
+return deriveAble(s, target)? target: null;
+}
+
+/**
+ * 複合コマンドの派生解決（eraMaou の各 COMF 冒頭の JUMP 分岐の移植）。
+ * 基礎コマンド baseId が押された手の開始時点で、前回（PREVCOM =
+ * s.prev）・前々回（TFLAG:59 = s.prevPrevCommandId）と状態から派生を
+ * 評価し、派生先のコマンドIDを返す（派生しなければ null）。
+ * 「前回と今回の調教者が同じ」前提（ASSIPLAY 分岐）は、試作に助手が
+ * 無く調教者は常に同一のため、常に成立として扱う。
+ * 【欠け】フェラチオ→シックスナイン（COM69）はカタログにコマンド
+ * 自体が無いため未接続。3P（COM64）への派生も助手システムが無い
+ * ため対象外。セルフクンニ（com135）は派生ではなく種族前提の
+ * コマンドで、前提データが無いためマスク据え置き（対象外）。
+ */
+export function resolveDerivation(s: GameState, baseId: string): string | null {
+const prev = s.prev;
+const prev2 = s.prevPrevCommandId;
+if (!prev) return null;
+const skill = s.trainerSkill?? 0;
+const inSet = (v: string | null, set: string[]) => v!== null && set.includes(v);
+switch (baseId) {
+case "sex_v": {
+// COMF20 正常位: 128→129 / 129→128 の連続（前々回が SP で前回が
+// 128/129 でも可）から正常位SP。次に Gスポ/子宮口（閾値40）。
+if (((prev2 === "com128" && prev === "com129")
+|| (prev2 === "com129" && prev === "com128")
+|| (prev2 === "com130" && inSet(prev, ["com128", "com129"])))
+&& deriveAble(s, "com130")) return "com130";
+if (inSet(prev, ["sex_v", "com128", "com129", "com130"]) && skill >= 3)
+return deriveGSpotOrCervix(s, 40);
+return null;
+}
+case "com21": {
+// COMF21 後背位: 131/132（前々回が SP でも可）→ 133 の流れから
+// 後背位SP。次に Gスポ/子宮口（閾値50）。
+if (inSet(prev2, ["com131", "com132", "com134"]) && prev === "com133"
+&& deriveAble(s, "com134")) return "com134";
+if (inSet(prev, ["com21", "com131", "com132", "com133", "com134"]) && skill >= 3)
+return deriveGSpotOrCervix(s, 50);
+return null;
+}
+case "com22": // COMF22 対面座位 → Gスポ/子宮口（閾値30）
+return prev === "com22" && skill >= 3? deriveGSpotOrCervix(s, 30): null;
+case "com23": // COMF23 背面座位 → Gスポ/子宮口（閾値60）
+return prev === "com23" && skill >= 3? deriveGSpotOrCervix(s, 60): null;
+case "com34": // COMF34 騎乗位 → Gスポ/子宮口（騎乗形、閾値50）
+return prev === "com34" && skill >= 3? deriveGSpotOrCervix(s, 50): null;
+case "kiss": {
+// COMF6 キス: 正常位系の最中なら正常位・キス、後背位系の最中なら
+// 立ちバック。Gスポ/子宮口の直後（前々回が体位系）も同じ。
+if (inSet(prev, ["sex_v", "com129", "com130"]) && deriveAble(s, "com128")) return "com128";
+if (inSet(prev2, ["sex_v", "com128", "com129", "com130"])
+&& inSet(prev, ["com120", "com121"]) && deriveAble(s, "com128")) return "com128";
+if (inSet(prev, ["com131", "com132", "com134"]) && deriveAble(s, "com133")) return "com133";
+if (inSet(prev2, ["com131", "com132", "com134"])
+&& inSet(prev, ["com120", "com121"]) && deriveAble(s, "com133")) return "com133";
+return null;
+}
+case "breast_caress": {
+// COMF5 胸愛撫: 正常位系の最中なら正常位・胸愛撫、後背位系の
+// 最中なら後背位・胸愛撫。Gスポ/子宮口の直後も同じ。
+if (inSet(prev, ["sex_v", "com128", "com130"]) && deriveAble(s, "com129")) return "com129";
+if (inSet(prev2, ["sex_v", "com128", "com129", "com130"])
+&& inSet(prev, ["com120", "com121"]) && deriveAble(s, "com129")) return "com129";
+if (inSet(prev, ["com21", "com132", "com133", "com134"]) && deriveAble(s, "com131")) return "com131";
+if (inSet(prev2, ["com21", "com131", "com132", "com133", "com134"])
+&& inSet(prev, ["com120", "com121"]) && deriveAble(s, "com131")) return "com131";
+return null;
+}
+case "com40": {
+// COMF40 スパンキング: 後背位系の最中なら後背位・スパンキング。
+if (inSet(prev, ["com21", "com131", "com133", "com134"]) && deriveAble(s, "com132")) return "com132";
+if (inSet(prev2, ["com21", "com131", "com132", "com133", "com134"])
+&& inSet(prev, ["com120", "com121"]) && deriveAble(s, "com132")) return "com132";
+return null;
+}
+case "fellatio": {
+// COMF31 フェラチオ（原作の判定順どおり）: パイズリ直後 →
+// パイズリフェラ、自慰直後 → フェラ自慰、フェラ系の継続 →
+// ランダムでディープスロート/バキュームフェラ、手淫直後 →
+// 手コキフェラ。
+if (prev === "com32" && deriveAble(s, "com123")) return "com123";
+if (prev === "com3" && deriveAble(s, "com125")) return "com125";
+if (inSet(prev, ["fellatio", "com123", "com125", "com126"])) {
+if (rand11(s) > 5) return deriveAble(s, "com124")? "com124": null;
+return deriveAble(s, "com127")? "com127": null;
+}
+if (prev === "com30" && deriveAble(s, "com126")) return "com126";
+return null;
+}
+case "com30": // COMF30 手淫: フェラ系の直後 → 手コキフェラ
+return inSet(prev, ["fellatio", "com123", "com124", "com125", "com127"])
+&& deriveAble(s, "com126")? "com126": null;
+case "com32": // COMF32 パイズリ: フェラ系の直後 → パイズリフェラ
+return inSet(prev, ["fellatio", "com124", "com125", "com126", "com127"])
+&& deriveAble(s, "com123")? "com123": null;
+case "com3": // COMF3 自慰: フェラ系の直後 → フェラ自慰
+return inSet(prev, ["fellatio", "com123", "com124", "com126", "com127"])
+&& deriveAble(s, "com125")? "com125": null;
+default:
+return null;
+}
 }
 
 /**
@@ -2620,7 +2871,7 @@ return { ok: false, reason: "調教は終了している。次へ進むまでコ
 }
 const list = visibleCommands(s);
 const idx = list.findIndex((c) => c.id === cmdId);
-const cmd = list[idx];
+let cmd = list[idx];
 if (!cmd) return { ok: false, reason: "そのコマンドはこのセッションにない"};
 
 const echoEntry = pushLog(s, "echo", `> [${idx}] ${cmd.label}`);
@@ -2632,6 +2883,25 @@ return { ok: false, reason: "条件を満たしていない"};
 if ((s.params["fatigue"]?? 0) >= 100) {
 pushLog(s, "text", "彼女は限界だ。これ以上は崩れてしまう。調教を切り上げるべきだ。", { mark: 1});
 return { ok: false, reason: "疲労が限界に達している"};
+}
+
+// 複合コマンドの派生解決（eraMaou の各 COMF 冒頭の JUMP 分岐の位置）:
+// 基礎コマンドの実行判定より前に評価し、派生が決まれば以降の全て
+// （実行判定・ソース・コスト・経験・地の文・履歴）は派生先コマンド
+// として処理する。派生しなければ基礎コマンドが通常どおり実行される。
+const requestedId = cmdId;
+const requestedLabel = cmd.label;
+let derivedFrom: string | null = null;
+{
+const derivedId = resolveDerivation(s, cmdId);
+if (derivedId && derivedId!== cmdId) {
+const target = COMMANDS.find((c) => c.id === derivedId);
+if (target) {
+derivedFrom = requestedId;
+cmdId = derivedId;
+cmd = target;
+}
+}
 }
 
 // 実行判定（eraMaou @COM_ORDER 方式）: ORDER_JUDGES にあるコマンドは
@@ -2653,6 +2923,12 @@ return { ok: false, reason: "実行値が足りない"};
 // この手のセリフ既定値は、手の確定後に口上辞書から選んで設定する
 // （口上選択の段を参照。該当セルが無ければ空文字のまま）。
 s.dialogue = "";
+
+// 派生が成立した手は、後文（,3）の先頭で分かるように記録する
+// （実行判定を抜けた後に置く: 判定で落ちた手には付けない）。
+if (derivedFrom) {
+pushLog(s, "summary", `（派生）${requestedLabel} → ${cmd.label}`, { mark: 3});
+}
 
 const ns = namespaceOf(s);
 
@@ -3271,6 +3547,30 @@ if ((s.inventory[key]?? 0) > 0) s.inventory[key] = (s.inventory[key]?? 0) - 1;
 }
 // TEQUIP:11 のトグル（COMF11 バイブ: TEQUIP:11 = 1 - TEQUIP:11）
 if (cmdId === "com11" && !failed) s.toolInsertedV = !s.toolInsertedV;
+// シーンプレイ TEQUIP のトグル（com54/57/58/59: 原作の
+// 「解除はいつでも可能」の形。実行で入り、同じコマンドの再実行で
+// 抜ける。unlock 側で他シーン中の開始は禁じてある）
+const SCENE_TEQUIP: Record<string, number> = { com54: 54, com57: 57, com58: 58, com59: 59 };
+if (!failed && SCENE_TEQUIP[cmdId] !== undefined) {
+s.sceneTequip = s.sceneTequip === SCENE_TEQUIP[cmdId] ? 0 : SCENE_TEQUIP[cmdId];
+}
+// 装備系 TEQUIP のトグル（対応コマンドの実行で着脱する。原作の
+// 「解除はいつでも可能」の形）
+const TOY_TEQUIP: Record<string, number> = {
+com13: 13, com16: 16, com17: 17, com19: 19, com43: 43,
+com44: 44, com45: 45, com46: 46, com49: 49,
+};
+if (!failed && TOY_TEQUIP[cmdId] !== undefined) {
+if (!s.tequipToys) s.tequipToys = {};
+const key = String(TOY_TEQUIP[cmdId]);
+s.tequipToys[key] = s.tequipToys[key] ? 0 : 1;
+}
+// 利尿剤の効果持続（TEQUIP:22）。com52 の使用で立ち、セッション内
+// 有効。連続投与は unlock 側で禁じる
+if (cmdId === "com52" && !failed) {
+if (!s.tequipToys) s.tequipToys = {};
+s.tequipToys["22"] = 1;
+}
 // 媚薬（COMF51）の残留度と薬物経験: 使用のたび 残留度 +1（CFLAG:31）、
 // 薬物経験 +1（EXP:57 写像）。残留度が閾値に達したら媚薬中毒を
 // 取得し、残留度は 15 以上に引き上げられる（EVENT_ADDICT の形）。
@@ -3403,6 +3703,9 @@ text = text?? narration.get(narrationKey(cmdId, band, rep))?? "";
 s.exp[cmdId] = (s.exp[cmdId]?? 0) + 1;
 s.dailyExp[cmdId] = (s.dailyExp[cmdId]?? 0) + 1;
 if (!s.usedCommands.includes(cmdId)) s.usedCommands.push(cmdId);
+// 履歴は「前々回 ← 前回 ← 今回」とずらす（eraMaou の PREVCOM →
+// TFLAG:59 の移し替えと同じ形）。複合の派生条件が読むのはこの2つ。
+s.prevPrevCommandId = s.prev;
 s.prev = cmdId;
 s.prevCommandId = cmdId;
 
@@ -3495,7 +3798,7 @@ pushLog(s, "day", `―― 第${s.day}日（${slotLabelOf(s.slot)}）調教中断
 pushLog(s, "notice", "彼女は倒れた。このセッションの精算は行われない。次へ進むと次の時間帯へ移る。", { mark: 3 });
 }
 pushLog(s, "status", "", { snapshot: snapshotOf(s)});
-return { ok: true};
+return { ok: true, commandId: cmdId, commandLabel: cmd.label, derivedFrom };
 }
 
 // ---------------------------------------------------------------- ending

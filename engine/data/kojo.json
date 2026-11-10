@@ -633,7 +633,7 @@
   {
    "band": "high",
    "branch": null,
-   "commandId": "com14",
+   "commandId": "com10",
    "kind": "command",
    "markId": null,
    "part": null,
@@ -648,7 +648,7 @@
   {
    "band": "high",
    "branch": null,
-   "commandId": "com14",
+   "commandId": "com10",
    "kind": "command",
    "markId": null,
    "part": null,
@@ -663,7 +663,7 @@
   {
    "band": "low",
    "branch": null,
-   "commandId": "com14",
+   "commandId": "com10",
    "kind": "command",
    "markId": null,
    "part": null,
@@ -678,7 +678,7 @@
   {
    "band": "low",
    "branch": null,
-   "commandId": "com14",
+   "commandId": "com10",
    "kind": "command",
    "markId": null,
    "part": null,
@@ -693,7 +693,7 @@
   {
    "band": "mid",
    "branch": null,
-   "commandId": "com14",
+   "commandId": "com10",
    "kind": "command",
    "markId": null,
    "part": null,
@@ -708,7 +708,7 @@
   {
    "band": "mid",
    "branch": null,
-   "commandId": "com14",
+   "commandId": "com10",
    "kind": "command",
    "markId": null,
    "part": null,
@@ -723,7 +723,7 @@
   {
    "band": "high",
    "branch": null,
-   "commandId": "com15",
+   "commandId": "rotor_b",
    "kind": "command",
    "markId": null,
    "part": null,
@@ -738,7 +738,7 @@
   {
    "band": "high",
    "branch": null,
-   "commandId": "com15",
+   "commandId": "rotor_b",
    "kind": "command",
    "markId": null,
    "part": null,
@@ -753,7 +753,7 @@
   {
    "band": "low",
    "branch": null,
-   "commandId": "com15",
+   "commandId": "rotor_b",
    "kind": "command",
    "markId": null,
    "part": null,
@@ -768,7 +768,7 @@
   {
    "band": "low",
    "branch": null,
-   "commandId": "com15",
+   "commandId": "rotor_b",
    "kind": "command",
    "markId": null,
    "part": null,
@@ -783,7 +783,7 @@
   {
    "band": "mid",
    "branch": null,
-   "commandId": "com15",
+   "commandId": "rotor_b",
    "kind": "command",
    "markId": null,
    "part": null,
@@ -798,7 +798,7 @@
   {
    "band": "mid",
    "branch": null,
-   "commandId": "com15",
+   "commandId": "rotor_b",
    "kind": "command",
    "markId": null,
    "part": null,
@@ -6903,7 +6903,7 @@
   {
    "band": "high",
    "branch": null,
-   "commandId": "com14",
+   "commandId": "com10",
    "kind": "command",
    "markId": null,
    "part": null,
@@ -6918,7 +6918,7 @@
   {
    "band": "high",
    "branch": null,
-   "commandId": "com14",
+   "commandId": "com10",
    "kind": "command",
    "markId": null,
    "part": null,
@@ -6933,7 +6933,7 @@
   {
    "band": "low",
    "branch": null,
-   "commandId": "com14",
+   "commandId": "com10",
    "kind": "command",
    "markId": null,
    "part": null,
@@ -6948,7 +6948,7 @@
   {
    "band": "low",
    "branch": null,
-   "commandId": "com14",
+   "commandId": "com10",
    "kind": "command",
    "markId": null,
    "part": null,
@@ -6963,7 +6963,7 @@
   {
    "band": "mid",
    "branch": null,
-   "commandId": "com14",
+   "commandId": "com10",
    "kind": "command",
    "markId": null,
    "part": null,
@@ -6978,7 +6978,7 @@
   {
    "band": "mid",
    "branch": null,
-   "commandId": "com14",
+   "commandId": "com10",
    "kind": "command",
    "markId": null,
    "part": null,
@@ -6993,7 +6993,7 @@
   {
    "band": "high",
    "branch": null,
-   "commandId": "com15",
+   "commandId": "rotor_b",
    "kind": "command",
    "markId": null,
    "part": null,
@@ -7008,7 +7008,7 @@
   {
    "band": "high",
    "branch": null,
-   "commandId": "com15",
+   "commandId": "rotor_b",
    "kind": "command",
    "markId": null,
    "part": null,
@@ -7023,7 +7023,7 @@
   {
    "band": "low",
    "branch": null,
-   "commandId": "com15",
+   "commandId": "rotor_b",
    "kind": "command",
    "markId": null,
    "part": null,
@@ -7038,7 +7038,7 @@
   {
    "band": "low",
    "branch": null,
-   "commandId": "com15",
+   "commandId": "rotor_b",
    "kind": "command",
    "markId": null,
    "part": null,
@@ -7053,7 +7053,7 @@
   {
    "band": "mid",
    "branch": null,
-   "commandId": "com15",
+   "commandId": "rotor_b",
    "kind": "command",
    "markId": null,
    "part": null,
@@ -7068,7 +7068,7 @@
   {
    "band": "mid",
    "branch": null,
-   "commandId": "com15",
+   "commandId": "rotor_b",
    "kind": "command",
    "markId": null,
    "part": null,
@@ -13173,7 +13173,7 @@
   {
    "band": "high",
    "branch": null,
-   "commandId": "com14",
+   "commandId": "com10",
    "kind": "command",
    "markId": null,
    "part": null,
@@ -13188,7 +13188,7 @@
   {
    "band": "high",
    "branch": null,
-   "commandId": "com14",
+   "commandId": "com10",
    "kind": "command",
    "markId": null,
    "part": null,
@@ -13203,7 +13203,7 @@
   {
    "band": "low",
    "branch": null,
-   "commandId": "com14",
+   "commandId": "com10",
    "kind": "command",
    "markId": null,
    "part": null,
@@ -13218,7 +13218,7 @@
   {
    "band": "low",
    "branch": null,
-   "commandId": "com14",
+   "commandId": "com10",
    "kind": "command",
    "markId": null,
    "part": null,
@@ -13233,7 +13233,7 @@
   {
    "band": "mid",
    "branch": null,
-   "commandId": "com14",
+   "commandId": "com10",
    "kind": "command",
    "markId": null,
    "part": null,
@@ -13248,7 +13248,7 @@
   {
    "band": "mid",
    "branch": null,
-   "commandId": "com14",
+   "commandId": "com10",
    "kind": "command",
    "markId": null,
    "part": null,
@@ -13263,7 +13263,7 @@
   {
    "band": "high",
    "branch": null,
-   "commandId": "com15",
+   "commandId": "rotor_b",
    "kind": "command",
    "markId": null,
    "part": null,
@@ -13278,7 +13278,7 @@
   {
    "band": "high",
    "branch": null,
-   "commandId": "com15",
+   "commandId": "rotor_b",
    "kind": "command",
    "markId": null,
    "part": null,
@@ -13293,7 +13293,7 @@
   {
    "band": "low",
    "branch": null,
-   "commandId": "com15",
+   "commandId": "rotor_b",
    "kind": "command",
    "markId": null,
    "part": null,
@@ -13308,7 +13308,7 @@
   {
    "band": "low",
    "branch": null,
-   "commandId": "com15",
+   "commandId": "rotor_b",
    "kind": "command",
    "markId": null,
    "part": null,
@@ -13323,7 +13323,7 @@
   {
    "band": "mid",
    "branch": null,
-   "commandId": "com15",
+   "commandId": "rotor_b",
    "kind": "command",
    "markId": null,
    "part": null,
@@ -13338,7 +13338,7 @@
   {
    "band": "mid",
    "branch": null,
-   "commandId": "com15",
+   "commandId": "rotor_b",
    "kind": "command",
    "markId": null,
    "part": null,
@@ -19443,7 +19443,7 @@
   {
    "band": "high",
    "branch": null,
-   "commandId": "com14",
+   "commandId": "com10",
    "kind": "command",
    "markId": null,
    "part": null,
@@ -19458,7 +19458,7 @@
   {
    "band": "high",
    "branch": null,
-   "commandId": "com14",
+   "commandId": "com10",
    "kind": "command",
    "markId": null,
    "part": null,
@@ -19473,7 +19473,7 @@
   {
    "band": "low",
    "branch": null,
-   "commandId": "com14",
+   "commandId": "com10",
    "kind": "command",
    "markId": null,
    "part": null,
@@ -19488,7 +19488,7 @@
   {
    "band": "low",
    "branch": null,
-   "commandId": "com14",
+   "commandId": "com10",
    "kind": "command",
    "markId": null,
    "part": null,
@@ -19503,7 +19503,7 @@
   {
    "band": "mid",
    "branch": null,
-   "commandId": "com14",
+   "commandId": "com10",
    "kind": "command",
    "markId": null,
    "part": null,
@@ -19518,7 +19518,7 @@
   {
    "band": "mid",
    "branch": null,
-   "commandId": "com14",
+   "commandId": "com10",
    "kind": "command",
    "markId": null,
    "part": null,
@@ -19533,7 +19533,7 @@
   {
    "band": "high",
    "branch": null,
-   "commandId": "com15",
+   "commandId": "rotor_b",
    "kind": "command",
    "markId": null,
    "part": null,
@@ -19548,7 +19548,7 @@
   {
    "band": "high",
    "branch": null,
-   "commandId": "com15",
+   "commandId": "rotor_b",
    "kind": "command",
    "markId": null,
    "part": null,
@@ -19563,7 +19563,7 @@
   {
    "band": "low",
    "branch": null,
-   "commandId": "com15",
+   "commandId": "rotor_b",
    "kind": "command",
    "markId": null,
    "part": null,
@@ -19578,7 +19578,7 @@
   {
    "band": "low",
    "branch": null,
-   "commandId": "com15",
+   "commandId": "rotor_b",
    "kind": "command",
    "markId": null,
    "part": null,
@@ -19593,7 +19593,7 @@
   {
    "band": "mid",
    "branch": null,
-   "commandId": "com15",
+   "commandId": "rotor_b",
    "kind": "command",
    "markId": null,
    "part": null,
@@ -19608,7 +19608,7 @@
   {
    "band": "mid",
    "branch": null,
-   "commandId": "com15",
+   "commandId": "rotor_b",
    "kind": "command",
    "markId": null,
    "part": null,

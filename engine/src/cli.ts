@@ -382,11 +382,45 @@ function appendOpLog(msg: any, out: any, logFrom: number) {
   };
   if (msg.trainerId !== undefined) rec.requestTrainerId = msg.trainerId;
   if (msg.command !== undefined) rec.commandId = msg.command;
+  if (out?.commandId !== undefined) rec.executedCommandId = out.commandId;
+  if (out?.derivedFrom) rec.derivedFrom = out.derivedFrom;
   if (msg.itemId !== undefined) rec.itemId = msg.itemId;
   if (msg.abilityId !== undefined) rec.abilityId = msg.abilityId;
   if (msg.juelChoice !== undefined) rec.juelChoice = msg.juelChoice;
   if (msg.choice !== undefined) rec.choice = msg.choice;
   if (out?.reason !== undefined) rec.reason = out.reason;
+  // --- リプレイ用の記録拡張（セーブ＝初期シード＋opログ列 の確定に伴う） ---
+  // 再生は「保存された rngSeed で新規 state を作り、op 列を順に流す」形。
+  // そのために必要なリクエスト側の入力は、応答に現れない物も含めて
+  // ここで落とさず残す（旧形式ログには無いので、再生側は欠落を前提に
+  // フォールバックする）。
+  if (msg.characterId !== undefined) rec.characterId = msg.characterId;
+  if (msg.fresh !== undefined) rec.fresh = !!msg.fresh;
+  if (msg.text !== undefined) rec.text = msg.text;
+  if (msg.days !== undefined) rec.days = msg.days;
+  if (msg.candidateId !== undefined) rec.candidateId = msg.candidateId;
+  if (msg.traitId !== undefined) rec.traitId = msg.traitId;
+  if (msg.random !== undefined) rec.random = msg.random ? 1 : 0;
+  if (msg.seed !== undefined) rec.requestSeed = msg.seed;
+  if (msg.count !== undefined) rec.count = msg.count;
+  if (msg.op === "start" && out?.ok) {
+    // 起点の再構成情報: 再生側はこの rngSeed で新規 state を作る。
+    // rngSeed はセッション（セーブ）側の値で、キャラ定義には置かない。
+    rec.rngSeed = state.rngSeed;
+    if (!out.resumed) {
+      // 新規開始時の調教主ハイドレーション結果。再生側はトレーナー
+      // ストアをこの値で種付けしてから開始を再現する（開始前購入など
+      // ログ外で起きたストア変更も、この一点に集約される）。
+      rec.trainerStart = {
+        trainerSkill: state.trainerSkill ?? 0,
+        fallenCount: state.fallenCount ?? 0,
+        funds: state.allowance ?? 0,
+      };
+    }
+  }
+  if (msg.op === "poolgen" && out?.ok) {
+    rec.generatedSeeds = (out.candidates ?? []).map((c: any) => c.seed);
+  }
   try {
     appendFileSync(join(logDir, `${state.characterId}.jsonl`), JSON.stringify(rec) + "\n");
   } catch { /* logging must never break a hand */ }
