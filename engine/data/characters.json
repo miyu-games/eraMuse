@@ -1,39 +1,6 @@
 {
   "characters": [
     {
-      "id": "base",
-      "initOverrides": {},
-      "name": "素体タイプ",
-      "note": "全面ランダム作成（charroll）の土台。素質も初期値の上書きも持たず、ロール結果がそのまま個性になる",
-      "personality": "sunao",
-      "traits": []
-    },
-    {
-      "id": "shiori",
-      "initOverrides": {
-        "relief": 30,
-        "stress": 80
-      },
-      "name": "栞",
-      "note": "深夜の資料室で記録を守る司書のミューズ、26歳。言葉は正確で約束に堅く、乱れた棚を放っておけない。夜勤に強く、疲れを見せない。ミューがイメージして作った一人目。",
-      "personality": "majime",
-      "traits": [
-        {
-          "id": "kaifuku_hayai"
-        }
-      ],
-      "look": {
-        "age": 26,
-        "pronoun": "わたし",
-        "heightCm": 158,
-        "build": "標準的で姿勢がいい",
-        "hairColor": "黒",
-        "hairLength": "ロング",
-        "hairSet": "低く結ぶ",
-        "pupilColor": "茶"
-      }
-    },
-    {
       "id": "cand_20261109",
       "registered": 0,
       "name": "凛",
@@ -277,5 +244,5 @@
       }
     }
   ],
-  "comment": "キャラ定義。base は Space の getCharacter で実物確認済み。shiori は作成時の記録（2026-11-08 17:51）から転記。shiori の getCharacter は Space 側の旧スナップショット互換問題（log 内 snapshot に abilities[].queued が無い）で応答検証エラーになるため実物未確認。kaifuku_hayai の src_mult/conv_mult は未確認（効果は体力・気力最大値 +500/+500 が実測済み）。"
+  "comment": "配布パックのキャラ定義。プール候補4件（凛・遥・オリガ・弥生）のみを registered: 0 の初期状態で収録。base（素体タイプ）と栞は配布側から除外（2026-11-10）。候補は poolregister で正式登録してから開始する。"
 }
